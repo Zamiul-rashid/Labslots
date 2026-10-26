@@ -1,0 +1,127 @@
+# Deployed in CT 101 at /opt/labslots, next to Headscale (a systemd service on this host).
+#   labslots        the hub: website, enrollments, Google Sheet sync          (:3100, behind the proxy)
+#   labslots-agent  enforces the schedule on this server's Headscale (hs1)
+#   ts-scheduler    the agent's way onto the tailnet, to SSH to lab PCs
+#   backup          nightly copies of the three SQLite databases
+# Headscale itself is not in this file: it is installed from the official .deb and runs on the host.
+# The image is a labslots release from GitHub (ghcr.io/zamiul-rashid/labslots:<version>); the one in use
+# is LABSLOTS_IMAGE in .env. Deploy with ./deploy.sh (health-checked, rolls back on failure).
+# Other Headscale servers run agent-compose.yml.
+
+x-logging: &logging
+  driver: json-file
+  options: {max-size: "10m", max-file: "3"}
+
+x-app: &app
+  image: ${LABSLOTS_IMAGE:-ghcr.io/zamiul-rashid/labslots:latest}
+  restart: unless-stopped
+  network_mode: host
+  logging: *logging
+
+services:
+  labslots:
+    <<: *app
+    container_name: labslots
+    environment:
+      TZ: "${TZ:-UTC}"                  # slot times are local to this zone
+      LABSLOTS_LAB_NAME: "${LABSLOTS_LAB_NAME:-Research Lab}"
+      LABSLOTS_ORG_NAME: "${LABSLOTS_ORG_NAME:-university}"
+      LABSLOTS_STUDENT_DOMAINS: "${LABSLOTS_STUDENT_DOMAINS:-students.example.edu}"
+      LABSLOTS_PUBLIC_URL: "https://hs.example.edu"
+      LABSLOTS_BASE_PATH: "/slots"
+      LABSLOTS_BOOTSTRAP_ADMINS: "${LABSLOTS_BOOTSTRAP_ADMINS}"
+      OIDC_ISSUER: "https://accounts.google.com"
+      GOOGLE_OAUTH_CLIENT_FILE: "/run/secrets/google-oauth-client.json"   # website sign-in, as downloaded
+      # Outgoing email for enrollment decisions; off while SMTP_HOST/SMTP_FROM are empty.
+      SMTP_HOST: "${SMTP_HOST:-}"
+      SMTP_PORT: "${SMTP_PORT:-587}"
+      SMTP_USER: "${SMTP_USER:-}"
+      SMTP_FROM: "${SMTP_FROM:-}"
+      SMTP_PASSWORD_FILE: "/run/secrets/smtp_password"
+      # Google Sheet that holds the schedule (source of truth); off while LABSLOTS_SHEET is empty.
+      LABSLOTS_SHEET: "${LABSLOTS_SHEET:-}"
+      GOOGLE_SA_KEY_FILE: "/run/secrets/google-service-account.json"    # Sheets, as downloaded
+    volumes:
+      - ./data:/data
+      - ./secrets/hub:/run/secrets:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:3100/slots/healthz', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+  # Fetches hs1's slice of the schedule from the hub and applies it (Headscale policy, device
+  # clean-up, PC account switching). Keeps enforcing its local copy while the hub is down.
+  labslots-agent:
+    <<: *app
+    container_name: labslots-agent
+    command: ["python", "-m", "labslots.agent"]
+    environment:
+      TZ: "${TZ:-UTC}"
+      AGENT_HUB_URL: "http://127.0.0.1:3100/slots"
+      AGENT_TOKEN_FILE: "/run/secrets/agent_token"
+      HEADSCALE_URL: "http://127.0.0.1:8080"
+      HEADSCALE_API_KEY_FILE: "/run/secrets/headscale_api_key"
+      LABSLOTS_SSH_SOCKS: "127.0.0.1:1055"
+    volumes:
+      - ./agent-data:/data
+      - ./secrets/agent:/run/secrets:ro
+    healthcheck:   # the agent touches /data/heartbeat after every run
+      test: ["CMD", "python", "-c", "import os, sys, time; sys.exit(time.time() - os.path.getmtime('/data/heartbeat') > 120)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # The agent's own tailnet presence (tag:scheduler), used only to SSH to lab PCs.
+  # Userspace mode: no TUN device, no changes to the host's DNS or routes.
+  ts-scheduler:
+    image: tailscale/tailscale:v1.102.3
+    container_name: ts-scheduler
+    restart: unless-stopped
+    network_mode: host
+    logging: *logging
+    environment:
+      TS_USERSPACE: "true"
+      TS_SOCKS5_SERVER: "127.0.0.1:1055"
+      TS_STATE_DIR: "/var/lib/tailscale"
+      TS_ACCEPT_DNS: "false"
+      TS_HOSTNAME: "lab-scheduler"
+      TS_AUTHKEY: "file:/run/secrets/ts_authkey"
+      TS_EXTRA_ARGS: "--login-server=https://hs.example.edu"
+      TS_TAILSCALED_EXTRA_ARGS: "--port=41642"
+    volumes:
+      - ./ts-state:/var/lib/tailscale
+      - ./secrets/tailscale:/run/secrets:ro
+
+  # Every night at 02:30 (local time, TZ): consistent copies of the website's, the agent's and
+  # Headscale's databases in ./backups, 14 days kept. Root, to read Headscale's own files.
+  backup:
+    <<: *app
+    container_name: labslots-backup
+    command: ["python", "-m", "labslots.backup"]
+    user: "0"
+    environment:
+      TZ: "${TZ:-UTC}"
+      BACKUP_SOURCES: "labslots=/src/labslots/labslots.db,agent=/src/agent/agent.db,headscale=/src/headscale/db.sqlite"
+      BACKUP_DIR: "/backups"
+      BACKUP_KEEP_DAYS: "14"
+      BACKUP_AT: "02:30"
+    volumes:
+      - ./data:/src/labslots
+      - ./agent-data:/src/agent
+      - /var/lib/headscale:/src/headscale
+      - ./backups:/backups
+
+# Keys and passwords live in ./secrets, one folder per service, each mounted read-only at
+# /run/secrets (a service sees only its own folder):
+#   secrets/hub/        google-service-account.json  Google Sheets key, the JSON as downloaded
+#                       google-oauth-client.json     website sign-in client, the JSON as downloaded
+#                       smtp_password                outgoing email (empty = email off)
+#   secrets/agent/      headscale_api_key, agent_token
+#   secrets/tailscale/  ts_authkey
+# Files are mode 400, owner uid 10001 (root for tailscale/). To change one, drop the new file in
+# under the same name. The Sheets key is picked up within a minute; for the others run
+# `docker compose restart <service>`. Folders, not single-file mounts, so a replaced file is
+# always the one the container sees.

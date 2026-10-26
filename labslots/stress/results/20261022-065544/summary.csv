@@ -1,0 +1,156 @@
+phase,metric,value,unit
+slot change B,policy written to Headscale,5.0,s
+slot change B,outgoing devices removed,0,devices
+slot change B,PCs switched over SSH,65,PCs
+slot change B,last PC switched,23.0,s
+slot change B,PC switch errors (retried next run),1,errors
+slot change B,every student check correct,36.3,s
+slot change B,student checks run,480,checks
+slot change B,wrong access after the policy (leaks),0,checks
+slot change B,wrongly blocked 60 s after the policy,0,checks
+slot change C,policy written to Headscale,14.0,s
+slot change C,outgoing devices removed,27,devices
+slot change C,last device removed,38.0,s
+slot change C,PCs switched over SSH,65,PCs
+slot change C,last PC switched,40.0,s
+slot change C,PC switch errors (retried next run),0,errors
+slot change C,incoming students all online,0.1,s
+slot change C,every student check correct,58.5,s
+slot change C,student checks run,1565,checks
+slot change C,wrong access after the policy (leaks),0,checks
+slot change C,wrongly blocked 60 s after the policy,1,checks
+slot change D,policy written to Headscale,12.0,s
+slot change D,outgoing devices removed,50,devices
+slot change D,last device removed,51.0,s
+slot change D,PCs switched over SSH,60,PCs
+slot change D,last PC switched,53.0,s
+slot change D,PC switch errors (retried next run),0,errors
+slot change D,incoming students all online,60.6,s
+slot change D,every student check correct,16.7,s
+slot change D,student checks run,270,checks
+slot change D,wrong access after the policy (leaks),0,checks
+slot change D,wrongly blocked 60 s after the policy,0,checks
+slot change E,policy written to Headscale,10.0,s
+slot change E,outgoing devices removed,0,devices
+slot change E,PCs switched over SSH,63,PCs
+slot change E,last PC switched,28.0,s
+slot change E,PC switch errors (retried next run),1,errors
+slot change E,incoming students all online,72.8,s
+slot change E,every student check correct,50.2,s
+slot change E,student checks run,258,checks
+slot change E,wrong access after the policy (leaks),0,checks
+slot change E,wrongly blocked 60 s after the policy,0,checks
+PCs join,agent CPU mean,0.4,% of one core
+PCs join,agent CPU peak,1.1,% of one core
+PCs join,agent memory peak,22.8,MB
+PCs join,Headscale CPU mean,32.8,% of one core
+PCs join,Headscale CPU peak,46.6,% of one core
+PCs join,Headscale memory peak,65.3,MB
+PCs join,website CPU mean,0.1,% of one core
+PCs join,website CPU peak,0.2,% of one core
+PCs join,website memory peak,39.4,MB
+students join,agent CPU mean,0.0,% of one core
+students join,agent CPU peak,0.0,% of one core
+students join,agent memory peak,22.9,MB
+students join,Headscale CPU mean,78.3,% of one core
+students join,Headscale CPU peak,98.5,% of one core
+students join,Headscale memory peak,107.6,MB
+students join,website CPU mean,0.1,% of one core
+students join,website CPU peak,0.1,% of one core
+students join,website memory peak,39.3,MB
+steady (150 devices),agent CPU mean,0.2,% of one core
+steady (150 devices),agent CPU peak,1.3,% of one core
+steady (150 devices),agent memory peak,15.2,MB
+steady (150 devices),Headscale CPU mean,12.2,% of one core
+steady (150 devices),Headscale CPU peak,34.4,% of one core
+steady (150 devices),Headscale memory peak,108.5,MB
+steady (150 devices),website CPU mean,0.3,% of one core
+steady (150 devices),website CPU peak,1.4,% of one core
+steady (150 devices),website memory peak,30.2,MB
+slot change B,agent CPU mean,0.0,% of one core
+slot change B,agent CPU peak,0.0,% of one core
+slot change B,agent memory peak,24.3,MB
+slot change B,Headscale CPU mean,5.3,% of one core
+slot change B,Headscale CPU peak,10.2,% of one core
+slot change B,Headscale memory peak,96.8,MB
+slot change B,website CPU mean,0.1,% of one core
+slot change B,website CPU peak,0.1,% of one core
+slot change B,website memory peak,45.1,MB
+churn,agent CPU mean,0.1,% of one core
+churn,agent CPU peak,1.0,% of one core
+churn,agent memory peak,24.8,MB
+churn,Headscale CPU mean,20.6,% of one core
+churn,Headscale CPU peak,34.2,% of one core
+churn,Headscale memory peak,104.4,MB
+churn,website CPU mean,0.3,% of one core
+churn,website CPU peak,1.2,% of one core
+churn,website memory peak,45.1,MB
+slot change C,agent CPU mean,0.1,% of one core
+slot change C,agent CPU peak,2.0,% of one core
+slot change C,agent memory peak,25.5,MB
+slot change C,Headscale CPU mean,6.7,% of one core
+slot change C,Headscale CPU peak,60.1,% of one core
+slot change C,Headscale memory peak,107.2,MB
+slot change C,website CPU mean,0.1,% of one core
+slot change C,website CPU peak,0.3,% of one core
+slot change C,website memory peak,45.1,MB
+slot change D,agent CPU mean,0.2,% of one core
+slot change D,agent CPU peak,0.8,% of one core
+slot change D,agent memory peak,26.1,MB
+slot change D,Headscale CPU mean,24.9,% of one core
+slot change D,Headscale CPU peak,66.5,% of one core
+slot change D,Headscale memory peak,161.3,MB
+slot change D,website CPU mean,0.3,% of one core
+slot change D,website CPU peak,1.1,% of one core
+slot change D,website memory peak,45.1,MB
+second device per student,agent CPU mean,0.1,% of one core
+second device per student,agent CPU peak,1.0,% of one core
+second device per student,agent memory peak,26.5,MB
+second device per student,Headscale CPU mean,14.3,% of one core
+second device per student,Headscale CPU peak,65.4,% of one core
+second device per student,Headscale memory peak,120.3,MB
+second device per student,website CPU mean,0.2,% of one core
+second device per student,website CPU peak,1.1,% of one core
+second device per student,website memory peak,45.1,MB
+steady (peak devices),agent CPU mean,0.1,% of one core
+steady (peak devices),agent CPU peak,1.0,% of one core
+steady (peak devices),agent memory peak,25.5,MB
+steady (peak devices),Headscale CPU mean,6.4,% of one core
+steady (peak devices),Headscale CPU peak,20.1,% of one core
+steady (peak devices),Headscale memory peak,94.8,MB
+steady (peak devices),website CPU mean,0.3,% of one core
+steady (peak devices),website CPU peak,1.3,% of one core
+steady (peak devices),website memory peak,45.1,MB
+slot change E,agent CPU mean,0.2,% of one core
+slot change E,agent CPU peak,0.9,% of one core
+slot change E,agent memory peak,26.3,MB
+slot change E,Headscale CPU mean,48.4,% of one core
+slot change E,Headscale CPU peak,110.4,% of one core
+slot change E,Headscale memory peak,129.6,MB
+slot change E,website CPU mean,0.1,% of one core
+slot change E,website CPU peak,0.2,% of one core
+slot change E,website memory peak,45.1,MB
+cool down,agent CPU mean,0.0,% of one core
+cool down,agent CPU peak,0.0,% of one core
+cool down,agent memory peak,26.1,MB
+cool down,Headscale CPU mean,14.6,% of one core
+cool down,Headscale CPU peak,24.4,% of one core
+cool down,Headscale memory peak,143.5,MB
+cool down,website CPU mean,0.1,% of one core
+cool down,website CPU peak,0.1,% of one core
+cool down,website memory peak,42.7,MB
+PCs join,all PCs online,3.1,s
+students join,all students online,45.8,s
+churn,student reconnects,55,reconnects
+second device per student,devices online,131,devices
+website (70 PCs),"page /, median load",5,ms
+website (70 PCs),"page /calendar?view=day, median load",6,ms
+website (70 PCs),"page /calendar?view=week, median load",28,ms
+website (70 PCs),"page /calendar?view=month, median load",15,ms
+website (70 PCs),"page /calendar?view=quarter, median load",33,ms
+website (70 PCs),"page /pcs, median load",4,ms
+website (70 PCs),"page /settings, median load",11,ms
+website (70 PCs),"page /audit, median load",1,ms
+all,"Headscale API list nodes, median",56,ms
+all,"Headscale API list nodes, 95th percentile",65,ms
+all,"devices online, peak",181,devices

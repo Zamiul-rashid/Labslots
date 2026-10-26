@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Semesters{% endblock %}
+{% block body %}
+<div class="pagehead">
+  <div>
+    <h1>Semesters</h1>
+    <p>A semester is the date range the weekly routine repeats in. Semesters are edited in the Terms tab of the {% if sheet %}<a href="{{ sheet.url }}" target="_blank" rel="noopener">Google Sheet</a>{% else %}Google Sheet{% endif %}; a new one gets its own Routine tab automatically.</p>
+  </div>
+  {% if sheet %}<a class="btn primary" href="{{ sheet.url }}" target="_blank" rel="noopener">Edit in the Sheet</a>{% endif %}
+</div>
+<div class="sheet-wrap">
+<table class="sheet list">
+  <thead><tr><th scope="col">Semester</th><th scope="col">Starts</th><th scope="col">Ends</th></tr></thead>
+  <tbody>
+  {% for t in terms %}
+  <tr>
+    <td><a class="lead" href="{{ base }}/calendar?view=quarter&at={{ t.start_date }}">{{ t.name }}</a></td>
+    <td data-label="Starts" class="nowrap">{{ t.start_date }}</td>
+    <td data-label="Ends" class="nowrap">{{ t.end_date }}</td>
+  </tr>
+  {% else %}
+  <tr><td colspan="3">No semesters yet. Add the current one in the Sheet's Terms tab.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

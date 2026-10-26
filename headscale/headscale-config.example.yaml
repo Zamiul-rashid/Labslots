@@ -1,0 +1,166 @@
+# ==============================================================================
+# Headscale configuration — example. Copy to /etc/headscale/config.yaml and
+# replace hs.example.edu, the proxy address and the Google OAuth client ID.
+# ==============================================================================
+
+# The URL clients connect to. Must be https and must match the TLS cert.
+# In reverse-proxy mode this stays https:// even though Headscale itself
+# serves plain HTTP — it describes what the CLIENT connects to, not the bind.
+server_url: https://hs.example.edu
+
+# What Headscale binds locally.
+#   direct TLS modes : 0.0.0.0:443  — the client assumes HTTPS on 443 in some
+#                      situations, so serving elsewhere invites odd breakage.
+#   reverse-proxy    : 0.0.0.0:<HS_LISTEN_PORT>, plain HTTP, proxy in front.
+listen_addr: 0.0.0.0:8080
+
+# Metrics and the /debug endpoints. LOCALHOST ONLY, deliberately:
+# /debug dumps the live policy, packet filters and connected nodes — i.e. a
+# real-time map of which group currently holds which lab PC.
+metrics_listen_addr: 127.0.0.1:9090
+
+# gRPC for remote CLI. Localhost only; the reconciler uses the unix socket.
+grpc_listen_addr: 127.0.0.1:50443
+grpc_allow_insecure: false
+
+# CIDRs of reverse proxies whose True-Client-IP / X-Real-IP / X-Forwarded-For
+# headers Headscale should believe. Empty = ignore those headers.
+# Setting this without a real proxy in front lets clients spoof their logged
+# source IP, so set it only in reverse-proxy mode.
+trusted_proxies: ["10.0.0.30/32"]   # your reverse proxy
+
+noise:
+  private_key_path: /var/lib/headscale/noise_private.key
+
+prefixes:
+  v4: 100.64.0.0/10
+  v6: fd7a:115c:a1e0::/48
+  allocation: sequential
+
+derp:
+  server:
+    # Embedded DERP off. The docs say plainly it has "no speed or throughput
+    # optimisations" and it would share port 443 with the control plane.
+    # Clients fall back to Tailscale's public DERP mesh, which is free.
+    enabled: false
+  urls:
+    - https://controlplane.tailscale.com/derpmap/default
+  paths: []
+  auto_update_enabled: true
+  update_frequency: 3h
+
+disable_check_updates: true
+
+node:
+  # Student devices re-authenticate after this long. Tagged nodes (lab PCs)
+  # are exempt and never expire. See HS_NODE_EXPIRY in .env for why.
+  expiry: 2160h
+
+  ephemeral:
+    inactivity_timeout: 30m
+
+  routes:
+    ha:
+      probe_interval: 10s
+      probe_timeout: 5s
+
+database:
+  type: sqlite
+  debug: false
+
+  gorm:
+    prepare_stmt: true
+    parameterized_queries: true
+    skip_err_record_not_found: true
+    slow_threshold: 1000
+
+  sqlite:
+    path: /var/lib/headscale/db.sqlite
+    # Write-ahead logging. Required, not optional: this is what lets the
+    # database survive an unclean shutdown (power cut, Proxmox host reset).
+    write_ahead_log: true
+    wal_autocheckpoint: 1000
+
+# ------------------------------------------------------------------------------
+# TLS
+# ------------------------------------------------------------------------------
+acme_url: https://acme-v02.api.letsencrypt.org/directory
+acme_email: "you@youremail.com"
+tls_letsencrypt_hostname: ""
+tls_letsencrypt_cache_dir: /var/lib/headscale/cache
+tls_letsencrypt_challenge_type: HTTP-01
+tls_letsencrypt_listen: ":http"
+tls_cert_path: ""
+tls_key_path: ""
+
+log:
+  level: info
+  format: text
+
+# ------------------------------------------------------------------------------
+# Policy
+# ------------------------------------------------------------------------------
+policy:
+  # "database", NOT "file". Three reasons:
+  #   1. `headscale policy set` returns ErrPolicyUpdateIsDisabled in file mode,
+  #      so the reconciler could not write at all.
+  #   2. file mode + SIGHUP gives no return channel — a failed reload logs the
+  #      error and keeps the OLD, more permissive policy loaded. A failed
+  #      revoke would silently leave a student's access open.
+  #   3. The policies table becomes an append-only audit log of every version.
+  mode: database
+  path: ""
+
+# ------------------------------------------------------------------------------
+# DNS
+# ------------------------------------------------------------------------------
+dns:
+  magic_dns: true
+  base_domain: lab.internal
+
+  # FALSE, deliberately. The shipped example sets this to true with global
+  # 1.1.1.1 nameservers, which makes every enrolled device ignore its own DNS
+  # settings and send all lookups through us. On personally-owned student
+  # laptops that is an indefensible privacy grab and students would be right
+  # to object. With this false they keep their own resolver and still get
+  # MagicDNS for tailnet names.
+  override_local_dns: false
+
+  # Left empty on purpose — see above. Do not add public resolvers here.
+  nameservers:
+    global: []
+    split: {}
+
+  search_domains: []
+  extra_records: []
+
+unix_socket: /var/run/headscale/headscale.sock
+unix_socket_permission: "0770"
+
+# ------------------------------------------------------------------------------
+# OIDC — students self-register with their university account
+# ------------------------------------------------------------------------------
+# Google OAuth, same client as Headplane. Only verified university emails may register. Signing in proves identity; the policy decides access.
+oidc:
+  # false: if Google is unreachable at startup Headscale still starts (only new logins wait).
+  only_start_if_oidc_is_available: false
+  issuer: "https://accounts.google.com"
+  client_id: "YOUR_CLIENT_ID.apps.googleusercontent.com"
+  client_secret_path: "/etc/headscale/oidc_client_secret"
+  scope: ["openid", "profile", "email"]
+  email_verified_required: true
+  allowed_domains:
+    - "students.example.edu"
+    - "example.edu"
+  pkce:
+    enabled: true
+    method: "S256"
+
+logtail:
+  enabled: false
+
+taildrop:
+  enabled: true
+
+auto_update:
+  enabled: false

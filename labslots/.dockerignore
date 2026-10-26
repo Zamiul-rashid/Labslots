@@ -1,0 +1,5 @@
+# Build only from the source; never send data, backups or key files to the Docker daemon.
+*
+!pyproject.toml
+!labslots/
+**/__pycache__

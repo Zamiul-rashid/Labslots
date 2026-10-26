@@ -1,0 +1,59 @@
+# Headscale for the stress lab: same version and database settings as production, but self-contained:
+# its own TLS (a test CA), its own embedded DERP relay, no OIDC, no outside DERP servers.
+server_url: https://__FRONT__:8443   # the address every device uses (setup.sh)
+listen_addr: 0.0.0.0:8443
+metrics_listen_addr: 0.0.0.0:9090
+grpc_listen_addr: 127.0.0.1:50443
+grpc_allow_insecure: false
+noise:
+  private_key_path: /var/lib/headscale/noise_private.key
+prefixes:
+  v4: 100.64.0.0/10
+  v6: fd7a:115c:a1e0::/48
+  allocation: sequential
+derp:
+  server:
+    enabled: true
+    region_id: 999
+    region_code: stress
+    region_name: Stress lab
+    stun_listen_addr: 0.0.0.0:3478
+    private_key_path: /var/lib/headscale/derp_server_private.key
+    automatically_add_embedded_derp_region: true
+    ipv4: __FRONT__
+  urls: []
+  paths: []
+  auto_update_enabled: false
+  update_frequency: 24h
+disable_check_updates: true
+node:
+  expiry: 2160h
+  ephemeral:
+    inactivity_timeout: 30m
+database:
+  type: sqlite
+  sqlite:
+    path: /var/lib/headscale/db.sqlite
+    write_ahead_log: true
+    wal_autocheckpoint: 1000
+tls_cert_path: /certs/hs.crt
+tls_key_path: /certs/hs.key
+log:
+  level: info
+  format: text
+policy:
+  mode: database
+  path: ""
+dns:
+  magic_dns: true
+  base_domain: stress.internal
+  override_local_dns: false
+  nameservers:
+    global: []
+    split: {}
+  search_domains: []
+  extra_records: []
+unix_socket: /var/run/headscale/headscale.sock
+unix_socket_permission: "0770"
+logtail:
+  enabled: false

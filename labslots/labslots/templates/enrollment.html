@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}{{ e.group_name }}{% endblock %}
+{% block body %}
+<div class="pagehead">
+  <div>
+    <h1>{{ e.group_name }}</h1>
+    <p><a href="{{ base }}/enrollments">All enrollments</a> · sent {{ e.submitted_at.replace('T', ' ') }} by {{ e.submitted_by }}{% if e.sent_name != e.group_name %} · Sent as {{ e.sent_name }}{% endif %}</p>
+  </div>
+  {% if e.status == 'pending' %}<span class="state-wait">Waiting</span>
+  {% elif e.status == 'approved' %}<span class="state-ok">Enrolled by {{ e.decided_by }}</span>
+  {% elif e.status == 'rejected' %}<span class="state-bad">Not approved</span>
+  {% else %}<span class="muted">Withdrawn by the group</span>{% endif %}
+</div>
+
+<div class="cols">
+  <section class="section">
+    <h2>Application</h2>
+    <dl class="facts">
+      <dt>Thesis</dt><dd>{{ e.thesis_title }}</dd>
+      {% for s in e.supervisors %}
+      <dt>{{ 'Supervisor' if loop.first else 'Co-supervisor' }}</dt><dd>{{ s.name }}{% if s.email %} · <a href="mailto:{{ s.email }}">{{ s.email }}</a>{% endif %}</dd>
+      {% endfor %}
+      <dt>Hardware needs</dt><dd>{{ e.hardware or '—' }}</dd>
+      {% if e.notes %}<dt>Notes</dt><dd>{{ e.notes }}</dd>{% endif %}
+    </dl>
+    <h3>Members ({{ e.members|length }})</h3>
+    <div class="sheet-wrap">
+    <table class="sheet list">
+      <thead><tr><th scope="col">Name</th><th scope="col">Student ID</th><th scope="col">Email</th></tr></thead>
+      <tbody>{% for m in e.members %}<tr><td>{{ m.name }}</td><td data-label="ID">{{ m.student_id }}</td><td data-label="Email">{{ m.email }}</td></tr>{% endfor %}</tbody>
+    </table>
+    </div>
+  </section>
+
+  {% if e.status == 'pending' %}
+  <section class="section">
+    <h2>Assign a PC</h2>
+    {% if not sheet %}
+    <div class="note err">The Google Sheet is not connected, so groups cannot be assigned. Groups and slots are written to the Sheet.</div>
+    {% elif not pcs %}
+    <div class="note warn">No lab PCs yet. Add one in the PCs tab of the <a href="{{ sheet.url }}" target="_blank" rel="noopener">Google Sheet</a>, then reload this page.</div>
+    {% elif not terms %}
+    <div class="note warn">Add a term first, in the Terms tab of the <a href="{{ sheet.url }}" target="_blank" rel="noopener">Google Sheet</a>. A term is the date range, usually the semester, that a group's weekly slots repeat between. Reload this page once it shows under Terms.</div>
+    {% else %}
+    <form method="post" action="{{ base }}/enrollments/{{ e.id }}/approve" class="stack">
+      <div class="fields top">
+        <label>Code <input name="slug" required value="{{ suggested_slug }}" pattern="[a-z0-9][a-z0-9\-]{0,26}" spellcheck="false" autocapitalize="none">
+          <small>group:&lt;code&gt; in the policy, Linux account grp-&lt;code&gt;.</small></label>
+        <label style="flex: 0 1 140px">Short code <input name="short" value="{{ suggested_short }}" maxlength="8" spellcheck="false"></label>
+        <label style="flex: 0 0 auto">Highlighter <input type="color" name="color" value="{{ suggested_color }}"></label>
+      </div>
+      <div class="fields top" hx-get="{{ base }}/enrollments/{{ e.id }}/slots" hx-trigger="change" hx-include="[name=term], [name=pc]" hx-target="#slot-picker" hx-swap="outerHTML">
+        <label>Term <select name="term">{% for t in terms %}<option value="{{ t.id }}" {{ 'selected' if term and t.id == term.id }}>{{ t.name }} · {{ t.start_date }} to {{ t.end_date }}</option>{% endfor %}</select></label>
+        <label>PC <select name="pc">{% for p in pcs %}<option value="{{ p.id }}" {{ 'selected' if p.id == picker_pc }}>{{ p.name }}{% if p.notes %} · {{ p.notes }}{% endif %}</option>{% endfor %}</select></label>
+      </div>
+      <div>
+        <span class="label-text">Weekly slots</span>
+        {% include "_slot_picker.html" %}
+      </div>
+      <label>Note to the group <input name="note" maxlength="500" placeholder="Optional, shown on their status page"></label>
+      <div><button class="btn primary">Enroll and assign</button></div>
+      <p class="hint">Adds the group to the Sheet's Groups tab and its slots to the Routine tab, then {{ 'emails every member' if mailer_on else 'shows the result on their status page (email is not configured)' }}. Access starts at their first slot.</p>
+    </form>
+
+    <form method="post" action="{{ base }}/enrollments/{{ e.id }}/reject" class="stack section" style="margin-top: var(--s8)">
+      <h3 style="margin-top:0">Not approving?</h3>
+      <label>Reason for the group <input name="note" maxlength="500" placeholder="e.g. please re-apply with your supervisor's confirmation"></label>
+      <div><button class="btn danger">Reject enrollment</button></div>
+    </form>
+    {% endif %}
+  </section>
+  {% elif assignment %}
+  <section class="section">
+    <h2>Assigned</h2>
+    {% for pc in assignment.pcs %}
+    <div class="assignment">
+      <div class="assign-pc"><span class="hint">PC</span><b>{{ pc.name }}</b>{% if pc.address %}<code>{{ pc.address }}</code>{% endif %}</div>
+      <div><span class="hint">Weekly slots · {{ pc.term }}</span><ul class="slot-list">{% for sl in pc.slots %}<li>{{ sl }}</li>{% endfor %}</ul></div>
+    </div>
+    {% else %}<p class="muted">No slots assigned.</p>{% endfor %}
+    {% if assignment.group %}<p><a href="{{ base }}/calendar?group={{ assignment.group.id }}">See its slots in the Calendar</a>{% if sheet %} · change them in the <a href="{{ sheet.url }}" target="_blank" rel="noopener">Sheet</a>{% endif %}</p>{% endif %}
+    {% if e.decision_note %}<p class="muted">Note to the group: {{ e.decision_note }}</p>{% endif %}
+  </section>
+  {% elif e.decision_note %}
+  <section class="section"><h2>Decision</h2><p>{{ e.decision_note }}</p></section>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+# The system under test, as deployed in production (hub + slot agent + scheduler sidecar), pointed at
+# the stress lab's own Headscale (stress-hs, started by setup.sh).
+services:
+  hub:
+    image: labslots:stress
+    container_name: stress-hub
+    network_mode: host
+    environment:
+      LABSLOTS_PUBLIC_URL: "http://127.0.0.1:3100"
+      LABSLOTS_BASE_PATH: "/slots"
+      LABSLOTS_BOOTSTRAP_ADMINS: "admin@stress.test"
+      LABSLOTS_DEV_LOGIN: "1"          # test only: lets the harness load admin pages
+    volumes: [./hub-data:/data]
+
+  agent:
+    image: labslots:stress
+    container_name: stress-agent
+    network_mode: host
+    command: ["python", "-m", "labslots.agent"]
+    environment:
+      AGENT_HUB_URL: "http://127.0.0.1:3100/slots"
+      AGENT_TOKEN_FILE: "/run/secrets/agent_token"
+      HEADSCALE_URL: "https://127.0.0.1:8443"
+      HEADSCALE_API_KEY_FILE: "/run/secrets/headscale_api_key"
+      LABSLOTS_SSH_SOCKS: "127.0.0.1:1055"
+      SSL_CERT_FILE: "/certs/ca.crt"
+    volumes: [./agent-data:/data, ./secrets/agent:/run/secrets:ro, ./certs:/certs:ro]
+
+  ts-scheduler:
+    image: tailscale/tailscale:v1.102.3
+    container_name: stress-ts-scheduler
+    network_mode: host
+    environment:
+      TS_USERSPACE: "true"
+      TS_SOCKS5_SERVER: "127.0.0.1:1055"
+      TS_STATE_DIR: "/var/lib/tailscale"
+      TS_ACCEPT_DNS: "false"
+      TS_HOSTNAME: "lab-scheduler"
+      TS_AUTHKEY: "file:/run/secrets/ts_authkey"
+      TS_EXTRA_ARGS: "--login-server=https://127.0.0.1:8443"
+      TS_TAILSCALED_EXTRA_ARGS: "--port=41642 --no-logs-no-support"
+      SSL_CERT_FILE: "/certs/ca.crt"
+    volumes: [./ts-state:/var/lib/tailscale, ./secrets/tailscale:/run/secrets:ro, ./certs:/certs:ro]

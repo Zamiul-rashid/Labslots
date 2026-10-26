@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% block title %}Your thesis group{% endblock %}
+{% block body %}
+<div class="pagehead">
+  <div>
+    <h1>{{ 'Enroll your thesis group' if can_apply and not enrollments else 'Your thesis group' }}</h1>
+    <p>Signed in as {{ me }}. An admin assigns each enrolled group a lab PC and its weekly slots.</p>
+    {% if me_admin %}<p class="small"><a href="{{ base }}/">Open the admin desk</a></p>
+    {% else %}<p class="muted small">Lab admin? {{ me }} is not on the admin list. Sign out, then sign in with your admin Google account.</p>{% endif %}
+  </div>
+</div>
+
+{% for e in enrollments %}
+<section class="section enrollment-status">
+  <div class="row" style="justify-content: space-between">
+    <h2 style="margin: 0">{{ e.group_name }}</h2>
+    {% if e.status == 'pending' %}<span class="state-wait">Waiting for an admin</span>
+    {% elif e.status == 'approved' %}<span class="state-ok">Enrolled</span>
+    {% elif e.status == 'rejected' %}<span class="state-bad">Not approved</span>
+    {% else %}<span class="muted">Withdrawn</span>{% endif %}
+  </div>
+  <p class="muted small">Sent {{ e.submitted_at.replace('T', ' ') }} by {{ e.submitted_by }} · {{ e.thesis_title }} · {{ 'supervisors' if e.supervisors|length > 1 else 'supervisor' }} {{ e.supervisors|map(attribute='name')|join(', ') }}</p>
+
+  {% if e.status == 'approved' and e.assignment %}
+    {% set a = e.assignment %}
+    {% for pc in a.pcs %}
+    <div class="assignment">
+      <div class="assign-pc"><span class="hint">Your PC</span><b>{{ pc.name }}</b>{% if pc.address %}<code>{{ pc.address }}</code>{% endif %}</div>
+      <div>
+        <span class="hint">Weekly slots · {{ pc.term }}, {{ pc.dates }}</span>
+        <ul class="slot-list">{% for sl in pc.slots %}<li>{{ sl }}</li>{% endfor %}</ul>
+      </div>
+    </div>
+    {% else %}
+    <div class="note warn">Your group is enrolled but has no slots yet. An admin will add them.</div>
+    {% endfor %}
+
+    <h3>How to connect</h3>
+    <ol class="steps">
+      <li>Install Tailscale on your laptop: <a href="https://tailscale.com/download" rel="noopener">tailscale.com/download</a>.</li>
+      <li>Run <code>tailscale login --login-server https://hs.example.edu</code> and sign in with your {{ org }} Google account.</li>
+      <li>During one of your slots: <code>ssh {{ a.group.linux_account if a.group else 'your-group-account' }}@{{ a.pcs[0].address if a.pcs|length == 1 and a.pcs[0].address else '&lt;your PC address above&gt;'|safe }}</code></li>
+    </ol>
+    <p class="muted small">No SSH key or password: Tailscale checks that you are a member of the group, so every member signs in with their own {{ org }} account. Outside your slots the PC cannot be reached, and open sessions end when your slot does. Jobs still running then are stopped, so save checkpoints.</p>
+
+  {% elif e.status == 'pending' %}
+    <p>We have your enrollment. You will see your PC and slots here once an admin assigns them, and every member gets an email.</p>
+    {% if e.submitted_by == me %}
+    <form method="post" action="{{ base }}/enroll/{{ e.id }}/withdraw" onsubmit="return confirm('Withdraw this enrollment?')"><button class="btn small">Withdraw enrollment</button></form>
+    {% endif %}
+  {% elif e.status == 'rejected' and e.decision_note %}
+    <div class="note">Reason: {{ e.decision_note }}</div>
+  {% endif %}
+
+  <details class="members">
+    <summary>Members ({{ e.members|length }})</summary>
+    <table class="sheet list">
+      <thead><tr><th scope="col">Name</th><th scope="col">Student ID</th><th scope="col">Email</th></tr></thead>
+      <tbody>{% for m in e.members %}<tr><td>{{ m.name }}</td><td data-label="ID">{{ m.student_id }}</td><td data-label="Email">{{ m.email }}</td></tr>{% endfor %}</tbody>
+    </table>
+  </details>
+</section>
+{% endfor %}
+
+{% if can_apply %}
+{% set f = form or {} %}
+{% set fm = f.members if f and f.members else [] %}
+{% set fs = f.supervisors if f and f.supervisors else [] %}
+{% set suffix = '@' ~ student_domain %}
+<form method="post" action="{{ base }}/enroll" class="section enroll-form">
+  <h2>{{ 'Enrollment form' if not enrollments else 'Send a new enrollment' }}</h2>
+
+  <fieldset class="formpart" aria-labelledby="fp-thesis">
+    <div class="formpart-head"><h3 id="fp-thesis">Thesis</h3></div>
+    <div class="formpart-body">
+      <label>Group name <input name="group_name" required maxlength="120" value="{{ f.group_name }}" placeholder="e.g. Speech recognition"></label>
+      <label>Thesis title <input name="thesis_title" required maxlength="300" value="{{ f.thesis_title }}"></label>
+    </div>
+  </fieldset>
+
+  <fieldset class="formpart" aria-labelledby="fp-sup">
+    <div class="formpart-head">
+      <h3 id="fp-sup">Supervisors</h3>
+      <p class="hint">Your supervisor, and any co-supervisors, with their {{ org }} email.</p>
+    </div>
+    <div class="formpart-body">
+      <table class="sheet person-table">
+        <thead><tr><th scope="col">Role</th><th scope="col">Name</th><th scope="col">Email</th><th scope="col"><span class="visually-hidden">Remove</span></th></tr></thead>
+        <tbody>
+        {% for i in range(max_supervisors) %}{% set s = fs[i] if i < fs|length else {} %}
+        <tr class="{{ 'cosup' if i }}" data-filled="{{ '1' if s.name or s.email else '' }}">
+          <td class="role">{{ 'Supervisor' if i == 0 else 'Co-supervisor' }}</td>
+          <td><label for="sn{{ i }}" class="cell-label">{{ 'Supervisor' if i == 0 else 'Co-supervisor' }} name</label><input id="sn{{ i }}" name="s_name" class="cellinput" maxlength="120" value="{{ s.name }}" {{ 'required' if i == 0 }} autocomplete="off"></td>
+          <td><label for="se{{ i }}" class="cell-label">Email</label><input id="se{{ i }}" name="s_email" type="email" class="cellinput" maxlength="200" value="{{ s.email }}" {{ 'required' if i == 0 }} placeholder="name@example.edu" autocomplete="off"></td>
+          <td class="act">{% if i %}<button type="button" class="btn small quiet" data-remove-cosup hidden>Remove</button>{% endif %}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      <div><button type="button" class="btn small" data-add-cosup hidden>Add co-supervisor</button></div>
+    </div>
+  </fieldset>
+
+  <fieldset class="formpart" aria-labelledby="fp-members">
+    <div class="formpart-head">
+      <h3 id="fp-members">Members</h3>
+      <p class="hint">Up to {{ max_members }} members, including you. A smaller group, or a student working alone, leaves the other rows empty.</p>
+      <p class="hint">Each member signs in to the lab network with their {{ org }} address, so personal addresses such as Gmail are not accepted.</p>
+    </div>
+    <div class="formpart-body">
+      <table class="sheet person-table member-table">
+        <thead><tr><th scope="col">#</th><th scope="col">Full name</th><th scope="col">Student ID</th><th scope="col">Student email</th></tr></thead>
+        <tbody>
+        {% for i in range(max_members) %}{% set m = fm[i] if i < fm|length else {} %}
+        {% set addr = m.email if m and m.email else (me if i == 0 else '') %}
+        <tr>
+          <td class="role">{{ i + 1 }}</td>
+          <td>{% set needed = i < min_members %}<label for="mn{{ i }}" class="cell-label">{{ 'Your full name' if i == 0 else 'Member ' ~ (i + 1) ~ ' full name' ~ ('' if needed else ' (optional)') }}</label><input id="mn{{ i }}" name="m_name" class="cellinput" maxlength="120" value="{{ m.name }}" {{ 'required' if needed }} {{ '' if needed else 'placeholder=Optional' }} autocomplete="{{ 'name' if i == 0 else 'off' }}"></td>
+          <td><label for="mi{{ i }}" class="cell-label">Student ID</label><input id="mi{{ i }}" name="m_id" class="cellinput" value="{{ m.student_id }}" inputmode="numeric" pattern="\d{8}" maxlength="8" placeholder="8 digits" title="8 digits" {{ 'required' if needed }} autocomplete="off"></td>
+          <td><label for="me{{ i }}" class="cell-label">{{ 'Your student email' if i == 0 else 'Student email' }}</label>
+            {% if i == 0 %}<input id="me{{ i }}" name="m_email" class="cellinput locked" value="{{ addr }}" readonly title="The account you signed in with">
+            {% else %}<span class="suffixed"><input id="me{{ i }}" name="m_email" class="cellinput" value="{{ addr.rsplit('@', 1)[0] if addr.endswith(suffix) else addr }}" maxlength="80" pattern="[A-Za-z0-9._%+\-]+({{ suffix|replace('.', '\\.') }})?" title="The part before {{ suffix }}" {{ 'required' if needed }} spellcheck="false" autocapitalize="off" autocomplete="off"><span class="suffix" aria-hidden="true">{{ suffix }}</span></span>{% endif %}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </fieldset>
+
+  <fieldset class="formpart" aria-labelledby="fp-needs">
+    <div class="formpart-head"><h3 id="fp-needs">What you need</h3></div>
+    <div class="formpart-body">
+      <label>Hardware needs <textarea name="hardware" rows="3" maxlength="1000" placeholder="e.g. one GPU with 12 GB+ memory for training, about 200 GB of disk for datasets">{{ f.hardware }}</textarea>
+        <small>GPU and its memory, RAM, disk, and the kind of workload.</small></label>
+      <label>Anything else <textarea name="notes" rows="2" maxlength="1000" placeholder="Optional">{{ f.notes }}</textarea></label>
+    </div>
+  </fieldset>
+
+  <div class="form-actions">
+    <button class="btn primary">Send enrollment</button>
+    <p class="hint">An admin reviews it and assigns your group a PC and weekly slots. This page shows the result.</p>
+  </div>
+</form>
+<script>
+  // Co-supervisor rows: shown when filled in or added, so the form starts with only the supervisor.
+  (function () {
+    const rows = [...document.querySelectorAll('.enroll-form tr.cosup')];
+    const add = document.querySelector('[data-add-cosup]');
+    const sync = () => { add.hidden = rows.every((r) => !r.hidden); };
+    rows.forEach((r) => {
+      r.hidden = !r.dataset.filled;
+      const rm = r.querySelector('[data-remove-cosup]');
+      rm.hidden = false;
+      rm.addEventListener('click', () => {
+        r.querySelectorAll('input').forEach((i) => { i.value = ''; });
+        r.hidden = true; sync(); add.focus();
+      });
+    });
+    add.addEventListener('click', () => {
+      const next = rows.find((r) => r.hidden);
+      if (next) { next.hidden = false; next.querySelector('input').focus(); }
+      sync();
+    });
+    sync();
+  })();
+</script>
+{% endif %}
+{% endblock %}

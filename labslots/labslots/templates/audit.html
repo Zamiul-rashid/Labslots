@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Log{% endblock %}
+{% block body %}
+<div class="pagehead">
+  <div>
+    <h1>Log</h1>
+    <p>Every sign-in, booking decision, setting change and enforcement action, newest first.</p>
+  </div>
+</div>
+<div class="sheet-wrap">
+<table class="sheet list">
+  <thead><tr><th scope="col">When</th><th scope="col">Who</th><th scope="col">What</th><th scope="col">Detail</th></tr></thead>
+  <tbody>
+  {% for r in rows %}
+  <tr class="{{ 'errrow' if 'error' in r.action or r.action == 'login-refused' }}">
+    <td class="nowrap muted">{{ r.ts.replace('T', ' ') }}</td>
+    <td data-label="Who">{{ r.actor }}</td>
+    <td data-label="What"><code>{{ r.action }}</code></td>
+    <td data-label="Detail">{{ r.detail }}</td>
+  </tr>
+  {% else %}
+  <tr><td colspan="4" class="muted">Nothing logged yet.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

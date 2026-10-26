@@ -1,0 +1,23 @@
+<div id="slot-picker">
+{% if not picker_term or not picker_pc %}
+  <p class="hint">Choose a term and a PC to see its week.</p>
+{% else %}
+  <table class="mini picker">
+    <thead><tr><th scope="col"></th><th scope="col">{{ SPAN.day }}</th><th scope="col">{{ SPAN.night }}</th></tr></thead>
+    <tbody>
+    {% for wd in range(7) %}
+      <tr>
+        <th scope="row">{{ WEEKDAYS[wd] }}</th>
+        {% for half in HALVES %}{% set t = taken.get((wd, half)) %}
+        <td class="pick {{ half }}">
+          {% if t %}<span class="code-mark" style="--mark: {{ t.color }}" title="{{ t.name }}">{{ t.short or t.slug }}</span>
+          {% else %}<label class="pickbox"><input type="checkbox" name="slot" value="{{ wd }}-{{ half }}"><span>{{ WEEKDAYS[wd] }} {{ SPAN[half] }}</span></label>{% endif %}
+        </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <p class="hint">Codes show slots another group already holds on this PC. Each group usually gets two slots on different days.</p>
+{% endif %}
+</div>

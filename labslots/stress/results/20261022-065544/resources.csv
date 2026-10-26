@@ -1,0 +1,628 @@
+time,phase,container,count,cpu_pct,mem_mb
+2026-10-22T06:55:47,PCs join,pcs,10,9.9,178.4
+2026-10-22T06:55:47,PCs join,stress-agent,1,0.0,21.9
+2026-10-22T06:55:47,PCs join,stress-hs,1,46.6,26.8
+2026-10-22T06:55:47,PCs join,stress-hub,1,0.1,39.3
+2026-10-22T06:55:47,PCs join,stress-ts-scheduler,1,0.8,25.1
+2026-10-22T06:55:47,PCs join,host-ct,,0.44,5675
+2026-10-22T06:56:00,PCs join,pcs,40,13.4,675.9
+2026-10-22T06:56:00,PCs join,stress-agent,1,0.0,22.4
+2026-10-22T06:56:00,PCs join,stress-hs,1,30.1,37.2
+2026-10-22T06:56:00,PCs join,stress-hub,1,0.1,39.3
+2026-10-22T06:56:00,PCs join,stress-ts-scheduler,1,1.2,46.5
+2026-10-22T06:56:00,PCs join,host-ct,,1.04,5010
+2026-10-22T06:56:13,PCs join,pcs,70,19.8,1244.8
+2026-10-22T06:56:13,PCs join,stress-agent,1,1.1,22.8
+2026-10-22T06:56:13,PCs join,stress-hs,1,21.7,65.3
+2026-10-22T06:56:13,PCs join,stress-hub,1,0.2,39.4
+2026-10-22T06:56:13,PCs join,stress-ts-scheduler,1,1.7,56.1
+2026-10-22T06:56:13,PCs join,host-ct,,0.95,4269
+2026-10-22T06:56:26,students join,pcs,70,14.7,1359.6
+2026-10-22T06:56:26,students join,stress-agent,1,0.0,22.9
+2026-10-22T06:56:26,students join,stress-hs,1,62.0,71.3
+2026-10-22T06:56:26,students join,stress-hub,1,0.1,39.3
+2026-10-22T06:56:26,students join,stress-ts-scheduler,1,2.6,62.5
+2026-10-22T06:56:26,students join,students,20,13.9,400.0
+2026-10-22T06:56:26,students join,host-ct,,1.29,3615
+2026-10-22T06:56:41,students join,pcs,70,9.8,1400.7
+2026-10-22T06:56:41,students join,stress-agent,1,0.0,20.4
+2026-10-22T06:56:41,students join,stress-hs,1,74.3,93.4
+2026-10-22T06:56:41,students join,stress-hub,1,0.1,38.0
+2026-10-22T06:56:41,students join,stress-ts-scheduler,1,2.0,74.7
+2026-10-22T06:56:41,students join,students,50,18.8,1052.4
+2026-10-22T06:56:41,students join,host-ct,,2.41,2764
+2026-10-22T06:56:58,students join,pcs,70,17.5,1237.3
+2026-10-22T06:56:58,students join,stress-agent,1,0.0,14.6
+2026-10-22T06:56:58,students join,stress-hs,1,98.5,107.6
+2026-10-22T06:56:58,students join,stress-hub,1,0.1,33.8
+2026-10-22T06:56:58,students join,stress-ts-scheduler,1,2.4,72.6
+2026-10-22T06:56:58,students join,students,80,40.3,1729.8
+2026-10-22T06:56:58,students join,host-ct,,3.97,2325
+2026-10-22T06:57:10,steady (150 devices),pcs,70,10.0,1197.2
+2026-10-22T06:57:10,steady (150 devices),stress-agent,1,0.0,14.8
+2026-10-22T06:57:10,steady (150 devices),stress-hs,1,12.3,84.3
+2026-10-22T06:57:10,steady (150 devices),stress-hub,1,0.1,29.9
+2026-10-22T06:57:10,steady (150 devices),stress-ts-scheduler,1,0.4,65.0
+2026-10-22T06:57:10,steady (150 devices),students,80,34.6,1830.9
+2026-10-22T06:57:10,steady (150 devices),host-ct,,3.31,2018
+2026-10-22T06:57:23,steady (150 devices),pcs,70,9.5,1182.0
+2026-10-22T06:57:23,steady (150 devices),stress-agent,1,1.3,14.7
+2026-10-22T06:57:23,steady (150 devices),stress-hs,1,34.4,92.8
+2026-10-22T06:57:23,steady (150 devices),stress-hub,1,1.4,29.9
+2026-10-22T06:57:23,steady (150 devices),stress-ts-scheduler,1,0.3,65.8
+2026-10-22T06:57:23,steady (150 devices),students,80,33.0,1843.4
+2026-10-22T06:57:23,steady (150 devices),host-ct,,2.95,1948
+2026-10-22T06:57:35,steady (150 devices),pcs,70,3.8,1212.2
+2026-10-22T06:57:35,steady (150 devices),stress-agent,1,0.0,14.7
+2026-10-22T06:57:35,steady (150 devices),stress-hs,1,5.6,96.9
+2026-10-22T06:57:35,steady (150 devices),stress-hub,1,0.1,29.9
+2026-10-22T06:57:35,steady (150 devices),stress-ts-scheduler,1,0.1,65.6
+2026-10-22T06:57:35,steady (150 devices),students,80,4.8,1855.7
+2026-10-22T06:57:35,steady (150 devices),host-ct,,7.41,1912
+2026-10-22T06:57:47,steady (150 devices),pcs,70,3.1,1242.7
+2026-10-22T06:57:47,steady (150 devices),stress-agent,1,0.0,14.8
+2026-10-22T06:57:47,steady (150 devices),stress-hs,1,1.0,99.0
+2026-10-22T06:57:47,steady (150 devices),stress-hub,1,0.1,29.9
+2026-10-22T06:57:47,steady (150 devices),stress-ts-scheduler,1,0.1,65.4
+2026-10-22T06:57:47,steady (150 devices),students,80,3.1,1877.8
+2026-10-22T06:57:47,steady (150 devices),host-ct,,6.27,1834
+2026-10-22T06:58:00,steady (150 devices),pcs,70,3.8,1312.7
+2026-10-22T06:58:00,steady (150 devices),stress-agent,1,0.0,14.7
+2026-10-22T06:58:00,steady (150 devices),stress-hs,1,9.4,105.3
+2026-10-22T06:58:00,steady (150 devices),stress-hub,1,0.1,29.9
+2026-10-22T06:58:00,steady (150 devices),stress-ts-scheduler,1,0.0,64.8
+2026-10-22T06:58:00,steady (150 devices),students,80,5.4,1871.7
+2026-10-22T06:58:00,steady (150 devices),host-ct,,5.02,1868
+2026-10-22T06:58:12,steady (150 devices),pcs,70,9.2,1392.8
+2026-10-22T06:58:12,steady (150 devices),stress-agent,1,0.0,14.7
+2026-10-22T06:58:12,steady (150 devices),stress-hs,1,9.6,108.5
+2026-10-22T06:58:12,steady (150 devices),stress-hub,1,0.1,29.9
+2026-10-22T06:58:12,steady (150 devices),stress-ts-scheduler,1,0.1,64.8
+2026-10-22T06:58:12,steady (150 devices),students,80,32.5,1924.8
+2026-10-22T06:58:12,steady (150 devices),host-ct,,4.77,1626
+2026-10-22T06:58:24,steady (150 devices),pcs,70,3.4,1402.0
+2026-10-22T06:58:24,steady (150 devices),stress-agent,1,0.0,14.8
+2026-10-22T06:58:24,steady (150 devices),stress-hs,1,11.9,82.0
+2026-10-22T06:58:24,steady (150 devices),stress-hub,1,0.1,29.9
+2026-10-22T06:58:24,steady (150 devices),stress-ts-scheduler,1,0.0,64.8
+2026-10-22T06:58:24,steady (150 devices),students,80,10.4,1981.0
+2026-10-22T06:58:24,steady (150 devices),host-ct,,3.79,1587
+2026-10-22T06:58:37,steady (150 devices),pcs,70,12.3,1416.7
+2026-10-22T06:58:37,steady (150 devices),stress-agent,1,1.0,15.2
+2026-10-22T06:58:37,steady (150 devices),stress-hs,1,32.7,84.1
+2026-10-22T06:58:37,steady (150 devices),stress-hub,1,1.3,30.2
+2026-10-22T06:58:37,steady (150 devices),stress-ts-scheduler,1,0.0,64.8
+2026-10-22T06:58:37,steady (150 devices),students,80,56.1,2027.5
+2026-10-22T06:58:37,steady (150 devices),host-ct,,3.36,1516
+2026-10-22T06:58:49,steady (150 devices),pcs,70,6.6,1413.1
+2026-10-22T06:58:49,steady (150 devices),stress-agent,1,0.0,14.9
+2026-10-22T06:58:49,steady (150 devices),stress-hs,1,5.1,82.8
+2026-10-22T06:58:49,steady (150 devices),stress-hub,1,0.1,29.9
+2026-10-22T06:58:49,steady (150 devices),stress-ts-scheduler,1,0.0,64.7
+2026-10-22T06:58:49,steady (150 devices),students,80,27.3,2067.4
+2026-10-22T06:58:49,steady (150 devices),host-ct,,3.31,1474
+2026-10-22T06:59:01,steady (150 devices),pcs,70,4.7,1412.2
+2026-10-22T06:59:01,steady (150 devices),stress-agent,1,0.0,14.9
+2026-10-22T06:59:01,steady (150 devices),stress-hs,1,0.3,82.4
+2026-10-22T06:59:01,steady (150 devices),stress-hub,1,0.1,29.9
+2026-10-22T06:59:01,steady (150 devices),stress-ts-scheduler,1,0.0,64.7
+2026-10-22T06:59:01,steady (150 devices),students,80,16.7,2065.9
+2026-10-22T06:59:01,steady (150 devices),host-ct,,2.95,1533
+2026-10-22T06:59:14,slot change B,pcs,70,2.1,1450.2
+2026-10-22T06:59:14,slot change B,stress-agent,1,0.0,20.8
+2026-10-22T06:59:14,slot change B,stress-hs,1,0.2,93.3
+2026-10-22T06:59:14,slot change B,stress-hub,1,0.1,45.1
+2026-10-22T06:59:14,slot change B,stress-ts-scheduler,1,0.9,72.5
+2026-10-22T06:59:14,slot change B,students,80,2.2,2093.0
+2026-10-22T06:59:14,slot change B,host-ct,,2.37,1401
+2026-10-22T06:59:26,slot change B,pcs,70,2.8,1463.7
+2026-10-22T06:59:26,slot change B,stress-agent,1,0.0,18.8
+2026-10-22T06:59:26,slot change B,stress-hs,1,10.2,96.8
+2026-10-22T06:59:26,slot change B,stress-hub,1,0.1,45.1
+2026-10-22T06:59:26,slot change B,stress-ts-scheduler,1,0.8,72.2
+2026-10-22T06:59:26,slot change B,students,80,4.8,2104.8
+2026-10-22T06:59:26,slot change B,host-ct,,2.16,1377
+2026-10-22T06:59:38,slot change B,pcs,70,3.7,1468.2
+2026-10-22T06:59:38,slot change B,stress-agent,1,0.0,18.8
+2026-10-22T06:59:38,slot change B,stress-hs,1,5.3,94.8
+2026-10-22T06:59:38,slot change B,stress-hub,1,0.1,45.1
+2026-10-22T06:59:38,slot change B,stress-ts-scheduler,1,0.6,72.6
+2026-10-22T06:59:38,slot change B,students,80,5.7,2032.1
+2026-10-22T06:59:38,slot change B,host-ct,,1.98,1668
+2026-10-22T06:59:51,slot change B,pcs,70,7.0,1448.5
+2026-10-22T06:59:51,slot change B,stress-agent,1,0.0,24.3
+2026-10-22T06:59:51,slot change B,stress-hs,1,4.9,79.9
+2026-10-22T06:59:51,slot change B,stress-hub,1,0.1,45.1
+2026-10-22T06:59:51,slot change B,stress-ts-scheduler,1,0.5,72.7
+2026-10-22T06:59:51,slot change B,students,80,18.0,2124.5
+2026-10-22T06:59:51,slot change B,host-ct,,1.68,1374
+2026-10-22T07:00:03,slot change B,pcs,70,6.0,1394.3
+2026-10-22T07:00:03,slot change B,stress-agent,1,0.0,24.3
+2026-10-22T07:00:03,slot change B,stress-hs,1,6.1,86.7
+2026-10-22T07:00:03,slot change B,stress-hub,1,0.1,45.1
+2026-10-22T07:00:03,slot change B,stress-ts-scheduler,1,0.2,73.8
+2026-10-22T07:00:03,slot change B,students,80,10.9,2132.8
+2026-10-22T07:00:03,slot change B,host-ct,,1.42,1422
+2026-10-22T07:00:16,churn,pcs,70,7.8,1373.7
+2026-10-22T07:00:16,churn,stress-agent,1,0.0,24.3
+2026-10-22T07:00:16,churn,stress-hs,1,16.0,73.8
+2026-10-22T07:00:16,churn,stress-hub,1,0.1,45.1
+2026-10-22T07:00:16,churn,stress-ts-scheduler,1,2.8,69.6
+2026-10-22T07:00:16,churn,students,80,19.4,2130.8
+2026-10-22T07:00:16,churn,host-ct,,1.41,1453
+2026-10-22T07:00:28,churn,pcs,70,7.9,1372.2
+2026-10-22T07:00:28,churn,stress-agent,1,0.0,24.5
+2026-10-22T07:00:28,churn,stress-hs,1,21.4,97.1
+2026-10-22T07:00:28,churn,stress-hub,1,0.1,45.1
+2026-10-22T07:00:28,churn,stress-ts-scheduler,1,3.3,74.7
+2026-10-22T07:00:28,churn,students,80,28.2,2077.3
+2026-10-22T07:00:28,churn,host-ct,,1.27,1480
+2026-10-22T07:00:40,churn,pcs,70,4.7,1367.2
+2026-10-22T07:00:40,churn,stress-agent,1,1.0,24.5
+2026-10-22T07:00:40,churn,stress-hs,1,22.7,80.1
+2026-10-22T07:00:40,churn,stress-hub,1,1.2,45.1
+2026-10-22T07:00:40,churn,stress-ts-scheduler,1,0.1,68.3
+2026-10-22T07:00:40,churn,students,80,8.7,1994.5
+2026-10-22T07:00:40,churn,host-ct,,1.36,1762
+2026-10-22T07:00:53,churn,pcs,70,5.7,1376.0
+2026-10-22T07:00:53,churn,stress-agent,1,0.0,24.5
+2026-10-22T07:00:53,churn,stress-hs,1,16.2,75.8
+2026-10-22T07:00:53,churn,stress-hub,1,0.1,45.1
+2026-10-22T07:00:53,churn,stress-ts-scheduler,1,0.8,69.4
+2026-10-22T07:00:53,churn,students,80,18.9,2056.8
+2026-10-22T07:00:53,churn,host-ct,,1.31,1514
+2026-10-22T07:01:05,churn,pcs,70,8.4,1385.7
+2026-10-22T07:01:05,churn,stress-agent,1,0.0,24.5
+2026-10-22T07:01:05,churn,stress-hs,1,11.8,77.9
+2026-10-22T07:01:05,churn,stress-hub,1,0.1,45.1
+2026-10-22T07:01:05,churn,stress-ts-scheduler,1,1.7,70.9
+2026-10-22T07:01:05,churn,students,80,28.4,2047.5
+2026-10-22T07:01:05,churn,host-ct,,1.16,1498
+2026-10-22T07:01:19,churn,pcs,70,5.4,1391.6
+2026-10-22T07:01:19,churn,stress-agent,1,0.0,24.5
+2026-10-22T07:01:19,churn,stress-hs,1,21.0,88.2
+2026-10-22T07:01:19,churn,stress-hub,1,0.1,45.1
+2026-10-22T07:01:19,churn,stress-ts-scheduler,1,3.4,71.4
+2026-10-22T07:01:19,churn,students,80,7.9,2028.2
+2026-10-22T07:01:19,churn,host-ct,,1.31,1500
+2026-10-22T07:01:31,churn,pcs,70,7.9,1394.4
+2026-10-22T07:01:31,churn,stress-agent,1,0.0,24.6
+2026-10-22T07:01:31,churn,stress-hs,1,20.3,81.7
+2026-10-22T07:01:31,churn,stress-hub,1,0.1,45.1
+2026-10-22T07:01:31,churn,stress-ts-scheduler,1,2.2,71.8
+2026-10-22T07:01:31,churn,students,80,32.2,2033.0
+2026-10-22T07:01:31,churn,host-ct,,1.11,1489
+2026-10-22T07:01:44,churn,pcs,70,6.7,1397.0
+2026-10-22T07:01:44,churn,stress-agent,1,0.0,24.6
+2026-10-22T07:01:44,churn,stress-hs,1,20.5,81.9
+2026-10-22T07:01:44,churn,stress-hub,1,0.1,45.1
+2026-10-22T07:01:44,churn,stress-ts-scheduler,1,2.4,71.6
+2026-10-22T07:01:44,churn,students,80,9.9,1940.7
+2026-10-22T07:01:44,churn,host-ct,,1.01,1802
+2026-10-22T07:01:58,churn,pcs,70,10.4,1396.8
+2026-10-22T07:01:58,churn,stress-agent,1,0.0,24.6
+2026-10-22T07:01:58,churn,stress-hs,1,25.5,104.4
+2026-10-22T07:01:58,churn,stress-hub,1,0.1,45.1
+2026-10-22T07:01:58,churn,stress-ts-scheduler,1,3.2,71.9
+2026-10-22T07:01:58,churn,students,80,23.1,2019.3
+2026-10-22T07:01:58,churn,host-ct,,2.22,1473
+2026-10-22T07:02:10,churn,pcs,70,8.2,1378.2
+2026-10-22T07:02:10,churn,stress-agent,1,1.0,24.6
+2026-10-22T07:02:10,churn,stress-hs,1,34.2,82.2
+2026-10-22T07:02:10,churn,stress-hub,1,1.2,45.1
+2026-10-22T07:02:10,churn,stress-ts-scheduler,1,3.4,72.9
+2026-10-22T07:02:10,churn,students,80,11.5,1989.0
+2026-10-22T07:02:10,churn,host-ct,,2.25,1599
+2026-10-22T07:02:23,churn,pcs,70,4.3,1379.6
+2026-10-22T07:02:23,churn,stress-agent,1,0.0,24.6
+2026-10-22T07:02:23,churn,stress-hs,1,19.6,79.2
+2026-10-22T07:02:23,churn,stress-hub,1,0.1,45.1
+2026-10-22T07:02:23,churn,stress-ts-scheduler,1,1.7,72.7
+2026-10-22T07:02:23,churn,students,80,9.3,2008.0
+2026-10-22T07:02:23,churn,host-ct,,2.22,1511
+2026-10-22T07:02:36,churn,pcs,70,9.7,1390.0
+2026-10-22T07:02:36,churn,stress-agent,1,0.0,24.8
+2026-10-22T07:02:36,churn,stress-hs,1,19.3,80.1
+2026-10-22T07:02:36,churn,stress-hub,1,0.1,45.1
+2026-10-22T07:02:36,churn,stress-ts-scheduler,1,2.7,73.1
+2026-10-22T07:02:36,churn,students,80,37.4,1999.2
+2026-10-22T07:02:36,churn,host-ct,,2.10,1517
+2026-10-22T07:02:49,churn,pcs,70,6.2,1397.0
+2026-10-22T07:02:49,churn,stress-agent,1,0.0,24.8
+2026-10-22T07:02:49,churn,stress-hs,1,14.9,80.4
+2026-10-22T07:02:49,churn,stress-hub,1,0.1,45.1
+2026-10-22T07:02:49,churn,stress-ts-scheduler,1,1.8,71.8
+2026-10-22T07:02:49,churn,students,80,34.6,1968.5
+2026-10-22T07:02:49,churn,host-ct,,1.71,1501
+2026-10-22T07:03:02,churn,pcs,70,3.3,1405.0
+2026-10-22T07:03:02,churn,stress-agent,1,0.0,24.8
+2026-10-22T07:03:02,churn,stress-hs,1,24.7,80.3
+2026-10-22T07:03:02,churn,stress-hub,1,0.1,45.1
+2026-10-22T07:03:02,churn,stress-ts-scheduler,1,1.7,71.7
+2026-10-22T07:03:02,churn,students,80,5.0,2002.6
+2026-10-22T07:03:02,churn,host-ct,,1.84,1494
+2026-10-22T07:03:14,slot change C,pcs,70,3.1,1401.9
+2026-10-22T07:03:14,slot change C,stress-agent,1,0.0,24.8
+2026-10-22T07:03:14,slot change C,stress-hs,1,1.7,85.3
+2026-10-22T07:03:14,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:03:14,slot change C,stress-ts-scheduler,1,0.0,71.8
+2026-10-22T07:03:14,slot change C,students,80,5.8,1985.0
+2026-10-22T07:03:14,slot change C,host-ct,,1.88,1577
+2026-10-22T07:03:27,slot change C,pcs,70,21.7,1421.0
+2026-10-22T07:03:27,slot change C,stress-agent,1,0.1,24.8
+2026-10-22T07:03:27,slot change C,stress-hs,1,60.1,104.7
+2026-10-22T07:03:27,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:03:27,slot change C,stress-ts-scheduler,1,1.0,72.0
+2026-10-22T07:03:27,slot change C,students,80,71.1,2037.5
+2026-10-22T07:03:27,slot change C,host-ct,,1.74,1406
+2026-10-22T07:03:39,slot change C,pcs,70,9.2,1431.1
+2026-10-22T07:03:39,slot change C,stress-agent,1,0.1,24.8
+2026-10-22T07:03:39,slot change C,stress-hs,1,9.8,102.8
+2026-10-22T07:03:39,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:03:39,slot change C,stress-ts-scheduler,1,0.0,74.1
+2026-10-22T07:03:39,slot change C,students,71,30.1,1876.4
+2026-10-22T07:03:39,slot change C,host-ct,,1.80,1579
+2026-10-22T07:03:52,slot change C,pcs,70,44.4,1456.8
+2026-10-22T07:03:52,slot change C,stress-agent,1,2.0,25.4
+2026-10-22T07:03:52,slot change C,stress-hs,1,25.6,107.2
+2026-10-22T07:03:52,slot change C,stress-hub,1,0.3,45.1
+2026-10-22T07:03:52,slot change C,stress-ts-scheduler,1,4.0,74.2
+2026-10-22T07:03:52,slot change C,students,53,36.1,1469.3
+2026-10-22T07:03:52,slot change C,host-ct,,1.76,2053
+2026-10-22T07:04:04,slot change C,pcs,70,9.5,1459.9
+2026-10-22T07:04:04,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:04:04,slot change C,stress-hs,1,1.1,91.4
+2026-10-22T07:04:04,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:04:04,slot change C,stress-ts-scheduler,1,0.0,74.6
+2026-10-22T07:04:04,slot change C,students,53,29.4,1482.3
+2026-10-22T07:04:04,slot change C,host-ct,,1.83,2050
+2026-10-22T07:04:17,slot change C,pcs,70,3.8,1455.0
+2026-10-22T07:04:17,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:04:17,slot change C,stress-hs,1,2.1,75.5
+2026-10-22T07:04:17,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:04:17,slot change C,stress-ts-scheduler,1,0.3,75.3
+2026-10-22T07:04:17,slot change C,students,53,4.5,1487.9
+2026-10-22T07:04:17,slot change C,host-ct,,1.55,2071
+2026-10-22T07:04:29,slot change C,pcs,70,2.3,1456.6
+2026-10-22T07:04:29,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:04:29,slot change C,stress-hs,1,0.2,80.9
+2026-10-22T07:04:29,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:04:29,slot change C,stress-ts-scheduler,1,0.4,78.0
+2026-10-22T07:04:29,slot change C,students,53,2.4,1453.9
+2026-10-22T07:04:29,slot change C,host-ct,,1.49,2197
+2026-10-22T07:04:41,slot change C,pcs,70,10.0,1470.5
+2026-10-22T07:04:41,slot change C,stress-agent,1,0.0,25.4
+2026-10-22T07:04:41,slot change C,stress-hs,1,0.3,76.1
+2026-10-22T07:04:41,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:04:41,slot change C,stress-ts-scheduler,1,0.3,78.5
+2026-10-22T07:04:41,slot change C,students,53,32.1,1506.4
+2026-10-22T07:04:41,slot change C,host-ct,,1.73,2029
+2026-10-22T07:04:53,slot change C,pcs,70,3.1,1460.4
+2026-10-22T07:04:53,slot change C,stress-agent,1,0.1,25.4
+2026-10-22T07:04:53,slot change C,stress-hs,1,9.3,78.5
+2026-10-22T07:04:53,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:04:53,slot change C,stress-ts-scheduler,1,0.0,78.5
+2026-10-22T07:04:53,slot change C,students,53,2.3,1424.9
+2026-10-22T07:04:53,slot change C,host-ct,,1.55,2336
+2026-10-22T07:05:06,slot change C,pcs,70,3.7,1471.7
+2026-10-22T07:05:06,slot change C,stress-agent,1,0.0,25.4
+2026-10-22T07:05:06,slot change C,stress-hs,1,2.5,79.3
+2026-10-22T07:05:06,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:05:06,slot change C,stress-ts-scheduler,1,0.1,78.5
+2026-10-22T07:05:06,slot change C,students,53,4.4,1521.1
+2026-10-22T07:05:06,slot change C,host-ct,,1.35,2002
+2026-10-22T07:05:18,slot change C,pcs,70,7.3,1474.9
+2026-10-22T07:05:18,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:05:18,slot change C,stress-hs,1,0.3,80.0
+2026-10-22T07:05:18,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:05:18,slot change C,stress-ts-scheduler,1,0.0,78.5
+2026-10-22T07:05:18,slot change C,students,53,27.4,1526.2
+2026-10-22T07:05:18,slot change C,host-ct,,1.46,1993
+2026-10-22T07:05:30,slot change C,pcs,70,6.9,1477.1
+2026-10-22T07:05:30,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:05:30,slot change C,stress-hs,1,0.3,81.5
+2026-10-22T07:05:30,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:05:30,slot change C,stress-ts-scheduler,1,0.0,78.6
+2026-10-22T07:05:30,slot change C,students,53,29.7,1532.8
+2026-10-22T07:05:30,slot change C,host-ct,,1.50,1993
+2026-10-22T07:05:42,slot change C,pcs,70,4.5,1473.5
+2026-10-22T07:05:42,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:05:42,slot change C,stress-hs,1,5.0,84.1
+2026-10-22T07:05:42,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:05:42,slot change C,stress-ts-scheduler,1,0.1,78.6
+2026-10-22T07:05:42,slot change C,students,53,5.7,1537.2
+2026-10-22T07:05:42,slot change C,host-ct,,1.35,1986
+2026-10-22T07:05:55,slot change C,pcs,70,3.8,1460.2
+2026-10-22T07:05:55,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:05:55,slot change C,stress-hs,1,7.8,87.8
+2026-10-22T07:05:55,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:05:55,slot change C,stress-ts-scheduler,1,0.5,77.7
+2026-10-22T07:05:55,slot change C,students,53,4.1,1501.1
+2026-10-22T07:05:55,slot change C,host-ct,,1.05,2140
+2026-10-22T07:06:07,slot change C,pcs,70,11.6,1457.0
+2026-10-22T07:06:07,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:06:07,slot change C,stress-hs,1,7.4,85.5
+2026-10-22T07:06:07,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:06:07,slot change C,stress-ts-scheduler,1,0.1,77.8
+2026-10-22T07:06:07,slot change C,students,53,33.7,1541.0
+2026-10-22T07:06:07,slot change C,host-ct,,2.58,1998
+2026-10-22T07:06:19,slot change C,pcs,70,2.3,1436.2
+2026-10-22T07:06:19,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:06:19,slot change C,stress-hs,1,2.0,83.1
+2026-10-22T07:06:19,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:06:19,slot change C,stress-ts-scheduler,1,0.0,51.0
+2026-10-22T07:06:19,slot change C,students,53,3.3,1459.6
+2026-10-22T07:06:19,slot change C,host-ct,,2.50,2351
+2026-10-22T07:06:32,slot change C,pcs,70,3.6,1447.8
+2026-10-22T07:06:32,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:06:32,slot change C,stress-hs,1,7.6,82.3
+2026-10-22T07:06:32,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:06:32,slot change C,stress-ts-scheduler,1,0.1,51.0
+2026-10-22T07:06:32,slot change C,students,53,4.3,1541.0
+2026-10-22T07:06:32,slot change C,host-ct,,2.27,2046
+2026-10-22T07:06:44,slot change C,pcs,70,8.4,1452.3
+2026-10-22T07:06:44,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:06:44,slot change C,stress-hs,1,0.9,83.2
+2026-10-22T07:06:44,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:06:44,slot change C,stress-ts-scheduler,1,0.0,51.1
+2026-10-22T07:06:44,slot change C,students,53,28.1,1540.7
+2026-10-22T07:06:44,slot change C,host-ct,,2.49,2038
+2026-10-22T07:06:56,slot change C,pcs,70,6.8,1449.6
+2026-10-22T07:06:56,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:06:56,slot change C,stress-hs,1,6.8,89.3
+2026-10-22T07:06:56,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:06:56,slot change C,stress-ts-scheduler,1,0.0,51.1
+2026-10-22T07:06:56,slot change C,students,53,29.6,1542.0
+2026-10-22T07:06:56,slot change C,host-ct,,2.10,2038
+2026-10-22T07:07:08,slot change C,pcs,70,2.0,1441.8
+2026-10-22T07:07:08,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:07:08,slot change C,stress-hs,1,0.2,82.5
+2026-10-22T07:07:08,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:07:08,slot change C,stress-ts-scheduler,1,0.0,51.1
+2026-10-22T07:07:08,slot change C,students,53,2.2,1528.2
+2026-10-22T07:07:08,slot change C,host-ct,,1.85,2063
+2026-10-22T07:07:21,slot change C,pcs,70,1.6,1437.2
+2026-10-22T07:07:21,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:07:21,slot change C,stress-hs,1,0.2,80.3
+2026-10-22T07:07:21,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:07:21,slot change C,stress-ts-scheduler,1,0.0,51.1
+2026-10-22T07:07:21,slot change C,students,53,1.8,1491.3
+2026-10-22T07:07:21,slot change C,host-ct,,1.68,2196
+2026-10-22T07:07:33,slot change C,pcs,70,7.0,1449.4
+2026-10-22T07:07:33,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:07:33,slot change C,stress-hs,1,5.4,81.9
+2026-10-22T07:07:33,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:07:33,slot change C,stress-ts-scheduler,1,0.0,51.1
+2026-10-22T07:07:33,slot change C,students,53,30.1,1533.1
+2026-10-22T07:07:33,slot change C,host-ct,,1.58,2049
+2026-10-22T07:07:45,slot change C,pcs,70,3.1,1440.7
+2026-10-22T07:07:45,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:07:45,slot change C,stress-hs,1,1.9,84.5
+2026-10-22T07:07:45,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:07:45,slot change C,stress-ts-scheduler,1,0.0,51.2
+2026-10-22T07:07:45,slot change C,students,53,2.7,1451.9
+2026-10-22T07:07:45,slot change C,host-ct,,1.53,2348
+2026-10-22T07:07:58,slot change C,pcs,70,4.2,1436.2
+2026-10-22T07:07:58,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:07:58,slot change C,stress-hs,1,5.0,80.9
+2026-10-22T07:07:58,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:07:58,slot change C,stress-ts-scheduler,1,0.1,50.6
+2026-10-22T07:07:58,slot change C,students,53,4.6,1535.0
+2026-10-22T07:07:58,slot change C,host-ct,,1.37,2049
+2026-10-22T07:08:10,slot change C,pcs,70,9.7,1420.3
+2026-10-22T07:08:10,slot change C,stress-agent,1,0.0,25.5
+2026-10-22T07:08:10,slot change C,stress-hs,1,4.3,85.4
+2026-10-22T07:08:10,slot change C,stress-hub,1,0.1,45.1
+2026-10-22T07:08:10,slot change C,stress-ts-scheduler,1,0.1,50.6
+2026-10-22T07:08:10,slot change C,students,53,28.6,1539.0
+2026-10-22T07:08:10,slot change C,host-ct,,1.07,2064
+2026-10-22T07:08:22,slot change D,pcs,70,6.7,1409.6
+2026-10-22T07:08:22,slot change D,stress-agent,1,0.8,25.6
+2026-10-22T07:08:22,slot change D,stress-hs,1,8.2,87.3
+2026-10-22T07:08:22,slot change D,stress-hub,1,1.1,45.1
+2026-10-22T07:08:22,slot change D,stress-ts-scheduler,1,0.0,38.6
+2026-10-22T07:08:22,slot change D,students,53,29.5,1545.8
+2026-10-22T07:08:22,slot change D,host-ct,,0.98,2083
+2026-10-22T07:08:35,slot change D,pcs,70,9.2,1419.8
+2026-10-22T07:08:35,slot change D,stress-agent,1,0.1,25.6
+2026-10-22T07:08:35,slot change D,stress-hs,1,20.0,112.5
+2026-10-22T07:08:35,slot change D,stress-hub,1,0.1,45.1
+2026-10-22T07:08:35,slot change D,stress-ts-scheduler,1,0.7,70.1
+2026-10-22T07:08:35,slot change D,students,51,10.8,1450.7
+2026-10-22T07:08:35,slot change D,host-ct,,0.99,2129
+2026-10-22T07:08:47,slot change D,pcs,70,8.4,1426.1
+2026-10-22T07:08:47,slot change D,stress-agent,1,0.1,25.6
+2026-10-22T07:08:47,slot change D,stress-hs,1,20.6,161.3
+2026-10-22T07:08:47,slot change D,stress-hub,1,0.1,45.1
+2026-10-22T07:08:47,slot change D,stress-ts-scheduler,1,1.1,71.8
+2026-10-22T07:08:47,slot change D,students,45,11.3,1101.8
+2026-10-22T07:08:47,slot change D,host-ct,,0.92,2683
+2026-10-22T07:09:00,slot change D,pcs,70,9.8,1434.0
+2026-10-22T07:09:00,slot change D,stress-agent,1,0.1,25.6
+2026-10-22T07:09:00,slot change D,stress-hs,1,66.5,121.9
+2026-10-22T07:09:00,slot change D,stress-hub,1,0.1,45.1
+2026-10-22T07:09:00,slot change D,stress-ts-scheduler,1,1.5,72.7
+2026-10-22T07:09:00,slot change D,students,37,11.2,911.9
+2026-10-22T07:09:00,slot change D,host-ct,,1.01,2847
+2026-10-22T07:09:12,slot change D,pcs,70,3.7,1454.8
+2026-10-22T07:09:12,slot change D,stress-agent,1,0.0,26.1
+2026-10-22T07:09:12,slot change D,stress-hs,1,9.0,135.6
+2026-10-22T07:09:12,slot change D,stress-hub,1,0.1,45.1
+2026-10-22T07:09:12,slot change D,stress-ts-scheduler,1,1.2,72.9
+2026-10-22T07:09:12,slot change D,students,30,2.8,796.9
+2026-10-22T07:09:12,slot change D,host-ct,,5.09,2833
+2026-10-22T07:09:25,second device per student,pcs,70,3.5,1448.4
+2026-10-22T07:09:25,second device per student,stress-agent,1,0.0,26.1
+2026-10-22T07:09:25,second device per student,stress-hs,1,1.8,101.0
+2026-10-22T07:09:25,second device per student,stress-hub,1,0.1,45.1
+2026-10-22T07:09:25,second device per student,stress-ts-scheduler,1,1.0,72.9
+2026-10-22T07:09:25,second device per student,students,30,1.5,727.7
+2026-10-22T07:09:25,second device per student,host-ct,,4.03,3156
+2026-10-22T07:09:38,second device per student,pcs,70,15.7,1469.4
+2026-10-22T07:09:38,second device per student,stress-agent,1,0.0,26.1
+2026-10-22T07:09:38,second device per student,stress-hs,1,65.4,97.8
+2026-10-22T07:09:38,second device per student,stress-hub,1,0.1,45.1
+2026-10-22T07:09:38,second device per student,stress-ts-scheduler,1,2.8,77.9
+2026-10-22T07:09:38,second device per student,students,43,19.9,1095.2
+2026-10-22T07:09:38,second device per student,host-ct,,3.49,2610
+2026-10-22T07:09:50,second device per student,pcs,70,9.3,1500.8
+2026-10-22T07:09:50,second device per student,stress-agent,1,1.0,26.1
+2026-10-22T07:09:50,second device per student,stress-hs,1,19.1,109.0
+2026-10-22T07:09:50,second device per student,stress-hub,1,1.1,45.1
+2026-10-22T07:09:50,second device per student,stress-ts-scheduler,1,0.2,78.7
+2026-10-22T07:09:50,second device per student,students,60,15.5,1503.9
+2026-10-22T07:09:50,second device per student,host-ct,,5.59,1960
+2026-10-22T07:10:03,second device per student,pcs,70,3.4,1495.2
+2026-10-22T07:10:03,second device per student,stress-agent,1,0.0,26.1
+2026-10-22T07:10:03,second device per student,stress-hs,1,14.4,120.3
+2026-10-22T07:10:03,second device per student,stress-hub,1,0.1,45.1
+2026-10-22T07:10:03,second device per student,stress-ts-scheduler,1,0.2,79.0
+2026-10-22T07:10:03,second device per student,students,60,4.7,1535.7
+2026-10-22T07:10:03,second device per student,host-ct,,4.89,1918
+2026-10-22T07:10:15,second device per student,pcs,70,10.8,1507.6
+2026-10-22T07:10:15,second device per student,stress-agent,1,0.0,26.2
+2026-10-22T07:10:15,second device per student,stress-hs,1,6.1,115.9
+2026-10-22T07:10:15,second device per student,stress-hub,1,0.1,45.1
+2026-10-22T07:10:15,second device per student,stress-ts-scheduler,1,0.0,78.8
+2026-10-22T07:10:15,second device per student,students,60,53.6,1557.5
+2026-10-22T07:10:15,second device per student,host-ct,,3.96,1890
+2026-10-22T07:10:27,second device per student,pcs,70,8.9,1493.5
+2026-10-22T07:10:27,second device per student,stress-agent,1,0.0,26.5
+2026-10-22T07:10:27,second device per student,stress-hs,1,6.4,82.2
+2026-10-22T07:10:27,second device per student,stress-hub,1,0.1,45.1
+2026-10-22T07:10:27,second device per student,stress-ts-scheduler,1,0.1,79.0
+2026-10-22T07:10:27,second device per student,students,60,29.1,1576.0
+2026-10-22T07:10:27,second device per student,host-ct,,3.42,1903
+2026-10-22T07:10:40,second device per student,pcs,70,2.5,1488.0
+2026-10-22T07:10:40,second device per student,stress-agent,1,0.0,25.5
+2026-10-22T07:10:40,second device per student,stress-hs,1,0.3,82.1
+2026-10-22T07:10:40,second device per student,stress-hub,1,0.1,45.1
+2026-10-22T07:10:40,second device per student,stress-ts-scheduler,1,0.0,78.8
+2026-10-22T07:10:40,second device per student,students,60,2.1,1501.4
+2026-10-22T07:10:40,second device per student,host-ct,,3.07,2195
+2026-10-22T07:10:52,second device per student,pcs,70,2.8,1496.5
+2026-10-22T07:10:52,second device per student,stress-agent,1,0.0,25.5
+2026-10-22T07:10:52,second device per student,stress-hs,1,1.0,84.3
+2026-10-22T07:10:52,second device per student,stress-hub,1,0.1,45.1
+2026-10-22T07:10:52,second device per student,stress-ts-scheduler,1,0.0,78.8
+2026-10-22T07:10:52,second device per student,students,60,4.9,1600.3
+2026-10-22T07:10:52,second device per student,host-ct,,2.68,1875
+2026-10-22T07:11:04,steady (peak devices),pcs,70,4.3,1492.5
+2026-10-22T07:11:04,steady (peak devices),stress-agent,1,0.0,25.5
+2026-10-22T07:11:04,steady (peak devices),stress-hs,1,9.6,83.4
+2026-10-22T07:11:04,steady (peak devices),stress-hub,1,0.1,45.1
+2026-10-22T07:11:04,steady (peak devices),stress-ts-scheduler,1,0.2,78.8
+2026-10-22T07:11:04,steady (peak devices),students,60,5.5,1535.7
+2026-10-22T07:11:04,steady (peak devices),host-ct,,2.17,2174
+2026-10-22T07:11:16,steady (peak devices),pcs,70,3.6,1500.8
+2026-10-22T07:11:16,steady (peak devices),stress-agent,1,0.0,25.5
+2026-10-22T07:11:16,steady (peak devices),stress-hs,1,2.2,89.6
+2026-10-22T07:11:16,steady (peak devices),stress-hub,1,0.1,45.1
+2026-10-22T07:11:16,steady (peak devices),stress-ts-scheduler,1,0.0,78.8
+2026-10-22T07:11:16,steady (peak devices),students,60,8.0,1631.8
+2026-10-22T07:11:16,steady (peak devices),host-ct,,1.91,1836
+2026-10-22T07:11:29,steady (peak devices),pcs,70,4.1,1494.6
+2026-10-22T07:11:29,steady (peak devices),stress-agent,1,0.0,25.5
+2026-10-22T07:11:29,steady (peak devices),stress-hs,1,4.2,94.8
+2026-10-22T07:11:29,steady (peak devices),stress-hub,1,0.1,45.1
+2026-10-22T07:11:29,steady (peak devices),stress-ts-scheduler,1,0.1,78.8
+2026-10-22T07:11:29,steady (peak devices),students,60,5.0,1562.4
+2026-10-22T07:11:29,steady (peak devices),host-ct,,1.64,2091
+2026-10-22T07:11:41,steady (peak devices),pcs,70,6.8,1503.3
+2026-10-22T07:11:41,steady (peak devices),stress-agent,1,0.0,25.5
+2026-10-22T07:11:41,steady (peak devices),stress-hs,1,3.1,86.1
+2026-10-22T07:11:41,steady (peak devices),stress-hub,1,0.1,45.1
+2026-10-22T07:11:41,steady (peak devices),stress-ts-scheduler,1,0.0,78.8
+2026-10-22T07:11:41,steady (peak devices),students,60,23.9,1653.6
+2026-10-22T07:11:41,steady (peak devices),host-ct,,1.55,1813
+2026-10-22T07:11:53,steady (peak devices),pcs,70,2.2,1492.1
+2026-10-22T07:11:53,steady (peak devices),stress-agent,1,0.0,25.5
+2026-10-22T07:11:53,steady (peak devices),stress-hs,1,2.3,86.6
+2026-10-22T07:11:53,steady (peak devices),stress-hub,1,0.1,45.1
+2026-10-22T07:11:53,steady (peak devices),stress-ts-scheduler,1,0.0,58.2
+2026-10-22T07:11:53,steady (peak devices),students,60,2.3,1576.8
+2026-10-22T07:11:53,steady (peak devices),host-ct,,1.38,2114
+2026-10-22T07:12:06,steady (peak devices),pcs,70,4.7,1486.4
+2026-10-22T07:12:06,steady (peak devices),stress-agent,1,1.0,25.5
+2026-10-22T07:12:06,steady (peak devices),stress-hs,1,20.1,92.4
+2026-10-22T07:12:06,steady (peak devices),stress-hub,1,1.3,45.1
+2026-10-22T07:12:06,steady (peak devices),stress-ts-scheduler,1,0.1,58.2
+2026-10-22T07:12:06,steady (peak devices),students,60,4.4,1659.4
+2026-10-22T07:12:06,steady (peak devices),host-ct,,1.15,1842
+2026-10-22T07:12:18,steady (peak devices),pcs,70,2.9,1468.2
+2026-10-22T07:12:18,steady (peak devices),stress-agent,1,0.0,25.5
+2026-10-22T07:12:18,steady (peak devices),stress-hs,1,3.2,91.4
+2026-10-22T07:12:18,steady (peak devices),stress-hub,1,0.1,45.1
+2026-10-22T07:12:18,steady (peak devices),stress-ts-scheduler,1,0.1,58.5
+2026-10-22T07:12:18,steady (peak devices),students,60,3.9,1604.7
+2026-10-22T07:12:18,steady (peak devices),host-ct,,1.05,2070
+2026-10-22T07:12:30,slot change E,pcs,70,7.4,1480.3
+2026-10-22T07:12:30,slot change E,stress-agent,1,0.0,25.5
+2026-10-22T07:12:30,slot change E,stress-hs,1,4.4,91.7
+2026-10-22T07:12:30,slot change E,stress-hub,1,0.1,45.1
+2026-10-22T07:12:30,slot change E,stress-ts-scheduler,1,0.0,58.2
+2026-10-22T07:12:30,slot change E,students,60,29.4,1666.1
+2026-10-22T07:12:30,slot change E,host-ct,,0.90,1829
+2026-10-22T07:12:46,slot change E,pcs,70,4.0,1483.9
+2026-10-22T07:12:46,slot change E,stress-agent,1,0.9,26.2
+2026-10-22T07:12:46,slot change E,stress-hs,1,31.5,95.2
+2026-10-22T07:12:46,slot change E,stress-hub,1,0.2,45.1
+2026-10-22T07:12:46,slot change E,stress-ts-scheduler,1,1.1,70.7
+2026-10-22T07:12:46,slot change E,students,69,11.1,1817.5
+2026-10-22T07:12:46,slot change E,host-ct,,0.86,1861
+2026-10-22T07:12:59,slot change E,pcs,70,6.2,1497.4
+2026-10-22T07:12:59,slot change E,stress-agent,1,0.0,26.2
+2026-10-22T07:12:59,slot change E,stress-hs,1,38.7,95.3
+2026-10-22T07:12:59,slot change E,stress-hub,1,0.1,45.1
+2026-10-22T07:12:59,slot change E,stress-ts-scheduler,1,2.9,81.3
+2026-10-22T07:12:59,slot change E,students,82,12.1,2127.1
+2026-10-22T07:12:59,slot change E,host-ct,,3.75,1206
+2026-10-22T07:13:11,slot change E,pcs,70,9.0,1491.5
+2026-10-22T07:13:11,slot change E,stress-agent,1,0.0,26.3
+2026-10-22T07:13:11,slot change E,stress-hs,1,56.9,105.0
+2026-10-22T07:13:11,slot change E,stress-hub,1,0.1,45.1
+2026-10-22T07:13:11,slot change E,stress-ts-scheduler,1,5.5,82.0
+2026-10-22T07:13:11,slot change E,students,92,18.9,2324.7
+2026-10-22T07:13:11,slot change E,host-ct,,4.21,1102
+2026-10-22T07:13:26,slot change E,pcs,70,11.9,1505.4
+2026-10-22T07:13:26,slot change E,stress-agent,1,0.0,26.3
+2026-10-22T07:13:26,slot change E,stress-hs,1,110.4,129.6
+2026-10-22T07:13:26,slot change E,stress-hub,1,0.1,45.1
+2026-10-22T07:13:26,slot change E,stress-ts-scheduler,1,3.4,82.9
+2026-10-22T07:13:26,slot change E,students,108,28.6,2720.0
+2026-10-22T07:13:26,slot change E,host-ct,,3.59,494
+2026-10-22T07:13:39,cool down,pcs,70,7.4,1477.2
+2026-10-22T07:13:39,cool down,stress-agent,1,0.0,23.8
+2026-10-22T07:13:39,cool down,stress-hs,1,16.1,105.4
+2026-10-22T07:13:39,cool down,stress-hub,1,0.1,42.7
+2026-10-22T07:13:39,cool down,stress-ts-scheduler,1,0.0,83.9
+2026-10-22T07:13:39,cool down,students,110,27.5,2789.6
+2026-10-22T07:13:39,cool down,host-ct,,2.95,472
+2026-10-22T07:13:51,cool down,pcs,70,3.3,1474.5
+2026-10-22T07:13:51,cool down,stress-agent,1,0.0,24.7
+2026-10-22T07:13:51,cool down,stress-hs,1,24.4,121.8
+2026-10-22T07:13:51,cool down,stress-hub,1,0.1,42.7
+2026-10-22T07:13:51,cool down,stress-ts-scheduler,1,0.1,83.9
+2026-10-22T07:13:51,cool down,students,110,7.2,2743.8
+2026-10-22T07:13:51,cool down,host-ct,,2.50,728
+2026-10-22T07:14:04,cool down,pcs,70,11.0,1462.0
+2026-10-22T07:14:04,cool down,stress-agent,1,0.0,25.7
+2026-10-22T07:14:04,cool down,stress-hs,1,21.2,143.5
+2026-10-22T07:14:04,cool down,stress-hub,1,0.1,42.7
+2026-10-22T07:14:04,cool down,stress-ts-scheduler,1,0.1,83.9
+2026-10-22T07:14:04,cool down,students,110,39.2,2804.9
+2026-10-22T07:14:04,cool down,host-ct,,2.15,440
+2026-10-22T07:14:17,cool down,pcs,70,7.8,1469.9
+2026-10-22T07:14:17,cool down,stress-agent,1,0.0,26.1
+2026-10-22T07:14:17,cool down,stress-hs,1,3.0,108.2
+2026-10-22T07:14:17,cool down,stress-hub,1,0.1,42.7
+2026-10-22T07:14:17,cool down,stress-ts-scheduler,1,0.0,83.9
+2026-10-22T07:14:17,cool down,students,110,31.1,2820.3
+2026-10-22T07:14:17,cool down,host-ct,,1.82,450
+2026-10-22T07:14:29,cool down,pcs,70,3.9,1463.3
+2026-10-22T07:14:29,cool down,stress-agent,1,0.0,25.5
+2026-10-22T07:14:29,cool down,stress-hs,1,8.1,109.9
+2026-10-22T07:14:29,cool down,stress-hub,1,0.1,42.7
+2026-10-22T07:14:29,cool down,stress-ts-scheduler,1,0.1,83.9
+2026-10-22T07:14:29,cool down,students,110,6.7,2787.1
+2026-10-22T07:14:29,cool down,host-ct,,1.49,609

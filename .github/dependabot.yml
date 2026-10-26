@@ -1,0 +1,9 @@
+# Weekly pull requests to bump the commit SHAs the workflows pin, and the Python base image.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: {interval: weekly}
+  - package-ecosystem: docker
+    directory: /labslots
+    schedule: {interval: weekly}

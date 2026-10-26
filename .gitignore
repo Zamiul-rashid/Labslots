@@ -1,0 +1,17 @@
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+
+# Runtime secrets and data (compose files mount these)
+.env
+secrets/
+data/
+agent-data/
+backups/
+*.db
+*.sqlite*
+
+# Browser-automation screenshots and snapshots
+.playwright-mcp/

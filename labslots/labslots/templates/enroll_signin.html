@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Enroll a thesis group{% endblock %}
+{% block body %}
+<section class="signin">
+  <h1>Enroll your thesis group</h1>
+  <p>Thesis groups get remote access to a lab PC in fixed weekly slots. Send your group's details here; an admin assigns your group a PC and its slots, and you see the result on this page.</p>
+  <p class="muted">Sign in with your {{ org }} Google account (<code>@{{ student_domain }}</code>). One member sends the enrollment for the whole group.</p>
+  {% if oidc %}
+  <p><a class="btn primary" href="{{ base }}/login/google">Sign in with Google</a></p>
+  {% else %}
+  <div class="note warn">Google sign-in is not configured on this server.</div>
+  {% endif %}
+  {% if dev %}
+  <form method="get" action="{{ base }}/dev-login" class="row">
+    <input type="hidden" name="next" value="/enroll">
+    <label class="visually-hidden" for="dev-email">Email</label>
+    <input id="dev-email" name="email" type="email" placeholder="student email (dev sign-in)" required>
+    <button class="btn">Dev sign-in</button>
+  </form>
+  {% endif %}
+</section>
+{% endblock %}

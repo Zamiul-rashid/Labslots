@@ -1,0 +1,10 @@
+key,value
+cpu_cores,6
+memory_mb,5902
+headscale,headscale version v0.29.3
+tailscale,tailscale/tailscale:v1.102.3
+pcs,70
+groups,57
+students,80
+agent_poll_s,15
+probe_round_s,20

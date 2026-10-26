@@ -1,0 +1,506 @@
+time,phase,action,detail
+2026-10-22T06:55:57,PCs join,pc-switched,"pc-10: grp-g10 (slot-active=grp-g10 on pc-10
+Warning: Permanently added '100.64.0.16' (ED25519) to the list of known hosts.)"
+2026-10-22T06:55:57,PCs join,pc-switch-error,"pc-11: switch to grp-g11 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T06:55:57,PCs join,pc-switch-error,"pc-12: switch to grp-g12 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T06:55:57,PCs join,pc-switch-error,"pc-13: switch to grp-g13 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T06:55:57,PCs join,pc-switch-error,"pc-14: switch to grp-g14 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T06:55:57,PCs join,pc-switch-error,"pc-15: switch to grp-g15 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T06:55:57,PCs join,pc-switch-error,"pc-16: switch to grp-g16 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T06:55:57,PCs join,pc-switch-error,"pc-17: switch to grp-g17 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T06:55:57,PCs join,pc-switch-error,"pc-18: switch to grp-g18 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T06:55:57,PCs join,pc-switch-error,"pc-19: switch to grp-g19 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T06:55:57,PCs join,pc-switched,"pc-2: grp-g02 (slot-active=grp-g02 on pc-2
+Warning: Permanently added '100.64.0.8' (ED25519) to the list of known hosts.)"
+2026-10-22T06:55:57,PCs join,pc-switch-error,"pc-20: switch to grp-g20 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T06:55:57,PCs join,pc-switched,"pc-3: grp-g03 (slot-active=grp-g03 on pc-3
+Warning: Permanently added '100.64.0.9' (ED25519) to the list of known hosts.)"
+2026-10-22T06:55:57,PCs join,pc-switched,"pc-4: grp-g04 (slot-active=grp-g04 on pc-4
+Warning: Permanently added '100.64.0.10' (ED25519) to the list of known hosts.)"
+2026-10-22T06:55:57,PCs join,pc-switched,"pc-5: grp-g05 (slot-active=grp-g05 on pc-5
+Warning: Permanently added '100.64.0.11' (ED25519) to the list of known hosts.)"
+2026-10-22T06:55:57,PCs join,pc-switched,"pc-6: grp-g06 (slot-active=grp-g06 on pc-6
+Warning: Permanently added '100.64.0.12' (ED25519) to the list of known hosts.)"
+2026-10-22T06:55:57,PCs join,pc-switched,"pc-7: grp-g07 (slot-active=grp-g07 on pc-7
+Warning: Permanently added '100.64.0.13' (ED25519) to the list of known hosts.)"
+2026-10-22T06:55:57,PCs join,pc-switched,"pc-8: grp-g08 (slot-active=grp-g08 on pc-8
+Warning: Permanently added '100.64.0.14' (ED25519) to the list of known hosts.)"
+2026-10-22T06:55:57,PCs join,pc-switched,"pc-9: grp-g09 (slot-active=grp-g09 on pc-9
+Warning: Permanently added '100.64.0.15' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-11: grp-g11 (slot-active=grp-g11 on pc-11
+Warning: Permanently added '100.64.0.17' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-12: grp-g12 (slot-active=grp-g12 on pc-12
+Warning: Permanently added '100.64.0.18' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-13: grp-g13 (slot-active=grp-g13 on pc-13
+Warning: Permanently added '100.64.0.19' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-14: grp-g14 (slot-active=grp-g14 on pc-14
+Warning: Permanently added '100.64.0.20' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-15: grp-g15 (slot-active=grp-g15 on pc-15
+Warning: Permanently added '100.64.0.21' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-16: grp-g16 (slot-active=grp-g16 on pc-16
+Warning: Permanently added '100.64.0.22' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-17: grp-g17 (slot-active=grp-g17 on pc-17
+Warning: Permanently added '100.64.0.23' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-18: grp-g18 (slot-active=grp-g18 on pc-18
+Warning: Permanently added '100.64.0.24' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-19: grp-g19 (slot-active=grp-g19 on pc-19
+Warning: Permanently added '100.64.0.25' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-20: grp-g20 (slot-active=grp-g20 on pc-20
+Warning: Permanently added '100.64.0.26' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-21: grp-g21 (slot-active=grp-g21 on pc-21
+Warning: Permanently added '100.64.0.27' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-22: grp-g22 (slot-active=grp-g22 on pc-22
+Warning: Permanently added '100.64.0.28' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-23: grp-g23 (slot-active=grp-g23 on pc-23
+Warning: Permanently added '100.64.0.29' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-24: grp-g24 (slot-active=grp-g24 on pc-24
+Warning: Permanently added '100.64.0.30' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-25: grp-g25 (slot-active=grp-g25 on pc-25
+Warning: Permanently added '100.64.0.31' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-26: grp-g26 (slot-active=grp-g26 on pc-26
+Warning: Permanently added '100.64.0.32' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-27: grp-g27 (slot-active=grp-g27 on pc-27
+Warning: Permanently added '100.64.0.33' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-28: grp-g28 (slot-active=grp-g28 on pc-28
+Warning: Permanently added '100.64.0.34' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-29: grp-g29 (slot-active=grp-g29 on pc-29
+Warning: Permanently added '100.64.0.35' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-30: grp-g30 (slot-active=grp-g30 on pc-30
+Warning: Permanently added '100.64.0.36' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-31: grp-g31 (slot-active=grp-g31 on pc-31
+Warning: Permanently added '100.64.0.37' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-32: grp-g32 (slot-active=grp-g32 on pc-32
+Warning: Permanently added '100.64.0.38' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-33: grp-g33 (slot-active=grp-g33 on pc-33
+Warning: Permanently added '100.64.0.39' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-34: grp-g34 (slot-active=grp-g34 on pc-34
+Warning: Permanently added '100.64.0.40' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-35: grp-g35 (slot-active=grp-g35 on pc-35
+Warning: Permanently added '100.64.0.41' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-36: grp-g36 (slot-active=grp-g36 on pc-36
+Warning: Permanently added '100.64.0.42' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-37: grp-g37 (slot-active=grp-g37 on pc-37
+Warning: Permanently added '100.64.0.43' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-38: grp-g38 (slot-active=grp-g38 on pc-38
+Warning: Permanently added '100.64.0.44' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-39: grp-g39 (slot-active=grp-g39 on pc-39
+Warning: Permanently added '100.64.0.45' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-40: grp-g40 (slot-active=grp-g40 on pc-40
+Warning: Permanently added '100.64.0.46' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-41: grp-g41 (slot-active=grp-g41 on pc-41
+Warning: Permanently added '100.64.0.47' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-42: grp-g42 (slot-active=grp-g42 on pc-42
+Warning: Permanently added '100.64.0.48' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-43: grp-g43 (slot-active=grp-g43 on pc-43
+Warning: Permanently added '100.64.0.49' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-44: grp-g44 (slot-active=grp-g44 on pc-44
+Warning: Permanently added '100.64.0.50' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-45: grp-g45 (slot-active=grp-g45 on pc-45
+Warning: Permanently added '100.64.0.51' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-46: grp-g46 (slot-active=grp-g46 on pc-46
+Warning: Permanently added '100.64.0.52' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-47: grp-g47 (slot-active=grp-g47 on pc-47
+Warning: Permanently added '100.64.0.53' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-48: grp-g48 (slot-active=grp-g48 on pc-48
+Warning: Permanently added '100.64.0.54' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-49: grp-g49 (slot-active=grp-g49 on pc-49
+Warning: Permanently added '100.64.0.55' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switched,"pc-50: grp-g50 (slot-active=grp-g50 on pc-50
+Warning: Permanently added '100.64.0.56' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:12,PCs join,pc-switch-error,"pc-51: switch to grp-g51 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T06:56:12,PCs join,pc-switch-error,"pc-52: switch to grp-g52 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T06:56:12,PCs join,pc-switch-error,"pc-53: switch to grp-g53 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T06:56:12,PCs join,pc-switch-error,"pc-54: switch to grp-g54 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T06:56:22,students join,pc-switched,"pc-51: grp-g51 (slot-active=grp-g51 on pc-51
+Warning: Permanently added '100.64.0.57' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-52: grp-g52 (slot-active=grp-g52 on pc-52
+Warning: Permanently added '100.64.0.58' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-53: grp-g53 (slot-active=grp-g53 on pc-53
+Warning: Permanently added '100.64.0.59' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-54: grp-g54 (slot-active=grp-g54 on pc-54
+Warning: Permanently added '100.64.0.60' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-55: grp-g55 (slot-active=grp-g55 on pc-55
+Warning: Permanently added '100.64.0.61' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-56: grp-g56 (slot-active=grp-g56 on pc-56
+Warning: Permanently added '100.64.0.62' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-57: grp-g57 (slot-active=grp-g57 on pc-57
+Warning: Permanently added '100.64.0.63' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-58: grp-g01 (slot-active=grp-g01 on pc-58
+Warning: Permanently added '100.64.0.64' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-59: grp-g02 (slot-active=grp-g02 on pc-59
+Warning: Permanently added '100.64.0.65' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-60: grp-g03 (slot-active=grp-g03 on pc-60
+Warning: Permanently added '100.64.0.66' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-61: grp-g04 (slot-active=grp-g04 on pc-61
+Warning: Permanently added '100.64.0.67' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-62: grp-g05 (slot-active=grp-g05 on pc-62
+Warning: Permanently added '100.64.0.68' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-63: grp-g06 (slot-active=grp-g06 on pc-63
+Warning: Permanently added '100.64.0.69' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-64: grp-g07 (slot-active=grp-g07 on pc-64
+Warning: Permanently added '100.64.0.70' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-65: grp-g08 (slot-active=grp-g08 on pc-65
+Warning: Permanently added '100.64.0.71' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-66: - (slot-active=- on pc-66
+Warning: Permanently added '100.64.0.72' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-67: - (slot-active=- on pc-67
+Warning: Permanently added '100.64.0.73' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-68: - (slot-active=- on pc-68
+Warning: Permanently added '100.64.0.74' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-69: - (slot-active=- on pc-69
+Warning: Permanently added '100.64.0.75' (ED25519) to the list of known hosts.)"
+2026-10-22T06:56:22,students join,pc-switched,"pc-70: - (slot-active=- on pc-70
+Warning: Permanently added '100.64.0.76' (ED25519) to the list of known hosts.)"
+2026-10-22T06:59:07,slot change B,policy-applied,"Wed 21 Oct 20:00-08:00: Group 20->pc-1, Group 21->pc-2, Group 22->pc-3, Group 23->pc-4, Group 24->pc-5, Group 25->pc-6, Group 26->pc-7, Group 27->pc-8, Group 28->pc-9, Group 29->pc-10, Group 30->pc-11, Group 31->pc-12, Group 32->pc-13, Group 33->pc-14, Group 34->pc-15, Group 35->pc-16, Group 36->pc-"
+2026-10-22T06:59:23,slot change B,pc-switched,"pc-1: grp-g20 (slot-active=grp-g20 on pc-1
+Warning: Permanently added '100.64.0.7' (ED25519) to the list of known hosts.)"
+2026-10-22T06:59:23,slot change B,pc-switched,pc-10: grp-g29 (slot-active=grp-g29 on pc-10)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-11: grp-g30 (slot-active=grp-g30 on pc-11)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-12: grp-g31 (slot-active=grp-g31 on pc-12)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-13: grp-g32 (slot-active=grp-g32 on pc-13)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-14: grp-g33 (slot-active=grp-g33 on pc-14)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-15: grp-g34 (slot-active=grp-g34 on pc-15)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-16: grp-g35 (slot-active=grp-g35 on pc-16)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-17: grp-g36 (slot-active=grp-g36 on pc-17)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-18: grp-g37 (slot-active=grp-g37 on pc-18)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-19: grp-g38 (slot-active=grp-g38 on pc-19)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-2: grp-g21 (slot-active=grp-g21 on pc-2)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-20: grp-g39 (slot-active=grp-g39 on pc-20)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-21: grp-g40 (slot-active=grp-g40 on pc-21)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-22: grp-g41 (slot-active=grp-g41 on pc-22)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-23: grp-g42 (slot-active=grp-g42 on pc-23)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-24: grp-g43 (slot-active=grp-g43 on pc-24)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-25: grp-g44 (slot-active=grp-g44 on pc-25)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-26: grp-g45 (slot-active=grp-g45 on pc-26)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-27: grp-g46 (slot-active=grp-g46 on pc-27)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-28: grp-g47 (slot-active=grp-g47 on pc-28)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-29: grp-g48 (slot-active=grp-g48 on pc-29)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-3: grp-g22 (slot-active=grp-g22 on pc-3)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-30: grp-g49 (slot-active=grp-g49 on pc-30)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-31: grp-g50 (slot-active=grp-g50 on pc-31)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-32: grp-g51 (slot-active=grp-g51 on pc-32)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-33: grp-g52 (slot-active=grp-g52 on pc-33)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-34: grp-g53 (slot-active=grp-g53 on pc-34)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-35: grp-g54 (slot-active=grp-g54 on pc-35)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-36: grp-g55 (slot-active=grp-g55 on pc-36)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-37: grp-g56 (slot-active=grp-g56 on pc-37)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-38: grp-g57 (slot-active=grp-g57 on pc-38)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-39: grp-g01 (slot-active=grp-g01 on pc-39)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-4: grp-g23 (slot-active=grp-g23 on pc-4)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-40: grp-g02 (slot-active=grp-g02 on pc-40)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-41: grp-g03 (slot-active=grp-g03 on pc-41)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-42: grp-g04 (slot-active=grp-g04 on pc-42)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-43: grp-g05 (slot-active=grp-g05 on pc-43)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-44: grp-g06 (slot-active=grp-g06 on pc-44)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-45: grp-g07 (slot-active=grp-g07 on pc-45)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-46: grp-g08 (slot-active=grp-g08 on pc-46)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-47: grp-g09 (slot-active=grp-g09 on pc-47)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-48: grp-g10 (slot-active=grp-g10 on pc-48)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-49: grp-g11 (slot-active=grp-g11 on pc-49)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-5: grp-g24 (slot-active=grp-g24 on pc-5)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-50: grp-g12 (slot-active=grp-g12 on pc-50)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-51: grp-g13 (slot-active=grp-g13 on pc-51)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-52: grp-g14 (slot-active=grp-g14 on pc-52)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-53: grp-g15 (slot-active=grp-g15 on pc-53)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-54: grp-g16 (slot-active=grp-g16 on pc-54)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-55: grp-g17 (slot-active=grp-g17 on pc-55)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-56: grp-g18 (slot-active=grp-g18 on pc-56)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-57: grp-g19 (slot-active=grp-g19 on pc-57)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-58: grp-g20 (slot-active=grp-g20 on pc-58)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-59: grp-g21 (slot-active=grp-g21 on pc-59)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-6: grp-g25 (slot-active=grp-g25 on pc-6)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-60: grp-g22 (slot-active=grp-g22 on pc-60)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-61: grp-g23 (slot-active=grp-g23 on pc-61)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-62: grp-g24 (slot-active=grp-g24 on pc-62)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-63: grp-g25 (slot-active=grp-g25 on pc-63)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-64: grp-g26 (slot-active=grp-g26 on pc-64)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-65: grp-g27 (slot-active=grp-g27 on pc-65)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-7: grp-g26 (slot-active=grp-g26 on pc-7)
+2026-10-22T06:59:23,slot change B,pc-switched,pc-8: grp-g27 (slot-active=grp-g27 on pc-8)
+2026-10-22T06:59:23,slot change B,pc-switch-error,"pc-9: switch to grp-g28 failed: Connection timed out during banner exchange
+Connection to UNKNOWN port 65535 timed out"
+2026-10-22T06:59:25,slot change B,pc-switched,pc-9: grp-g28 (slot-active=grp-g28 on pc-9)
+2026-10-22T07:03:25,slot change C,policy-applied,"Wed 21 Oct 20:00-08:00: Group 01->pc-1, Group 01->pc-2, Group 02->pc-3, Group 02->pc-4, Group 03->pc-5, Group 03->pc-6, Group 04->pc-7, Group 04->pc-8, Group 05->pc-9, Group 05->pc-10, Group 06->pc-11, Group 06->pc-12, Group 07->pc-13, Group 07->pc-14, Group 08->pc-15, Group 08->pc-16, Group 09->pc-"
+2026-10-22T07:03:26,slot change C,device-removed,"s31-a (s31@stress.test, id 107)"
+2026-10-22T07:03:27,slot change C,device-removed,"s32-a (s32@stress.test, id 108)"
+2026-10-22T07:03:28,slot change C,device-removed,"s33-a (s33@stress.test, id 109)"
+2026-10-22T07:03:28,slot change C,device-removed,"s34-a (s34@stress.test, id 110)"
+2026-10-22T07:03:29,slot change C,device-removed,"s35-a (s35@stress.test, id 111)"
+2026-10-22T07:03:30,slot change C,device-removed,"s36-a (s36@stress.test, id 112)"
+2026-10-22T07:03:31,slot change C,device-removed,"s37-a (s37@stress.test, id 113)"
+2026-10-22T07:03:32,slot change C,device-removed,"s38-a (s38@stress.test, id 114)"
+2026-10-22T07:03:33,slot change C,device-removed,"s39-a (s39@stress.test, id 115)"
+2026-10-22T07:03:33,slot change C,device-removed,"s40-a (s40@stress.test, id 116)"
+2026-10-22T07:03:35,slot change C,device-removed,"s41-a (s41@stress.test, id 117)"
+2026-10-22T07:03:35,slot change C,device-removed,"s42-a (s42@stress.test, id 118)"
+2026-10-22T07:03:36,slot change C,device-removed,"s43-a (s43@stress.test, id 119)"
+2026-10-22T07:03:37,slot change C,device-removed,"s44-a (s44@stress.test, id 120)"
+2026-10-22T07:03:38,slot change C,device-removed,"s45-a (s45@stress.test, id 121)"
+2026-10-22T07:03:39,slot change C,device-removed,"s46-a (s46@stress.test, id 122)"
+2026-10-22T07:03:40,slot change C,device-removed,"s47-a (s47@stress.test, id 123)"
+2026-10-22T07:03:41,slot change C,device-removed,"s48-a (s48@stress.test, id 124)"
+2026-10-22T07:03:42,slot change C,device-removed,"s49-a (s49@stress.test, id 125)"
+2026-10-22T07:03:43,slot change C,device-removed,"s50-a (s50@stress.test, id 126)"
+2026-10-22T07:03:44,slot change C,device-removed,"s51-a (s51@stress.test, id 127)"
+2026-10-22T07:03:45,slot change C,device-removed,"s52-a (s52@stress.test, id 128)"
+2026-10-22T07:03:45,slot change C,device-removed,"s53-a (s53@stress.test, id 129)"
+2026-10-22T07:03:46,slot change C,device-removed,"s54-a (s54@stress.test, id 130)"
+2026-10-22T07:03:47,slot change C,device-removed,"s55-a (s55@stress.test, id 131)"
+2026-10-22T07:03:48,slot change C,device-removed,"s56-a (s56@stress.test, id 132)"
+2026-10-22T07:03:49,slot change C,device-removed,"s57-a (s57@stress.test, id 133)"
+2026-10-22T07:03:51,slot change C,pc-switched,pc-1: grp-g01 (slot-active=grp-g01 on pc-1)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-10: grp-g05 (slot-active=grp-g05 on pc-10)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-11: grp-g06 (slot-active=grp-g06 on pc-11)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-12: grp-g06 (slot-active=grp-g06 on pc-12)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-13: grp-g07 (slot-active=grp-g07 on pc-13)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-14: grp-g07 (slot-active=grp-g07 on pc-14)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-15: grp-g08 (slot-active=grp-g08 on pc-15)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-16: grp-g08 (slot-active=grp-g08 on pc-16)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-17: grp-g09 (slot-active=grp-g09 on pc-17)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-18: grp-g09 (slot-active=grp-g09 on pc-18)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-19: grp-g10 (slot-active=grp-g10 on pc-19)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-2: grp-g01 (slot-active=grp-g01 on pc-2)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-20: grp-g10 (slot-active=grp-g10 on pc-20)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-21: grp-g11 (slot-active=grp-g11 on pc-21)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-22: grp-g11 (slot-active=grp-g11 on pc-22)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-23: grp-g12 (slot-active=grp-g12 on pc-23)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-24: grp-g12 (slot-active=grp-g12 on pc-24)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-25: grp-g13 (slot-active=grp-g13 on pc-25)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-26: grp-g13 (slot-active=grp-g13 on pc-26)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-27: grp-g14 (slot-active=grp-g14 on pc-27)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-28: grp-g14 (slot-active=grp-g14 on pc-28)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-29: grp-g15 (slot-active=grp-g15 on pc-29)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-3: grp-g02 (slot-active=grp-g02 on pc-3)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-30: grp-g15 (slot-active=grp-g15 on pc-30)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-31: grp-g16 (slot-active=grp-g16 on pc-31)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-32: grp-g16 (slot-active=grp-g16 on pc-32)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-33: grp-g17 (slot-active=grp-g17 on pc-33)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-34: grp-g17 (slot-active=grp-g17 on pc-34)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-35: grp-g18 (slot-active=grp-g18 on pc-35)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-36: grp-g18 (slot-active=grp-g18 on pc-36)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-37: grp-g19 (slot-active=grp-g19 on pc-37)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-38: grp-g19 (slot-active=grp-g19 on pc-38)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-39: grp-g20 (slot-active=grp-g20 on pc-39)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-4: grp-g02 (slot-active=grp-g02 on pc-4)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-40: grp-g20 (slot-active=grp-g20 on pc-40)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-41: grp-g21 (slot-active=grp-g21 on pc-41)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-42: grp-g21 (slot-active=grp-g21 on pc-42)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-43: grp-g22 (slot-active=grp-g22 on pc-43)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-44: grp-g22 (slot-active=grp-g22 on pc-44)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-45: grp-g23 (slot-active=grp-g23 on pc-45)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-46: grp-g23 (slot-active=grp-g23 on pc-46)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-47: grp-g24 (slot-active=grp-g24 on pc-47)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-48: grp-g24 (slot-active=grp-g24 on pc-48)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-49: grp-g25 (slot-active=grp-g25 on pc-49)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-5: grp-g03 (slot-active=grp-g03 on pc-5)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-50: grp-g25 (slot-active=grp-g25 on pc-50)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-51: grp-g26 (slot-active=grp-g26 on pc-51)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-52: grp-g26 (slot-active=grp-g26 on pc-52)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-53: grp-g27 (slot-active=grp-g27 on pc-53)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-54: grp-g27 (slot-active=grp-g27 on pc-54)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-55: grp-g28 (slot-active=grp-g28 on pc-55)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-56: grp-g28 (slot-active=grp-g28 on pc-56)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-57: grp-g29 (slot-active=grp-g29 on pc-57)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-58: grp-g29 (slot-active=grp-g29 on pc-58)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-59: grp-g30 (slot-active=grp-g30 on pc-59)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-6: grp-g03 (slot-active=grp-g03 on pc-6)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-60: grp-g30 (slot-active=grp-g30 on pc-60)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-61: - (slot-active=- on pc-61)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-62: - (slot-active=- on pc-62)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-63: - (slot-active=- on pc-63)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-64: - (slot-active=- on pc-64)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-65: - (slot-active=- on pc-65)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-7: grp-g04 (slot-active=grp-g04 on pc-7)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-8: grp-g04 (slot-active=grp-g04 on pc-8)
+2026-10-22T07:03:51,slot change C,pc-switched,pc-9: grp-g05 (slot-active=grp-g05 on pc-9)
+2026-10-22T07:08:23,slot change D,policy-applied,"Wed 21 Oct 20:00-08:00: Group 28->pc-1, Group 28->pc-2, Group 29->pc-3, Group 29->pc-4, Group 30->pc-5, Group 30->pc-6, Group 31->pc-7, Group 31->pc-8, Group 32->pc-9, Group 32->pc-10, Group 33->pc-11, Group 33->pc-12, Group 34->pc-13, Group 34->pc-14, Group 35->pc-15, Group 35->pc-16, Group 36->pc-"
+2026-10-22T07:08:24,slot change D,device-removed,"s01-a (s01@stress.test, id 77)"
+2026-10-22T07:08:24,slot change D,device-removed,"s02-a (s02@stress.test, id 78)"
+2026-10-22T07:08:25,slot change D,device-removed,"s03-a (s03@stress.test, id 79)"
+2026-10-22T07:08:26,slot change D,device-removed,"s04-a (s04@stress.test, id 80)"
+2026-10-22T07:08:27,slot change D,device-removed,"s05-a (s05@stress.test, id 81)"
+2026-10-22T07:08:28,slot change D,device-removed,"s06-a (s06@stress.test, id 82)"
+2026-10-22T07:08:29,slot change D,device-removed,"s07-a (s07@stress.test, id 83)"
+2026-10-22T07:08:30,slot change D,device-removed,"s08-a (s08@stress.test, id 84)"
+2026-10-22T07:08:31,slot change D,device-removed,"s09-a (s09@stress.test, id 85)"
+2026-10-22T07:08:31,slot change D,device-removed,"s10-a (s10@stress.test, id 86)"
+2026-10-22T07:08:32,slot change D,device-removed,"s11-a (s11@stress.test, id 87)"
+2026-10-22T07:08:33,slot change D,device-removed,"s12-a (s12@stress.test, id 88)"
+2026-10-22T07:08:34,slot change D,device-removed,"s13-a (s13@stress.test, id 89)"
+2026-10-22T07:08:35,slot change D,device-removed,"s14-a (s14@stress.test, id 90)"
+2026-10-22T07:08:36,slot change D,device-removed,"s15-a (s15@stress.test, id 91)"
+2026-10-22T07:08:37,slot change D,device-removed,"s16-a (s16@stress.test, id 92)"
+2026-10-22T07:08:37,slot change D,device-removed,"s17-a (s17@stress.test, id 93)"
+2026-10-22T07:08:38,slot change D,device-removed,"s18-a (s18@stress.test, id 94)"
+2026-10-22T07:08:38,slot change D,device-removed,"s19-a (s19@stress.test, id 95)"
+2026-10-22T07:08:39,slot change D,device-removed,"s20-a (s20@stress.test, id 96)"
+2026-10-22T07:08:40,slot change D,device-removed,"s21-a (s21@stress.test, id 97)"
+2026-10-22T07:08:40,slot change D,device-removed,"s22-a (s22@stress.test, id 98)"
+2026-10-22T07:08:41,slot change D,device-removed,"s23-a (s23@stress.test, id 99)"
+2026-10-22T07:08:42,slot change D,device-removed,"s24-a (s24@stress.test, id 100)"
+2026-10-22T07:08:43,slot change D,device-removed,"s25-a (s25@stress.test, id 101)"
+2026-10-22T07:08:44,slot change D,device-removed,"s26-a (s26@stress.test, id 102)"
+2026-10-22T07:08:45,slot change D,device-removed,"s27-a (s27@stress.test, id 103)"
+2026-10-22T07:08:46,slot change D,device-removed,"s58-a (s58@stress.test, id 134)"
+2026-10-22T07:08:47,slot change D,device-removed,"s59-a (s59@stress.test, id 135)"
+2026-10-22T07:08:48,slot change D,device-removed,"s60-a (s60@stress.test, id 136)"
+2026-10-22T07:08:49,slot change D,device-removed,"s61-a (s61@stress.test, id 137)"
+2026-10-22T07:08:50,slot change D,device-removed,"s62-a (s62@stress.test, id 138)"
+2026-10-22T07:08:51,slot change D,device-removed,"s63-a (s63@stress.test, id 139)"
+2026-10-22T07:08:52,slot change D,device-removed,"s64-a (s64@stress.test, id 140)"
+2026-10-22T07:08:52,slot change D,device-removed,"s65-a (s65@stress.test, id 141)"
+2026-10-22T07:08:53,slot change D,device-removed,"s66-a (s66@stress.test, id 142)"
+2026-10-22T07:08:54,slot change D,device-removed,"s67-a (s67@stress.test, id 143)"
+2026-10-22T07:08:54,slot change D,device-removed,"s68-a (s68@stress.test, id 144)"
+2026-10-22T07:08:55,slot change D,device-removed,"s69-a (s69@stress.test, id 145)"
+2026-10-22T07:08:56,slot change D,device-removed,"s70-a (s70@stress.test, id 146)"
+2026-10-22T07:08:57,slot change D,device-removed,"s71-a (s71@stress.test, id 147)"
+2026-10-22T07:08:58,slot change D,device-removed,"s72-a (s72@stress.test, id 148)"
+2026-10-22T07:08:59,slot change D,device-removed,"s73-a (s73@stress.test, id 149)"
+2026-10-22T07:08:59,slot change D,device-removed,"s74-a (s74@stress.test, id 150)"
+2026-10-22T07:09:00,slot change D,device-removed,"s75-a (s75@stress.test, id 151)"
+2026-10-22T07:09:00,slot change D,device-removed,"s76-a (s76@stress.test, id 152)"
+2026-10-22T07:09:01,slot change D,device-removed,"s77-a (s77@stress.test, id 153)"
+2026-10-22T07:09:01,slot change D,device-removed,"s78-a (s78@stress.test, id 154)"
+2026-10-22T07:09:02,slot change D,device-removed,"s79-a (s79@stress.test, id 155)"
+2026-10-22T07:09:02,slot change D,device-removed,"s80-a (s80@stress.test, id 156)"
+2026-10-22T07:09:04,slot change D,pc-switched,pc-1: grp-g28 (slot-active=grp-g28 on pc-1)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-10: grp-g32 (slot-active=grp-g32 on pc-10)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-11: grp-g33 (slot-active=grp-g33 on pc-11)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-12: grp-g33 (slot-active=grp-g33 on pc-12)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-13: grp-g34 (slot-active=grp-g34 on pc-13)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-14: grp-g34 (slot-active=grp-g34 on pc-14)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-15: grp-g35 (slot-active=grp-g35 on pc-15)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-16: grp-g35 (slot-active=grp-g35 on pc-16)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-17: grp-g36 (slot-active=grp-g36 on pc-17)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-18: grp-g36 (slot-active=grp-g36 on pc-18)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-19: grp-g37 (slot-active=grp-g37 on pc-19)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-2: grp-g28 (slot-active=grp-g28 on pc-2)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-20: grp-g37 (slot-active=grp-g37 on pc-20)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-21: grp-g38 (slot-active=grp-g38 on pc-21)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-22: grp-g38 (slot-active=grp-g38 on pc-22)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-23: grp-g39 (slot-active=grp-g39 on pc-23)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-24: grp-g39 (slot-active=grp-g39 on pc-24)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-25: grp-g40 (slot-active=grp-g40 on pc-25)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-26: grp-g40 (slot-active=grp-g40 on pc-26)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-27: grp-g41 (slot-active=grp-g41 on pc-27)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-28: grp-g41 (slot-active=grp-g41 on pc-28)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-29: grp-g42 (slot-active=grp-g42 on pc-29)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-3: grp-g29 (slot-active=grp-g29 on pc-3)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-30: grp-g42 (slot-active=grp-g42 on pc-30)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-31: grp-g43 (slot-active=grp-g43 on pc-31)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-32: grp-g43 (slot-active=grp-g43 on pc-32)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-33: grp-g44 (slot-active=grp-g44 on pc-33)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-34: grp-g44 (slot-active=grp-g44 on pc-34)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-35: grp-g45 (slot-active=grp-g45 on pc-35)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-36: grp-g45 (slot-active=grp-g45 on pc-36)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-37: grp-g46 (slot-active=grp-g46 on pc-37)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-38: grp-g46 (slot-active=grp-g46 on pc-38)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-39: grp-g47 (slot-active=grp-g47 on pc-39)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-4: grp-g29 (slot-active=grp-g29 on pc-4)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-40: grp-g47 (slot-active=grp-g47 on pc-40)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-41: grp-g48 (slot-active=grp-g48 on pc-41)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-42: grp-g48 (slot-active=grp-g48 on pc-42)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-43: grp-g49 (slot-active=grp-g49 on pc-43)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-44: grp-g49 (slot-active=grp-g49 on pc-44)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-45: grp-g50 (slot-active=grp-g50 on pc-45)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-46: grp-g50 (slot-active=grp-g50 on pc-46)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-47: grp-g51 (slot-active=grp-g51 on pc-47)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-48: grp-g51 (slot-active=grp-g51 on pc-48)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-49: grp-g52 (slot-active=grp-g52 on pc-49)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-5: grp-g30 (slot-active=grp-g30 on pc-5)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-50: grp-g52 (slot-active=grp-g52 on pc-50)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-51: grp-g53 (slot-active=grp-g53 on pc-51)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-52: grp-g53 (slot-active=grp-g53 on pc-52)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-53: grp-g54 (slot-active=grp-g54 on pc-53)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-54: grp-g54 (slot-active=grp-g54 on pc-54)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-55: grp-g55 (slot-active=grp-g55 on pc-55)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-56: grp-g55 (slot-active=grp-g55 on pc-56)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-57: grp-g56 (slot-active=grp-g56 on pc-57)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-58: grp-g56 (slot-active=grp-g56 on pc-58)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-59: grp-g57 (slot-active=grp-g57 on pc-59)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-6: grp-g30 (slot-active=grp-g30 on pc-6)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-60: grp-g57 (slot-active=grp-g57 on pc-60)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-7: grp-g31 (slot-active=grp-g31 on pc-7)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-8: grp-g31 (slot-active=grp-g31 on pc-8)
+2026-10-22T07:09:04,slot change D,pc-switched,pc-9: grp-g32 (slot-active=grp-g32 on pc-9)
+2026-10-22T07:12:35,slot change E,policy-applied,"Wed 21 Oct 20:00-08:00: Group 08->pc-1, Group 09->pc-2, Group 10->pc-3, Group 11->pc-4, Group 12->pc-5, Group 13->pc-6, Group 14->pc-7, Group 15->pc-8, Group 16->pc-9, Group 17->pc-10, Group 18->pc-11, Group 19->pc-12, Group 20->pc-13, Group 21->pc-14, Group 22->pc-15, Group 23->pc-16, Group 24->pc-"
+2026-10-22T07:12:41,slot change E,pc-switched,pc-1: grp-g08 (slot-active=grp-g08 on pc-1)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-10: grp-g17 (slot-active=grp-g17 on pc-10)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-11: grp-g18 (slot-active=grp-g18 on pc-11)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-12: grp-g19 (slot-active=grp-g19 on pc-12)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-13: grp-g20 (slot-active=grp-g20 on pc-13)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-14: grp-g21 (slot-active=grp-g21 on pc-14)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-15: grp-g22 (slot-active=grp-g22 on pc-15)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-16: grp-g23 (slot-active=grp-g23 on pc-16)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-17: grp-g24 (slot-active=grp-g24 on pc-17)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-18: grp-g25 (slot-active=grp-g25 on pc-18)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-19: grp-g26 (slot-active=grp-g26 on pc-19)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-2: grp-g09 (slot-active=grp-g09 on pc-2)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-20: grp-g27 (slot-active=grp-g27 on pc-20)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-21: grp-g28 (slot-active=grp-g28 on pc-21)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-22: grp-g29 (slot-active=grp-g29 on pc-22)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-23: grp-g30 (slot-active=grp-g30 on pc-23)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-24: grp-g31 (slot-active=grp-g31 on pc-24)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-25: grp-g32 (slot-active=grp-g32 on pc-25)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-26: grp-g33 (slot-active=grp-g33 on pc-26)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-27: grp-g34 (slot-active=grp-g34 on pc-27)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-28: grp-g35 (slot-active=grp-g35 on pc-28)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-29: grp-g36 (slot-active=grp-g36 on pc-29)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-3: grp-g10 (slot-active=grp-g10 on pc-3)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-30: grp-g37 (slot-active=grp-g37 on pc-30)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-31: grp-g38 (slot-active=grp-g38 on pc-31)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-32: grp-g39 (slot-active=grp-g39 on pc-32)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-33: grp-g40 (slot-active=grp-g40 on pc-33)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-34: grp-g41 (slot-active=grp-g41 on pc-34)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-35: grp-g42 (slot-active=grp-g42 on pc-35)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-36: grp-g43 (slot-active=grp-g43 on pc-36)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-37: grp-g44 (slot-active=grp-g44 on pc-37)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-38: grp-g45 (slot-active=grp-g45 on pc-38)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-39: grp-g46 (slot-active=grp-g46 on pc-39)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-4: grp-g11 (slot-active=grp-g11 on pc-4)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-42: grp-g49 (slot-active=grp-g49 on pc-42)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-43: grp-g50 (slot-active=grp-g50 on pc-43)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-44: grp-g51 (slot-active=grp-g51 on pc-44)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-45: grp-g52 (slot-active=grp-g52 on pc-45)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-46: grp-g53 (slot-active=grp-g53 on pc-46)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-47: grp-g54 (slot-active=grp-g54 on pc-47)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-48: grp-g55 (slot-active=grp-g55 on pc-48)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-49: grp-g56 (slot-active=grp-g56 on pc-49)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-5: grp-g12 (slot-active=grp-g12 on pc-5)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-50: grp-g57 (slot-active=grp-g57 on pc-50)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-51: grp-g01 (slot-active=grp-g01 on pc-51)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-52: grp-g02 (slot-active=grp-g02 on pc-52)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-53: grp-g03 (slot-active=grp-g03 on pc-53)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-54: grp-g04 (slot-active=grp-g04 on pc-54)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-55: grp-g05 (slot-active=grp-g05 on pc-55)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-56: grp-g06 (slot-active=grp-g06 on pc-56)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-57: grp-g07 (slot-active=grp-g07 on pc-57)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-58: grp-g08 (slot-active=grp-g08 on pc-58)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-59: grp-g09 (slot-active=grp-g09 on pc-59)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-6: grp-g13 (slot-active=grp-g13 on pc-6)
+2026-10-22T07:12:41,slot change E,pc-switch-error,"pc-60: switch to grp-g10 failed: nc: connection failed, SOCKSv5 error: General SOCKS server failure
+Connection closed by UNKNOWN port 65535"
+2026-10-22T07:12:41,slot change E,pc-switched,pc-61: grp-g11 (slot-active=grp-g11 on pc-61)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-62: grp-g12 (slot-active=grp-g12 on pc-62)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-63: grp-g13 (slot-active=grp-g13 on pc-63)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-64: grp-g14 (slot-active=grp-g14 on pc-64)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-65: grp-g15 (slot-active=grp-g15 on pc-65)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-7: grp-g14 (slot-active=grp-g14 on pc-7)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-8: grp-g15 (slot-active=grp-g15 on pc-8)
+2026-10-22T07:12:41,slot change E,pc-switched,pc-9: grp-g16 (slot-active=grp-g16 on pc-9)
+2026-10-22T07:12:53,slot change E,pc-switched,pc-60: grp-g10 (slot-active=grp-g10 on pc-60)

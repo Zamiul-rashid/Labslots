@@ -1,0 +1,13 @@
+key,value
+server side,stress CT 190 on proxmox: 4 cores; 4096 MB
+headscale,v0.29.3
+tailscale,tailscale/tailscale:v1.102.3
+front,https://10.0.0.10:8443 (fwd.py on host-a)
+pcs,70 (Docker on host-a)
+groups,140
+students,700
+devices per student,2
+device clean-up,off for the whole run
+device machine,host-a: 16 cores, floor 2500 MB
+device machine,host-c: 8 cores, floor 4000 MB
+device machine,host-b: 8 cores, floor 1200 MB

@@ -1,0 +1,272 @@
+time,phase,call,ms,nodes,online
+2026-10-22T06:56:13,PCs join,list nodes,74,71,70
+2026-10-22T06:56:16,PCs join,list nodes,53,71,71
+2026-10-22T06:56:58,students join,list nodes,97,151,149
+2026-10-22T06:57:01,students join,list nodes,55,151,151
+2026-10-22T06:57:02,steady (150 devices),list nodes,64,151,151
+2026-10-22T06:57:02,steady (150 devices),list nodes,109,151,151
+2026-10-22T06:57:07,steady (150 devices),list nodes,59,151,151
+2026-10-22T06:57:12,steady (150 devices),list nodes,57,151,151
+2026-10-22T06:57:17,steady (150 devices),list nodes,55,151,151
+2026-10-22T06:57:22,steady (150 devices),list nodes,57,151,151
+2026-10-22T06:57:28,steady (150 devices),list nodes,55,151,151
+2026-10-22T06:57:33,steady (150 devices),list nodes,56,151,151
+2026-10-22T06:57:33,steady (150 devices),list nodes,56,151,151
+2026-10-22T06:57:38,steady (150 devices),list nodes,59,151,151
+2026-10-22T06:57:43,steady (150 devices),list nodes,56,151,151
+2026-10-22T06:57:48,steady (150 devices),list nodes,55,151,151
+2026-10-22T06:57:53,steady (150 devices),list nodes,57,151,151
+2026-10-22T06:57:58,steady (150 devices),list nodes,56,151,151
+2026-10-22T06:58:04,steady (150 devices),list nodes,56,151,151
+2026-10-22T06:58:05,steady (150 devices),list nodes,55,151,151
+2026-10-22T06:58:09,steady (150 devices),list nodes,56,151,151
+2026-10-22T06:58:14,steady (150 devices),list nodes,58,151,151
+2026-10-22T06:58:19,steady (150 devices),list nodes,59,151,151
+2026-10-22T06:58:24,steady (150 devices),list nodes,56,151,151
+2026-10-22T06:58:29,steady (150 devices),list nodes,57,151,151
+2026-10-22T06:58:34,steady (150 devices),list nodes,57,151,151
+2026-10-22T06:58:36,steady (150 devices),list nodes,56,151,151
+2026-10-22T06:58:39,steady (150 devices),list nodes,56,151,151
+2026-10-22T06:58:45,steady (150 devices),list nodes,56,151,151
+2026-10-22T06:58:50,steady (150 devices),list nodes,56,151,151
+2026-10-22T06:58:55,steady (150 devices),list nodes,56,151,151
+2026-10-22T06:59:00,steady (150 devices),list nodes,56,151,151
+2026-10-22T06:59:05,slot change B,list nodes,58,151,151
+2026-10-22T06:59:08,slot change B,list nodes,65,151,151
+2026-10-22T06:59:10,slot change B,list nodes,61,151,151
+2026-10-22T06:59:15,slot change B,list nodes,57,151,151
+2026-10-22T06:59:21,slot change B,list nodes,56,151,151
+2026-10-22T06:59:26,slot change B,list nodes,56,151,151
+2026-10-22T06:59:31,slot change B,list nodes,56,151,151
+2026-10-22T06:59:36,slot change B,list nodes,56,151,151
+2026-10-22T06:59:39,slot change B,list nodes,55,151,151
+2026-10-22T06:59:41,slot change B,list nodes,56,151,151
+2026-10-22T06:59:46,slot change B,list nodes,56,151,151
+2026-10-22T06:59:51,slot change B,list nodes,56,151,151
+2026-10-22T06:59:56,slot change B,list nodes,56,151,151
+2026-10-22T07:00:02,slot change B,list nodes,57,151,151
+2026-10-22T07:00:07,slot change B,list nodes,56,151,151
+2026-10-22T07:00:11,churn,list nodes,57,151,151
+2026-10-22T07:00:12,churn,list nodes,67,151,151
+2026-10-22T07:00:17,churn,list nodes,56,151,151
+2026-10-22T07:00:22,churn,list nodes,57,151,151
+2026-10-22T07:00:27,churn,list nodes,60,151,151
+2026-10-22T07:00:32,churn,list nodes,56,151,151
+2026-10-22T07:00:38,churn,list nodes,56,151,151
+2026-10-22T07:00:42,churn,list nodes,58,151,151
+2026-10-22T07:00:43,churn,list nodes,55,151,151
+2026-10-22T07:00:48,churn,list nodes,59,151,151
+2026-10-22T07:00:53,churn,list nodes,60,151,151
+2026-10-22T07:00:58,churn,list nodes,55,151,151
+2026-10-22T07:01:03,churn,list nodes,58,151,151
+2026-10-22T07:01:09,churn,list nodes,80,151,151
+2026-10-22T07:01:14,churn,list nodes,56,151,151
+2026-10-22T07:01:14,churn,list nodes,56,151,151
+2026-10-22T07:01:19,churn,list nodes,56,151,151
+2026-10-22T07:01:24,churn,list nodes,58,151,151
+2026-10-22T07:01:29,churn,list nodes,58,151,151
+2026-10-22T07:01:34,churn,list nodes,58,151,151
+2026-10-22T07:01:39,churn,list nodes,56,151,151
+2026-10-22T07:01:45,churn,list nodes,64,151,151
+2026-10-22T07:01:45,churn,list nodes,55,151,151
+2026-10-22T07:01:50,churn,list nodes,56,151,151
+2026-10-22T07:01:55,churn,list nodes,55,151,151
+2026-10-22T07:02:00,churn,list nodes,59,151,151
+2026-10-22T07:02:05,churn,list nodes,60,151,151
+2026-10-22T07:02:10,churn,list nodes,57,151,151
+2026-10-22T07:02:15,churn,list nodes,56,151,151
+2026-10-22T07:02:17,churn,list nodes,57,151,151
+2026-10-22T07:02:21,churn,list nodes,58,151,151
+2026-10-22T07:02:26,churn,list nodes,55,151,151
+2026-10-22T07:02:31,churn,list nodes,55,151,151
+2026-10-22T07:02:36,churn,list nodes,59,151,151
+2026-10-22T07:02:41,churn,list nodes,63,151,151
+2026-10-22T07:02:46,churn,list nodes,56,151,151
+2026-10-22T07:02:48,churn,list nodes,55,151,151
+2026-10-22T07:02:51,churn,list nodes,56,151,151
+2026-10-22T07:02:57,churn,list nodes,58,151,151
+2026-10-22T07:03:02,churn,list nodes,58,151,151
+2026-10-22T07:03:07,churn,list nodes,56,151,151
+2026-10-22T07:03:11,slot change C,list nodes,56,151,151
+2026-10-22T07:03:12,slot change C,list nodes,60,151,151
+2026-10-22T07:03:17,slot change C,list nodes,57,151,151
+2026-10-22T07:03:20,slot change C,list nodes,55,151,151
+2026-10-22T07:03:22,slot change C,list nodes,65,151,151
+2026-10-22T07:03:27,slot change C,list nodes,57,148,148
+2026-10-22T07:03:33,slot change C,list nodes,57,142,142
+2026-10-22T07:03:39,slot change C,list nodes,89,135,135
+2026-10-22T07:03:45,slot change C,list nodes,55,129,129
+2026-10-22T07:03:49,slot change C,list nodes,55,124,124
+2026-10-22T07:03:51,slot change C,list nodes,84,124,124
+2026-10-22T07:03:56,slot change C,list nodes,55,124,124
+2026-10-22T07:04:02,slot change C,list nodes,58,124,124
+2026-10-22T07:04:07,slot change C,list nodes,55,124,124
+2026-10-22T07:04:11,slot change C,list nodes,57,124,124
+2026-10-22T07:04:12,slot change C,list nodes,67,124,124
+2026-10-22T07:04:17,slot change C,list nodes,58,124,124
+2026-10-22T07:04:22,slot change C,list nodes,55,124,124
+2026-10-22T07:04:27,slot change C,list nodes,55,124,124
+2026-10-22T07:04:32,slot change C,list nodes,57,124,124
+2026-10-22T07:04:33,slot change C,list nodes,58,124,124
+2026-10-22T07:04:38,slot change C,list nodes,55,124,124
+2026-10-22T07:04:43,slot change C,list nodes,56,124,124
+2026-10-22T07:04:48,slot change C,list nodes,62,124,124
+2026-10-22T07:04:53,slot change C,list nodes,55,124,124
+2026-10-22T07:04:54,slot change C,list nodes,53,124,124
+2026-10-22T07:04:58,slot change C,list nodes,65,124,124
+2026-10-22T07:05:03,slot change C,list nodes,58,124,124
+2026-10-22T07:05:08,slot change C,list nodes,55,124,124
+2026-10-22T07:05:14,slot change C,list nodes,55,124,124
+2026-10-22T07:05:15,slot change C,list nodes,56,124,124
+2026-10-22T07:05:19,slot change C,list nodes,56,124,124
+2026-10-22T07:05:24,slot change C,list nodes,55,124,124
+2026-10-22T07:05:29,slot change C,list nodes,55,124,124
+2026-10-22T07:05:34,slot change C,list nodes,55,124,124
+2026-10-22T07:05:37,slot change C,list nodes,56,124,124
+2026-10-22T07:05:39,slot change C,list nodes,55,124,124
+2026-10-22T07:05:44,slot change C,list nodes,54,124,124
+2026-10-22T07:05:49,slot change C,list nodes,57,124,124
+2026-10-22T07:05:55,slot change C,list nodes,55,124,124
+2026-10-22T07:05:58,slot change C,list nodes,54,124,124
+2026-10-22T07:06:00,slot change C,list nodes,54,124,124
+2026-10-22T07:06:05,slot change C,list nodes,59,124,124
+2026-10-22T07:06:10,slot change C,list nodes,56,124,124
+2026-10-22T07:06:15,slot change C,list nodes,55,124,124
+2026-10-22T07:06:20,slot change C,list nodes,56,124,124
+2026-10-22T07:06:20,slot change C,list nodes,55,124,124
+2026-10-22T07:06:25,slot change C,list nodes,56,124,124
+2026-10-22T07:06:31,slot change C,list nodes,59,124,124
+2026-10-22T07:06:36,slot change C,list nodes,58,124,124
+2026-10-22T07:06:41,slot change C,list nodes,61,124,124
+2026-10-22T07:06:41,slot change C,list nodes,53,124,124
+2026-10-22T07:06:46,slot change C,list nodes,55,124,124
+2026-10-22T07:06:51,slot change C,list nodes,57,124,124
+2026-10-22T07:06:56,slot change C,list nodes,61,124,124
+2026-10-22T07:07:01,slot change C,list nodes,56,124,124
+2026-10-22T07:07:03,slot change C,list nodes,55,124,124
+2026-10-22T07:07:06,slot change C,list nodes,55,124,124
+2026-10-22T07:07:12,slot change C,list nodes,61,124,124
+2026-10-22T07:07:17,slot change C,list nodes,55,124,124
+2026-10-22T07:07:22,slot change C,list nodes,55,124,124
+2026-10-22T07:07:24,slot change C,list nodes,54,124,124
+2026-10-22T07:07:27,slot change C,list nodes,55,124,124
+2026-10-22T07:07:32,slot change C,list nodes,55,124,124
+2026-10-22T07:07:37,slot change C,list nodes,55,124,124
+2026-10-22T07:07:42,slot change C,list nodes,55,124,124
+2026-10-22T07:07:46,slot change C,list nodes,54,124,124
+2026-10-22T07:07:47,slot change C,list nodes,55,124,124
+2026-10-22T07:07:53,slot change C,list nodes,56,124,124
+2026-10-22T07:07:58,slot change C,list nodes,55,124,124
+2026-10-22T07:08:03,slot change C,list nodes,55,124,124
+2026-10-22T07:08:07,slot change C,list nodes,54,124,124
+2026-10-22T07:08:08,slot change C,list nodes,55,124,124
+2026-10-22T07:08:11,slot change D,list nodes,54,124,124
+2026-10-22T07:08:13,slot change D,list nodes,59,124,124
+2026-10-22T07:08:17,slot change D,list nodes,54,124,124
+2026-10-22T07:08:18,slot change D,list nodes,57,124,124
+2026-10-22T07:08:23,slot change D,list nodes,55,123,123
+2026-10-22T07:08:23,slot change D,list nodes,58,123,123
+2026-10-22T07:08:29,slot change D,list nodes,56,118,118
+2026-10-22T07:08:29,slot change D,list nodes,66,117,117
+2026-10-22T07:08:29,slot change D,list nodes,69,117,117
+2026-10-22T07:08:35,slot change D,list nodes,56,113,113
+2026-10-22T07:08:36,slot change D,list nodes,59,113,113
+2026-10-22T07:08:42,slot change D,list nodes,53,112,112
+2026-10-22T07:08:43,slot change D,list nodes,57,110,110
+2026-10-22T07:08:48,slot change D,list nodes,53,109,109
+2026-10-22T07:08:49,slot change D,list nodes,54,108,108
+2026-10-22T07:08:50,slot change D,list nodes,56,107,107
+2026-10-22T07:08:54,slot change D,list nodes,54,106,105
+2026-10-22T07:08:57,slot change D,list nodes,55,102,102
+2026-10-22T07:09:00,slot change D,list nodes,54,103,98
+2026-10-22T07:09:04,slot change D,list nodes,55,98,98
+2026-10-22T07:09:06,slot change D,list nodes,53,98,98
+2026-10-22T07:09:09,slot change D,list nodes,54,101,101
+2026-10-22T07:09:10,slot change D,list nodes,54,101,101
+2026-10-22T07:09:12,slot change D,list nodes,58,101,101
+2026-10-22T07:09:16,slot change D,list nodes,54,101,101
+2026-10-22T07:09:21,slot change D,list nodes,54,101,101
+2026-10-22T07:09:26,second device per student,list nodes,54,101,101
+2026-10-22T07:09:29,second device per student,list nodes,53,101,101
+2026-10-22T07:09:31,second device per student,list nodes,54,101,101
+2026-10-22T07:09:36,second device per student,list nodes,55,111,105
+2026-10-22T07:09:41,second device per student,list nodes,56,121,116
+2026-10-22T07:09:46,second device per student,list nodes,55,131,125
+2026-10-22T07:09:49,second device per student,list nodes,55,131,131
+2026-10-22T07:09:52,second device per student,list nodes,55,131,131
+2026-10-22T07:09:57,second device per student,list nodes,55,131,131
+2026-10-22T07:10:02,second device per student,list nodes,55,131,131
+2026-10-22T07:10:07,second device per student,list nodes,57,131,131
+2026-10-22T07:10:12,second device per student,list nodes,56,131,131
+2026-10-22T07:10:14,second device per student,list nodes,55,131,131
+2026-10-22T07:10:17,second device per student,list nodes,55,131,131
+2026-10-22T07:10:22,second device per student,list nodes,56,131,131
+2026-10-22T07:10:28,second device per student,list nodes,55,131,131
+2026-10-22T07:10:33,second device per student,list nodes,56,131,131
+2026-10-22T07:10:38,second device per student,list nodes,55,131,131
+2026-10-22T07:10:40,second device per student,list nodes,55,131,131
+2026-10-22T07:10:43,second device per student,list nodes,56,131,131
+2026-10-22T07:10:48,second device per student,list nodes,56,131,131
+2026-10-22T07:10:53,second device per student,list nodes,55,131,131
+2026-10-22T07:10:54,second device per student,list nodes,54,131,131
+2026-10-22T07:10:58,steady (peak devices),list nodes,55,131,131
+2026-10-22T07:11:04,steady (peak devices),list nodes,55,131,131
+2026-10-22T07:11:05,steady (peak devices),list nodes,54,131,131
+2026-10-22T07:11:09,steady (peak devices),list nodes,54,131,131
+2026-10-22T07:11:14,steady (peak devices),list nodes,55,131,131
+2026-10-22T07:11:19,steady (peak devices),list nodes,55,131,131
+2026-10-22T07:11:24,steady (peak devices),list nodes,56,131,131
+2026-10-22T07:11:29,steady (peak devices),list nodes,55,131,131
+2026-10-22T07:11:30,steady (peak devices),list nodes,55,131,131
+2026-10-22T07:11:35,steady (peak devices),list nodes,58,131,131
+2026-10-22T07:11:40,steady (peak devices),list nodes,55,131,131
+2026-10-22T07:11:45,steady (peak devices),list nodes,55,131,131
+2026-10-22T07:11:50,steady (peak devices),list nodes,55,131,131
+2026-10-22T07:11:55,steady (peak devices),list nodes,58,131,131
+2026-10-22T07:11:56,steady (peak devices),list nodes,54,131,131
+2026-10-22T07:12:00,steady (peak devices),list nodes,55,131,131
+2026-10-22T07:12:05,steady (peak devices),list nodes,56,131,131
+2026-10-22T07:12:11,steady (peak devices),list nodes,55,131,131
+2026-10-22T07:12:16,steady (peak devices),list nodes,59,131,131
+2026-10-22T07:12:21,steady (peak devices),list nodes,59,131,131
+2026-10-22T07:12:21,steady (peak devices),list nodes,60,131,131
+2026-10-22T07:12:25,slot change E,list nodes,55,131,131
+2026-10-22T07:12:26,slot change E,list nodes,61,131,131
+2026-10-22T07:12:31,slot change E,list nodes,57,131,131
+2026-10-22T07:12:31,slot change E,list nodes,60,131,131
+2026-10-22T07:12:37,slot change E,list nodes,69,131,131
+2026-10-22T07:12:37,slot change E,list nodes,55,131,131
+2026-10-22T07:12:42,slot change E,list nodes,60,133,133
+2026-10-22T07:12:43,slot change E,list nodes,56,133,133
+2026-10-22T07:12:48,slot change E,list nodes,55,140,140
+2026-10-22T07:12:49,slot change E,list nodes,55,140,140
+2026-10-22T07:12:49,slot change E,list nodes,60,140,140
+2026-10-22T07:12:55,slot change E,list nodes,58,147,147
+2026-10-22T07:12:56,slot change E,list nodes,56,147,147
+2026-10-22T07:13:01,slot change E,list nodes,56,153,153
+2026-10-22T07:13:02,slot change E,list nodes,55,153,153
+2026-10-22T07:13:07,slot change E,list nodes,54,158,158
+2026-10-22T07:13:09,slot change E,list nodes,60,158,158
+2026-10-22T07:13:13,slot change E,list nodes,56,163,163
+2026-10-22T07:13:15,slot change E,list nodes,56,163,163
+2026-10-22T07:13:16,slot change E,list nodes,57,163,163
+2026-10-22T07:13:19,slot change E,list nodes,54,168,168
+2026-10-22T07:13:22,slot change E,list nodes,62,168,168
+2026-10-22T07:13:25,slot change E,list nodes,66,176,171
+2026-10-22T07:13:30,slot change E,list nodes,57,179,179
+2026-10-22T07:13:31,slot change E,list nodes,59,179,179
+2026-10-22T07:13:36,slot change E,list nodes,57,181,181
+2026-10-22T07:13:37,slot change E,list nodes,58,181,181
+2026-10-22T07:13:41,cool down,list nodes,57,181,181
+2026-10-22T07:13:46,cool down,list nodes,59,181,181
+2026-10-22T07:13:51,cool down,list nodes,56,181,181
+2026-10-22T07:13:52,cool down,list nodes,60,181,181
+2026-10-22T07:13:56,cool down,list nodes,56,181,181
+2026-10-22T07:14:02,cool down,list nodes,72,181,181
+2026-10-22T07:14:07,cool down,list nodes,58,181,181
+2026-10-22T07:14:12,cool down,list nodes,62,181,181
+2026-10-22T07:14:17,cool down,list nodes,57,181,181
+2026-10-22T07:14:22,cool down,list nodes,60,181,181
+2026-10-22T07:14:28,cool down,list nodes,56,181,181
+2026-10-22T07:14:33,cool down,list nodes,56,181,181
+2026-10-22T07:14:33,cool down,list nodes,55,181,181

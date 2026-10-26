@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}PCs{% endblock %}
+{% block body %}
+<div class="pagehead">
+  <div>
+    <h1>Lab PCs</h1>
+    <p>A lab PC is a tagged Headscale node with its own tag, such as <code>tag:pc-41</code>. PCs are edited in the PCs tab of the {% if sheet %}<a href="{{ sheet.url }}" target="_blank" rel="noopener">Google Sheet</a>{% else %}Google Sheet{% endif %}: name, tag, account switching, notes and server. This page shows their live state.</p>
+  </div>
+  {% if sheet %}<a class="btn primary" href="{{ sheet.url }}" target="_blank" rel="noopener">Edit PCs in the Sheet</a>{% endif %}
+</div>
+<div class="sheet-wrap">
+<table class="sheet list">
+  <thead><tr><th scope="col">Name</th><th scope="col">Tag</th><th scope="col">Server</th><th scope="col">Tailnet</th><th scope="col">Account switching</th><th scope="col">On the PC</th><th scope="col">Notes</th></tr></thead>
+  <tbody>
+  {% for p in pcs %}{% set n = by_tag.get(p.tag) %}{% set st = states.get(p.id) %}
+  <tr class="{{ 'errrow' if st and st.last_error }}">
+    <td><span class="lead">{{ p.name }}</span></td>
+    <td data-label="Tag" class="nowrap"><code>{{ p.tag }}</code></td>
+    <td data-label="Server">{{ server_of(p) }}</td>
+    <td data-label="Tailnet">{% if n %}<span class="dot {{ 'up' if n.online }}"></span>{{ 'Online' if n.online else 'Offline' }} <code class="muted">{{ n.ipv4 }}</code>{% else %}<span class="state-bad">No node has this tag</span>{% endif %}</td>
+    <td data-label="Switching">{{ 'On' if p.ssh_enabled else 'Off' }}</td>
+    <td data-label="On the PC">{% if st and st.last_error %}<span class="state-bad">Switch failed</span><div class="small">{{ st.last_error }}</div>{% elif st %}<code>{{ st.active_account or 'nobody' }}</code>{% else %}<span class="muted">—</span>{% endif %}</td>
+    <td data-label="Notes">{{ p.notes }}</td>
+  </tr>
+  {% else %}
+  <tr><td colspan="7">No PCs yet. Add the first one in the Sheet's PCs tab.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% if unregistered %}<p class="small muted" style="margin-top: var(--s3)">Tagged nodes in Headscale not in the Sheet yet: {% for t in unregistered %}<code>{{ t }}</code>{{ ', ' if not loop.last }}{% endfor %}</p>{% endif %}
+
+<section class="section" style="margin-top: var(--s8)">
+  <h2>Preparing a PC for account switching</h2>
+  <ol style="max-width: 75ch; padding-left: var(--s5)">
+    <li>Join the PC to its Headscale server with its <code>tag:pc-…</code> tag, as before.</li>
+    <li>Download <a href="{{ base }}/pcs/setup-lab-pc.sh">setup-lab-pc.sh</a> (the same script for every server) and run it as root on the PC: <code>sudo bash setup-lab-pc.sh &lt;your-admin-user&gt;</code>. It turns on Tailscale SSH, and creates the slot agent's <code>labsched</code> account, the <code>slot-active</code> and <code>lab-admins</code> groups and the <code>slot-switch</code> helper. Locking OpenSSH down to admins is opt-in with <code>--harden</code>.</li>
+    <li>Set <b>Account switching</b> to Yes for the PC in the Sheet's PCs tab, then turn on <b>Switch accounts on PCs</b> in <a href="{{ base }}/settings">Settings</a>.</li>
+  </ol>
+  <p class="small muted">Nobody needs an SSH key. Over the tailnet, port 22 is Tailscale SSH: the policy lets admins in as any account except root, the slot agent in as <code>labsched</code>, and the group in its slot in as its own group account.</p>
+</section>
+{% endblock %}

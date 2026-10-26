@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% block title %}Calendar{% endblock %}
+{% block body %}
+{% set q = ('&group=' ~ group if group else '') ~ ('&pc=' ~ pc if pc else '') %}
+{% set step = {'day': 'day', 'week': 'week', 'month': 'month', 'quarter': '3 months'}[view] %}
+{% macro hours(half) %}{{ SPAN[half] }}{% endmacro %}
+<div class="pagehead">
+  <div>
+    <h1>{{ title }}</h1>
+    <p>Which group has which PC on each date, from every semester that covers it. The schedule itself is edited in the Google Sheet. Night slots run from {{ SPAN.night[:5] }} on the date shown to {{ SPAN.night[-5:] }} the next morning; each slot ends five minutes before the next starts.</p>
+  </div>
+  {% if sheet %}<a class="btn primary" href="{{ sheet.url }}" target="_blank" rel="noopener">Edit in the Sheet</a>{% endif %}
+</div>
+
+<form method="get" class="calbar">
+  <nav class="seg" aria-label="Calendar view">
+    {% for v, label in (('day', 'Day'), ('week', 'Week'), ('month', 'Month'), ('quarter', '3 months')) %}
+    <a href="?view={{ v }}&at={{ start.isoformat() }}{{ q }}" {% if v == view %}aria-current="true"{% endif %}>{{ label }}</a>
+    {% endfor %}
+  </nav>
+  <div class="row">
+    <a class="btn" href="?view={{ view }}&at={{ prev }}{{ q }}" aria-label="Previous {{ step }}">&larr; Previous</a>
+    <a class="btn" href="?view={{ view }}{{ q }}">Today</a>
+    <a class="btn" href="?view={{ view }}&at={{ next }}{{ q }}" aria-label="Next {{ step }}">Next &rarr;</a>
+  </div>
+  <input type="hidden" name="view" value="{{ view }}">
+  <input type="hidden" name="at" value="{{ start.isoformat() }}">
+  <label class="visually-hidden" for="cal-group">Group</label>
+  <select id="cal-group" name="group" onchange="this.form.submit()">
+    <option value="0">All groups</option>
+    {% for g in groups %}<option value="{{ g.id }}" {{ 'selected' if g.id == group }}>{{ g.short or g.slug }} · {{ g.name }}</option>{% endfor %}
+  </select>
+  <label class="visually-hidden" for="cal-pc">PC</label>
+  <select id="cal-pc" name="pc" onchange="this.form.submit()">
+    <option value="0">All PCs</option>
+    {% for p_ in all_pcs %}<option value="{{ p_.id }}" {{ 'selected' if p_.id == pc }}>{{ p_.name }}</option>{% endfor %}
+  </select>
+  {% if detail %}<a class="btn quiet" href="?view={{ view }}&at={{ start.isoformat() }}">Clear filters</a>{% endif %}
+  <noscript><button class="btn small">Show</button></noscript>
+</form>
+
+{% if not pcs %}
+<div class="note warn">No lab PCs yet. Add them in the PCs tab of the Sheet to see the calendar.</div>
+
+{# ---------------- Day: one row per PC, day and night side by side ---------------- #}
+{% elif view == 'day' %}{% set d = days[0] %}
+<div class="dayhead">
+  <p class="occ-line"><b>{{ occ[d].day }}</b> of {{ n_pcs }} PCs booked by day, <b>{{ occ[d].night }}</b> of {{ n_pcs }} by night{% if d not in in_term %} · <span class="state-wait">outside every semester</span>{% endif %}</p>
+  {% set search_placeholder = 'Filter by PC or group, e.g. pc-41 or MA-AI' %}{% include "_search.html" %}
+</div>
+<div class="sheet-wrap">
+<table class="sheet list daytable" aria-label="{{ title }}">
+  <thead><tr><th scope="col">PC</th><th scope="col">Day · {{ SPAN.day }}</th><th scope="col">Night · {{ SPAN.night }}</th></tr></thead>
+  <tbody>
+  {% for p_ in pcs %}{% set bd = (cal.get((p_.id, d, 'day')) or [None])[0] %}{% set bn = (cal.get((p_.id, d, 'night')) or [None])[0] %}
+  <tr data-search="{{ p_.name|lower }} {{ (bd.short or bd.slug or '')|lower if bd }} {{ (bd.group_name or '')|lower if bd }} {{ (bn.short or bn.slug or '')|lower if bn }} {{ (bn.group_name or '')|lower if bn }}">
+    <td><span class="lead">{{ p_.name }}</span></td>
+    {% for b, half in ((bd, 'day'), (bn, 'night')) %}
+    <td data-label="{{ half|capitalize }}" class="{{ 'livecell' if current.date == d and current.half == half }}">{% if b %}<span class="code-mark" style="--mark: {{ b.color }}">{{ b.short or b.slug }}</span> {{ b.group_name }}{% else %}<span class="free">Free</span>{% endif %}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{# ---------------- Week: the routine grid, every PC by every slot ---------------- #}
+{% elif view == 'week' %}
+<div class="dayhead">
+  <p class="occ-line">{{ pcs|length }} PC{{ 's' if pcs|length != 1 }} · select a day's name to open that day.</p>
+  {% set search_placeholder = 'Filter PCs by name or group' %}{% include "_search.html" %}
+</div>
+<div class="sheet-wrap routine-desktop">
+<table class="routine calendar" aria-label="{{ title }}">
+  <colgroup><col class="pccol">{% for i in range(14) %}<col>{% endfor %}</colgroup>
+  <thead>
+    <tr class="days"><th class="pc" rowspan="2">PC</th>
+      {% for d in days %}<th colspan="2" class="daystart {{ 'today' if d == today }}" scope="colgroup"><a class="daylink" href="?view=day&at={{ d.isoformat() }}{{ q }}">{{ WEEKDAYS[loop.index0] }}<small>{{ d.strftime('%d %b') }}</small></a></th>{% endfor %}</tr>
+    <tr class="halves">{% for d in days %}{% set t_ = 'today' if d == today else '' %}<th class="daystart {{ t_ }}" scope="col">{{ SPAN.day }}</th><th class="{{ t_ }}" scope="col">{{ SPAN.night }}</th>{% endfor %}</tr>
+  </thead>
+  <tbody>
+  {% for p_ in pcs %}
+    {% set codes = [] %}{% for d in days %}{% for half in HALVES %}{% for b in cal.get((p_.id, d, half), []) %}{% set _ = codes.append((b.short or b.slug)|lower) %}{% endfor %}{% endfor %}{% endfor %}
+    <tr data-search="{{ p_.name|lower }} {{ codes|unique|join(' ') }}">
+      <th class="pc" scope="row"><b>{{ p_.name }}</b><span>{{ p_.tag }}</span></th>
+      {% for d in days %}{% for half in HALVES %}
+        {% set items = cal.get((p_.id, d, half), []) %}
+        {% set is_live = current.date == d and current.half == half %}
+        <td class="cell {{ half }}{% if half == 'day' %} daystart{% endif %}{% if d == today %} today{% endif %}{% if is_live %} live{% endif %}{% if not items %} free{% endif %}{% if d not in in_term %} noterm{% endif %}">
+          {% if items %}<span class="stackmarks">{% for b in items %}<span class="code-mark" style="--mark: {{ b.color }}" title="{{ b.group_name }}">{{ b.short or b.slug }}</span>{% endfor %}</span>{% endif %}
+        </td>
+      {% endfor %}{% endfor %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+<div class="pc-pages" aria-label="Calendar by PC">
+  {% for p_ in pcs %}
+  {% set codes = [] %}{% for d in days %}{% for half in HALVES %}{% for b in cal.get((p_.id, d, half), []) %}{% set _ = codes.append((b.short or b.slug)|lower) %}{% endfor %}{% endfor %}{% endfor %}
+  <section class="pc-page" data-search="{{ p_.name|lower }} {{ codes|unique|join(' ') }}">
+    <h3>{{ p_.name }}<span>{{ p_.tag }}</span></h3>
+    <p class="swipe-hint">{{ loop.index }} of {{ pcs|length }}{% if pcs|length > 1 %} · swipe for the next PC{% endif %}</p>
+    <table class="mini calendar">
+      <thead><tr><th scope="col"></th><th scope="col">{{ SPAN.day }}</th><th scope="col">{{ SPAN.night }}</th></tr></thead>
+      <tbody>
+      {% for d in days %}
+        <tr>
+          <th scope="row" class="{{ 'today' if d == today }}">{{ WEEKDAYS[loop.index0] }}<small>{{ d.strftime('%d %b') }}</small></th>
+          {% for half in HALVES %}
+            {% set items = cal.get((p_.id, d, half), []) %}
+            <td class="cell {{ half }}{% if d == today %} today{% endif %}{% if current.date == d and current.half == half %} live{% endif %}{% if not items %} free{% endif %}{% if d not in in_term %} noterm{% endif %}">
+              {% if items %}<span class="stackmarks">{% for b in items %}<span class="code-mark" style="--mark: {{ b.color }}">{{ b.short or b.slug }}</span>{% endfor %}</span>{% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </section>
+  {% endfor %}
+</div>
+<p class="muted small" style="margin-top: var(--s3)">The blue cell is the slot running now. Hatched days are outside every semester.</p>
+
+{# ---------------- Month: a wall calendar ---------------- #}
+{% elif view == 'month' %}
+{% set m = months[0] %}{% set MAX = 4 %}
+<div class="mcal{{ ' detail' if detail }}" role="grid" aria-label="{{ title }}">
+  <div class="mcal-head" role="row">{% for w in ('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat') %}<div role="columnheader">{{ w }}</div>{% endfor %}</div>
+  {% for week in m.weeks %}
+  <div class="mcal-week" role="row">
+    {% for d in week %}{% set es = entries.get(d, []) %}{% set mine = d.month == m.first.month %}
+    <div role="gridcell" class="mcal-day{{ ' other' if not mine }}{{ ' noterm' if d not in in_term }}{{ ' today' if d == today }}">
+      <a class="mcal-date" href="?view=day&at={{ d.isoformat() }}{{ q }}" aria-label="{{ d.strftime('%A %d %B') }}, open the day">{{ d.day if d.day != 1 else d.strftime('%b') ~ ' 1' }}</a>
+      {% if detail %}
+        {% if es %}<ul>
+          {% for e in es[:MAX] %}{% set live = current.date == d and current.half == e.half %}
+          <li class="chip{{ ' live' if live }}" style="--mark: {{ e.b.color }}" title="{{ e.b.group_name }} · {{ e.pc }} · {{ hours(e.half) }}"><b>{{ e.b.short or e.b.slug }}</b><span>{{ e.pc }} · {{ e.half }}</span></li>
+          {% endfor %}
+        </ul>
+        {% if es|length > MAX %}<a class="more" href="?view=day&at={{ d.isoformat() }}{{ q }}" aria-label="{{ es|length - MAX }} more">+{{ es|length - MAX }}<span class="more-word"> more</span></a>{% endif %}{% endif %}
+      {% elif mine and d in in_term %}
+        {% for half in HALVES %}{% set n = occ[d][half] %}{% set free = n_pcs - n %}
+        <div class="occ {{ half }}{{ ' live' if current.date == d and current.half == half }}" title="{{ half|capitalize }} {{ hours(half) }}: {{ n }} of {{ n_pcs }} PCs booked, {{ free }} free">
+          <span class="occ-label">{{ 'Day' if half == 'day' else 'Night' }}</span><span class="occ-abbr" aria-hidden="true">{{ 'D' if half == 'day' else 'N' }}</span>
+          <span class="occ-bar"><i style="width: {{ (100 * n / n_pcs)|round(1) if n_pcs else 0 }}%"></i></span>
+          <span class="occ-num"><b>{{ n }}</b><span class="occ-of">/{{ n_pcs }}</span></span>
+        </div>
+        {% endfor %}
+        {% set free_total = 2 * n_pcs - occ[d].day - occ[d].night %}
+        <span class="occ-free{{ ' none' if not free_total }}">{{ free_total }}<span class="more-word"> free</span></span>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>
+<div class="key">
+  {% if detail %}
+  <span><span class="chip-sample"></span> code · PC · day ({{ SPAN.day }}) or night ({{ SPAN.night }})</span>
+  <span><span class="sample-live"></span> running now</span>
+  {% else %}
+  <span><span class="sample-occ"><i></i></span> share of the {{ n_pcs }} PCs booked; pick a group or PC above to list its slots</span>
+  {% endif %}
+  <span><span class="sample-noterm"></span> outside every semester</span>
+  <span>Select a date to open that day, PC by PC.</span>
+</div>
+
+{# ---------------- 3 months: small calendars, shaded by how full each day is ---------------- #}
+{% else %}
+<div class="ycal{{ ' detail' if group }}">
+  {% for m in months %}
+  <section class="ycal-month" aria-label="{{ m.label }} {{ m.year }}">
+    <h2>{{ m.label }}{% if m.first.month == 1 or loop.first %} <span>{{ m.year }}</span>{% endif %}</h2>
+    <div class="ycal-grid">
+      {% for w in 'SMTWTFS' %}<div class="ycal-wd">{{ w }}</div>{% endfor %}
+      {% for week in m.weeks %}{% for d in week %}
+        {% set mine = d.month == m.first.month %}
+        {% set es = entries.get(d, []) if mine else [] %}
+        {% set booked = occ[d].day + occ[d].night if mine else 0 %}
+        {% set share = booked / (2 * n_pcs) if n_pcs else 0 %}
+        {% set level = 0 if not booked else (1 if share < 0.25 else (2 if share < 0.5 else (3 if share < 0.75 else (4 if share < 1 else 5)))) %}
+        <a class="ycal-day{{ ' other' if not mine }}{{ ' noterm' if d not in in_term }}{{ ' today' if d == today }}{{ ' lv' ~ level if mine and not group }}"
+           href="?view=day&at={{ d.isoformat() }}{{ q }}"
+           title="{{ d.strftime('%a %d %b') }}{% if not mine %}{% elif d not in in_term %}: outside every semester{% elif group %}{% if es %}: {{ es|map(attribute='pc')|join(', ') }}{% endif %}{% else %}: {{ booked }} of {{ 2 * n_pcs }} slots booked{% endif %}">
+          <span class="n">{{ d.day }}</span>
+          {% if group %}<span class="dots">{% for e in es[:4] %}<i style="--mark: {{ e.b.color }}"></i>{% endfor %}</span>{% endif %}
+        </a>
+      {% endfor %}{% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
+<div class="key">
+  {% if group %}
+  <span>A dot for each of the group's slots that day.</span>
+  {% else %}
+  <span class="heat">Booked: <i class="lv1"></i><i class="lv2"></i><i class="lv3"></i><i class="lv4"></i><i class="lv5"></i> under a quarter … full</span>
+  {% endif %}
+  <span><span class="sample-todaydot"></span> today</span>
+  <span>Faded dates are outside every semester. Select a date to open that day.</span>
+</div>
+{% endif %}
+{% if view in ('month', 'quarter') and detail and legend %}
+<div class="key">{% for g in legend %}<span><span class="swatch" style="--mark: {{ g.color }}"></span>{{ g.short or g.slug }} · {{ g.name }}</span>{% endfor %}</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+time,phase,page,status,ms
+2026-10-22T16:20:38,steady (all devices),/,200,9
+2026-10-22T16:20:38,steady (all devices),/calendar?view=week,200,91
+2026-10-22T16:20:38,steady (all devices),/calendar?view=month,200,21
+2026-10-22T16:20:38,steady (all devices),/pcs,200,13
+2026-10-22T16:20:38,steady (all devices),/settings,200,31
+2026-10-22T16:20:38,steady (all devices),/audit,200,6
+2026-10-22T16:20:38,steady (all devices),/,200,9
+2026-10-22T16:20:38,steady (all devices),/calendar?view=week,200,36
+2026-10-22T16:20:38,steady (all devices),/calendar?view=month,200,20
+2026-10-22T16:20:38,steady (all devices),/pcs,200,5
+2026-10-22T16:20:38,steady (all devices),/settings,200,19
+2026-10-22T16:20:38,steady (all devices),/audit,200,3
+2026-10-22T16:26:33,slot change E,/,200,9
+2026-10-22T16:26:33,slot change E,/calendar?view=week,200,36
+2026-10-22T16:26:33,slot change E,/calendar?view=month,200,20
+2026-10-22T16:26:33,slot change E,/pcs,200,6
+2026-10-22T16:26:33,slot change E,/settings,200,20
+2026-10-22T16:26:34,slot change E,/audit,200,2
+2026-10-22T16:26:34,slot change E,/,200,8
+2026-10-22T16:26:34,slot change E,/calendar?view=week,200,36
+2026-10-22T16:26:34,slot change E,/calendar?view=month,200,31
+2026-10-22T16:26:34,slot change E,/pcs,200,6
+2026-10-22T16:26:34,slot change E,/settings,200,20
+2026-10-22T16:26:34,slot change E,/audit,200,3

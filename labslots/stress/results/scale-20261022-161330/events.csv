@@ -1,0 +1,28 @@
+time,phase,t_phase_s,t_change_s,event,value,detail
+2026-10-22T16:13:35,PCs join,0.0,,phase started,,
+2026-10-22T16:13:48,students join,0.0,,phase started,,
+2026-10-22T16:14:33,students join,44.9,,student keys ready,700,
+2026-10-22T16:17:06,students join,198.3,,stopped adding devices: every machine at its memory floor,800,
+2026-10-22T16:17:06,students join,198.3,,devices started,800,host-a=150 host-c=250 host-b=400
+2026-10-22T16:17:38,students join,229.6,,devices online,871,
+2026-10-22T16:17:38,steady (all devices),0.0,,phase started,,
+2026-10-22T16:20:38,slot change B,0.0,,phase started,,
+2026-10-22T16:20:39,slot change B,0.5,0.5,schedule changed,"65 PCs busy, 65 groups",
+2026-10-22T16:20:59,slot change B,20.5,20.5,policy applied,19.8,s (agent run 4.73 s)
+2026-10-22T16:20:59,slot change B,20.5,20.5,all PCs on the new account,19.8,s
+2026-10-22T16:21:33,slot change B,54.5,54.5,every probe correct,54.0,s (150 probes)
+2026-10-22T16:21:33,churn,0.0,,phase started,,
+2026-10-22T16:24:34,churn,181.3,,device reboots,87,in 180 s
+2026-10-22T16:24:34,slot change C,0.0,,phase started,,
+2026-10-22T16:24:34,slot change C,0.5,0.5,schedule changed,"65 PCs busy, 65 groups",
+2026-10-22T16:24:48,slot change C,14.5,14.5,policy applied,12.8,s (agent run 7.25 s)
+2026-10-22T16:24:48,slot change C,14.5,14.5,all PCs on the new account,12.8,s
+2026-10-22T16:25:28,slot change C,54.5,54.5,every probe correct,53.9,s (144 probes)
+2026-10-22T16:25:28,re-apply now,0.0,,phase started,,
+2026-10-22T16:25:41,re-apply now,12.5,,policy rewritten,11.1,s (agent run 2.82 s)
+2026-10-22T16:25:41,slot change E,0.0,,phase started,,
+2026-10-22T16:25:41,slot change E,0.5,0.5,schedule changed,"65 PCs busy, 65 groups",
+2026-10-22T16:25:57,slot change E,16.5,16.5,policy applied,16.1,s (agent run 4.55 s)
+2026-10-22T16:25:57,slot change E,16.5,16.5,all PCs on the new account,16.1,s
+2026-10-22T16:26:33,slot change E,52.5,52.5,every probe correct,51.3,s (136 probes)
+2026-10-22T16:26:34,cool down,0.0,,phase started,,

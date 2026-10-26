@@ -1,0 +1,6 @@
+{# A filter box: hides rows/cards whose data-search text does not contain what is typed. #}
+<label class="search"><span class="visually-hidden">{{ search_label|default('Filter') }}</span>
+  <input type="search" placeholder="{{ search_placeholder|default('Filter by PC or group') }}" autocomplete="off"
+         oninput="const q = this.value.trim().toLowerCase(); document.querySelectorAll('[data-search]').forEach(el => { el.hidden = q && !el.dataset.search.includes(q); }); const n = document.querySelectorAll('[data-search]:not([hidden])').length; const c = this.closest('.search').querySelector('output'); if (c) c.textContent = q ? n + ' shown' : '';">
+  <output aria-live="polite"></output>
+</label>

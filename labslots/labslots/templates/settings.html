@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block title %}Settings{% endblock %}
+{% block body %}
+<div class="pagehead">
+  <div>
+    <h1>Settings</h1>
+    <p>Changes reach every server's slot agent on its next check, within about 15 seconds.</p>
+  </div>
+</div>
+<div class="cols">
+  <form method="post" action="{{ base }}/settings" class="section stack">
+    <h2>Enforcement</h2>
+    <label class="check"><input type="checkbox" name="enforce_policy" value="1" {{ 'checked' if s.enforce_policy == '1' }}>
+      <span><b>Write the Headscale policy from the routine.</b> Only the group in each slot reaches its PC. If anything fails the policy falls back to admins only.</span></label>
+    <label class="check"><input type="checkbox" name="device_cleanup" value="1" {{ 'checked' if s.device_cleanup == '1' }}>
+      <span><b>Remove students' devices outside their slot</b> and beyond the per-student limit. Off means dry-run: the Now page lists what would be removed.</span></label>
+    <label class="check"><input type="checkbox" name="former_cleanup" value="1" {{ 'checked' if s.former_cleanup == '1' }}>
+      <span><b>Remove devices of students in no group</b>, a day after their group, its term or all its slots leave the Sheet. Off means dry-run: the Now page lists what would be removed.</span></label>
+    <label style="max-width: 240px">Devices per student <input type="number" name="max_devices_per_student" min="1" max="10" value="{{ s.max_devices_per_student }}"></label>
+    <label class="check"><input type="checkbox" name="ssh_enforce" value="1" {{ 'checked' if s.ssh_enforce == '1' }}>
+      <span><b>Switch accounts on PCs over SSH</b> at every slot change, on PCs with account switching turned on.</span></label>
+    <label>Ports a group gets on its PC during its slot <input name="ports" value="{{ ports }}" spellcheck="false"><small>Comma-separated, for example tcp:22,tcp:8888. tcp:22 is always included: it is how the group reaches its PC with Tailscale SSH.</small></label>
+    <label>Extra grants
+      <textarea name="extra" rows="12" class="code" spellcheck="false">{{ extra }}</textarea>
+      <small>A JSON list added to every policy, for permanent network rules such as each user's own devices reaching each other. Edit rules here, not in Headplane: the scheduler rewrites the live policy.</small></label>
+    <label>Extra SSH rules
+      <textarea name="extra_ssh" rows="8" class="code" spellcheck="false">{{ extra_ssh }}</textarea>
+      <small>A JSON list of permanent Tailscale SSH rules, each with <code>src</code>, <code>dst</code> and <code>users</code>, for example <code>{"src": ["tag:jumphost"], "dst": ["tag:pc-41"], "users": ["autogroup:nonroot"]}</code>. Lab PCs answer SSH on the tailnet only to the policy's SSH rules, so a grant to tcp:22 alone is refused. Each rule also gets its tcp:22 grant.</small></label>
+    <div><button class="btn primary">Save settings</button></div>
+  </form>
+
+  <section class="section">
+    <h2>Admins</h2>
+    <p class="muted">Admins can sign in here and form <code>group:admins</code> in the policy, with full access to every lab PC.</p>
+    <div class="sheet-wrap">
+    <table class="sheet">
+      <tbody>
+      {% for a in admins %}
+      <tr><td>{{ a }}{% if a == user %} <span class="muted small">(you)</span>{% endif %}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+    <p class="muted small" style="margin-top: var(--s3)">Admins are edited in the Admins tab of the {% if sheet %}<a href="{{ sheet.url }}" target="_blank" rel="noopener">Google Sheet</a>{% else %}Google Sheet{% endif %}.</p>
+  </section>
+</div>
+
+<section class="section" id="servers" style="margin-top: var(--s8)">
+  <h2>Headscale servers</h2>
+  <p class="muted" style="max-width: 75ch">Each Headscale server runs a slot agent that fetches its PCs' schedule from here with its own token and enforces it. A PC's server is set in the Sheet's PCs tab; a blank cell means <code>{{ default_server }}</code>.</p>
+  {% if new_token %}
+  <div class="note warn" role="alert"><b>Token for {{ new_token.name }}, shown once.</b> Put it in the agent's <code>agent_token</code> file on that server, then restart the agent. It replaces any earlier token for {{ new_token.name }}.
+    <pre style="user-select: all">{{ new_token.token }}</pre></div>
+  {% endif %}
+  <div class="sheet-wrap">
+  <table class="sheet list">
+    <thead><tr><th scope="col">Server</th><th scope="col">PCs</th><th scope="col">Last report</th><th scope="col"><span class="visually-hidden">Actions</span></th></tr></thead>
+    <tbody>
+    {% for sv in servers %}
+    <tr class="{{ 'errrow' if sv.stale }}"><td><span class="lead">{{ sv.name }}</span></td>
+      <td data-label="PCs">{{ pcs|selectattr('server', 'in', [sv.name] + ([''] if sv.name == default_server else []))|map(attribute='name')|join(', ') or '—' }}</td>
+      <td data-label="Last report">{% if sv.stale %}<span class="state-bad">{{ sv.last_seen.replace('T', ' ') if sv.last_seen else 'never' }}</span>{% else %}<span class="state-ok">{{ sv.last_seen.replace('T', ' ') }}</span>{% endif %}</td>
+      <td class="actions">
+        <form method="post" action="{{ base }}/settings/servers" class="inline" onsubmit="return confirm('Make a new token for {{ sv.name }}? Its agent stops working until it gets the new token.')"><input type="hidden" name="name" value="{{ sv.name }}"><button name="action" value="add" class="btn small">New token</button></form>
+        <form method="post" action="{{ base }}/settings/servers" class="inline" onsubmit="return confirm('Remove {{ sv.name }}?')"><input type="hidden" name="name" value="{{ sv.name }}"><button name="action" value="remove" class="btn small danger">Remove</button></form>
+      </td></tr>
+    {% else %}
+    <tr><td colspan="4">No servers yet. Add <code>{{ default_server }}</code> first.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <form method="post" action="{{ base }}/settings/servers" class="row" style="margin-top: var(--s3)">
+    <label class="visually-hidden" for="new-server">Server name</label>
+    <input id="new-server" name="name" placeholder="hs2" required pattern="[a-z0-9][a-z0-9\-]{0,30}" autocapitalize="none" spellcheck="false" style="flex: 0 1 200px">
+    <button name="action" value="add" class="btn">Add server</button>
+  </form>
+</section>
+
+{% if sheet %}
+<section class="section" id="sheet" style="margin-top: var(--s8)">
+  <h2>Google Sheet</h2>
+  <p class="muted" style="max-width: 75ch">The <a href="{{ sheet.url }}" target="_blank" rel="noopener">Sheet</a> is the schedule's source of truth. It is read every 30 seconds; this server keeps the last good copy and enforces that whenever the Sheet cannot be read. Signed in to Google as <code>{{ sheet.email }}</code>.</p>
+  {% if sheet.error %}<div class="note err">Cannot read the Sheet since {{ sheet.error_since.replace('T', ' ') }}: {{ sheet.error }}. Enforcing the last good copy.</div>
+  {% else %}<p>Last read {{ (sheet.last_ok or 'never').replace('T', ' ') }}{% if sheet.problems %} · <a href="{{ sheet.url }}" target="_blank" rel="noopener">{{ sheet.problems }} problem{{ 's' if sheet.problems != 1 }}</a> listed in its Problems tab{% endif %}.</p>{% endif %}
+  <div class="row">
+    <form method="post" action="{{ base }}/settings/sheet/sync"><button class="btn">Read the Sheet now</button></form>
+    <form method="post" action="{{ base }}/settings/sheet/restore" onsubmit="return confirm('Overwrite the Sheet with the last good copy? Edits in the Sheet that were never read, or were rejected, are lost.')"><button class="btn danger">Restore the Sheet from the last good copy</button></form>
+  </div>
+</section>
+{% endif %}
+
+<section class="section" id="email" style="margin-top: var(--s8)">
+  <h2>Email</h2>
+  {% if mail.on %}
+  <p class="muted" style="max-width: 75ch">Enrollment decisions are emailed to every member of the group. Sent from <code>{{ mail.sender }}</code> through <code>{{ mail.host }}:{{ mail.port }}</code>{% if mail.user %} as <code>{{ mail.user }}</code>{% endif %}. Each send and failure is in the <a href="{{ base }}/audit">Log</a>.</p>
+  <form method="post" action="{{ base }}/settings/email-test"><button class="btn">Send a test email to {{ user }}</button></form>
+  {% else %}
+  <div class="note warn">Email is off. Groups still see each decision on their status page.</div>
+  <p class="muted" style="max-width: 75ch">To turn it on, on the server in <code>/opt/labslots</code>:</p>
+  <ol class="steps">
+    <li>Set <code>SMTP_HOST</code>, <code>SMTP_PORT</code>, <code>SMTP_USER</code> and <code>SMTP_FROM</code> in <code>.env</code>. For a Google account: <code>smtp.gmail.com</code>, port <code>587</code>, the account's address as user and sender.</li>
+    <li>Put the password in <code>secrets/hub/smtp_password</code> (mode 400, owner uid 10001). For a Google account that is an app password, not the account password.</li>
+    <li>Run <code>docker compose up -d labslots</code>, then come back here and send a test email.</li>
+  </ol>
+  {% endif %}
+</section>
+
+<section class="section" id="rotation" style="margin-top: var(--s8)">
+  <h2>Test rotation</h2>
+  <p class="muted" style="max-width: 75ch">Rehearse slot changes in minutes instead of hours: one PC cycles through the chosen groups every few seconds, with every enforcement step (policy, device clean-up, account switching) exactly as at a real slot change. Other PCs keep the normal routine. It switches itself off at the end.</p>
+  {% if rotation %}
+  <div class="note warn">Running: switch {{ rotation.index + 1 }}, next at {{ rotation.next_change.strftime('%H:%M:%S') }}, ends {{ rotation.end_dt.strftime('%H:%M:%S') }}.</div>
+  <form method="post" action="{{ base }}/settings/rotation/stop"><button class="btn danger">Stop test rotation</button></form>
+  {% elif pcs and groups %}
+  <form method="post" action="{{ base }}/settings/rotation" class="stack" style="max-width: 760px">
+    <div class="fields top">
+      <label>PC <select name="pc">{% for p in pcs %}<option value="{{ p.id }}">{{ p.name }}</option>{% endfor %}</select></label>
+      <label>Slot length (seconds) <input type="number" name="seconds" min="30" max="3600" value="90"></label>
+      <label>Run for (minutes) <input type="number" name="minutes" min="1" max="120" value="6"></label>
+    </div>
+    <fieldset class="memberset"><legend>Groups, in rotation order</legend>
+      <div class="row">{% for g in groups %}<label class="check"><input type="checkbox" name="group" value="{{ g.id }}"> <span class="code-mark" style="--mark: {{ g.color }}">{{ g.short or g.slug }}</span> {{ g.name }}</label>{% endfor %}</div>
+    </fieldset>
+    <div><button class="btn">Start test rotation</button></div>
+  </form>
+  {% else %}<p class="muted">Needs at least one PC and one group.</p>{% endif %}
+</section>
+
+{% for pol in policies %}
+<div class="cols" style="margin-top: var(--s8)">
+  <section class="section"><h2>{{ pol.name }}: policy its agent would write now</h2><pre class="scroll">{{ pol.preview }}</pre></section>
+  <section class="section"><h2>{{ pol.name }}: live policy in Headscale</h2><p class="muted small">Last written by its agent: {{ (pol.applied_at or 'never').replace('T', ' ') }}</p><pre class="scroll">{{ pol.live or 'Not reported yet.' }}</pre></section>
+</div>
+{% endfor %}
+{% endblock %}

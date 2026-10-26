@@ -1,0 +1,333 @@
+time,phase,container,cpu_pct,mem_mb,ct_load1,ct_mem_available_mb
+2026-10-22T16:13:37,PCs join,stress-ts-scheduler,0.01,18.7,0.97,3713
+2026-10-22T16:13:37,PCs join,stress-agent,0.07,21.4,0.97,3713
+2026-10-22T16:13:37,PCs join,stress-hub,0.1,38.5,0.97,3713
+2026-10-22T16:13:37,PCs join,stress-hs,155.46,69.0,0.97,3713
+2026-10-22T16:13:48,PCs join,stress-ts-scheduler,1.72,33.6,1.05,3771
+2026-10-22T16:13:48,PCs join,stress-agent,0.0,21.3,1.05,3771
+2026-10-22T16:13:48,PCs join,stress-hub,0.1,38.5,1.05,3771
+2026-10-22T16:13:48,PCs join,stress-hs,15.99,71.9,1.05,3771
+2026-10-22T16:13:59,students join,stress-ts-scheduler,1.25,43.1,1.71,3625
+2026-10-22T16:13:59,students join,stress-agent,0.0,22.9,1.71,3625
+2026-10-22T16:13:59,students join,stress-hub,0.12,38.5,1.71,3625
+2026-10-22T16:13:59,students join,stress-hs,215.36,126.3,1.71,3625
+2026-10-22T16:14:09,students join,stress-ts-scheduler,0.83,53.3,1.91,3623
+2026-10-22T16:14:09,students join,stress-agent,0.0,22.7,1.91,3623
+2026-10-22T16:14:09,students join,stress-hub,0.11,38.7,1.91,3623
+2026-10-22T16:14:09,students join,stress-hs,212.5,115.8,1.91,3623
+2026-10-22T16:14:20,students join,stress-ts-scheduler,2.01,54.4,2.88,3625
+2026-10-22T16:14:20,students join,stress-agent,0.0,22.6,2.88,3625
+2026-10-22T16:14:20,students join,stress-hub,0.09,38.5,2.88,3625
+2026-10-22T16:14:20,students join,stress-hs,216.42,114.4,2.88,3625
+2026-10-22T16:14:31,students join,stress-ts-scheduler,1.1,54.4,3.42,3635
+2026-10-22T16:14:31,students join,stress-agent,0.0,22.6,3.42,3635
+2026-10-22T16:14:31,students join,stress-hub,0.1,38.5,3.42,3635
+2026-10-22T16:14:31,students join,stress-hs,224.4,117.7,3.42,3635
+2026-10-22T16:14:41,students join,stress-ts-scheduler,1.61,60.9,3.29,3737
+2026-10-22T16:14:41,students join,stress-agent,0.0,22.6,3.29,3737
+2026-10-22T16:14:41,students join,stress-hub,0.1,38.5,3.29,3737
+2026-10-22T16:14:41,students join,stress-hs,239.47,96.2,3.29,3737
+2026-10-22T16:14:52,students join,stress-ts-scheduler,0.88,61.0,3.5,3712
+2026-10-22T16:14:52,students join,stress-agent,2.6,23.0,3.5,3712
+2026-10-22T16:14:52,students join,stress-hub,1.8,38.8,3.5,3712
+2026-10-22T16:14:52,students join,stress-hs,332.28,107.5,3.5,3712
+2026-10-22T16:15:02,students join,stress-ts-scheduler,0.08,60.6,3.57,3674
+2026-10-22T16:15:02,students join,stress-agent,0.0,22.8,3.57,3674
+2026-10-22T16:15:02,students join,stress-hub,0.11,38.5,3.57,3674
+2026-10-22T16:15:02,students join,stress-hs,371.05,145.4,3.57,3674
+2026-10-22T16:15:13,students join,stress-ts-scheduler,0.1,60.8,3.4,3665
+2026-10-22T16:15:13,students join,stress-agent,0.0,23.7,3.4,3665
+2026-10-22T16:15:13,students join,stress-hub,0.1,38.5,3.4,3665
+2026-10-22T16:15:13,students join,stress-hs,288.72,145.0,3.4,3665
+2026-10-22T16:15:24,students join,stress-ts-scheduler,0.39,61.8,3.57,3644
+2026-10-22T16:15:24,students join,stress-agent,0.0,24.0,3.57,3644
+2026-10-22T16:15:24,students join,stress-hub,0.09,38.7,3.57,3644
+2026-10-22T16:15:24,students join,stress-hs,306.18,175.1,3.57,3644
+2026-10-22T16:15:34,students join,stress-ts-scheduler,1.03,61.6,3.79,3603
+2026-10-22T16:15:34,students join,stress-agent,0.0,24.0,3.79,3603
+2026-10-22T16:15:34,students join,stress-hub,0.08,38.7,3.79,3603
+2026-10-22T16:15:34,students join,stress-hs,361.13,208.0,3.79,3603
+2026-10-22T16:15:45,students join,stress-ts-scheduler,0.0,61.6,4.38,3524
+2026-10-22T16:15:45,students join,stress-agent,0.0,25.2,4.38,3524
+2026-10-22T16:15:45,students join,stress-hub,0.1,38.5,4.38,3524
+2026-10-22T16:15:45,students join,stress-hs,385.59,282.7,4.38,3524
+2026-10-22T16:15:56,students join,stress-ts-scheduler,2.06,61.7,4.39,3506
+2026-10-22T16:15:56,students join,stress-agent,0.0,25.8,4.39,3506
+2026-10-22T16:15:56,students join,stress-hub,0.09,38.5,4.39,3506
+2026-10-22T16:15:56,students join,stress-hs,356.17,307.4,4.39,3506
+2026-10-22T16:16:07,students join,stress-ts-scheduler,2.83,62.2,4.49,3495
+2026-10-22T16:16:07,students join,stress-agent,4.62,26.2,4.49,3495
+2026-10-22T16:16:07,students join,stress-hub,0.12,38.5,4.49,3495
+2026-10-22T16:16:07,students join,stress-hs,370.73,316.8,4.49,3495
+2026-10-22T16:16:17,students join,stress-ts-scheduler,0.01,62.0,4.88,3470
+2026-10-22T16:16:17,students join,stress-agent,0.0,26.4,4.88,3470
+2026-10-22T16:16:17,students join,stress-hub,0.09,38.6,4.88,3470
+2026-10-22T16:16:17,students join,stress-hs,381.37,341.8,4.88,3470
+2026-10-22T16:16:28,students join,stress-ts-scheduler,0.01,62.0,4.91,3429
+2026-10-22T16:16:28,students join,stress-agent,0.0,26.3,4.91,3429
+2026-10-22T16:16:28,students join,stress-hub,0.11,38.6,4.91,3429
+2026-10-22T16:16:28,students join,stress-hs,366.31,355.1,4.91,3429
+2026-10-22T16:16:39,students join,stress-ts-scheduler,0.02,62.1,5.0,3430
+2026-10-22T16:16:39,students join,stress-agent,0.0,25.1,5.0,3430
+2026-10-22T16:16:39,students join,stress-hub,0.11,38.6,5.0,3430
+2026-10-22T16:16:39,students join,stress-hs,367.5,382.4,5.0,3430
+2026-10-22T16:16:50,students join,stress-ts-scheduler,0.01,62.4,5.07,3392
+2026-10-22T16:16:50,students join,stress-agent,0.0,25.1,5.07,3392
+2026-10-22T16:16:50,students join,stress-hub,0.09,38.5,5.07,3392
+2026-10-22T16:16:50,students join,stress-hs,372.5,390.2,5.07,3392
+2026-10-22T16:17:00,students join,stress-ts-scheduler,0.01,62.2,4.83,3406
+2026-10-22T16:17:00,students join,stress-agent,0.0,28.2,4.83,3406
+2026-10-22T16:17:00,students join,stress-hub,0.11,38.5,4.83,3406
+2026-10-22T16:17:00,students join,stress-hs,355.52,403.4,4.83,3406
+2026-10-22T16:17:11,students join,stress-ts-scheduler,0.01,61.5,4.85,3359
+2026-10-22T16:17:11,students join,stress-agent,0.0,28.5,4.85,3359
+2026-10-22T16:17:11,students join,stress-hub,0.11,38.6,4.85,3359
+2026-10-22T16:17:11,students join,stress-hs,366.3,450.0,4.85,3359
+2026-10-22T16:17:22,students join,stress-ts-scheduler,0.0,61.8,4.96,3401
+2026-10-22T16:17:22,students join,stress-agent,3.8,28.8,4.96,3401
+2026-10-22T16:17:22,students join,stress-hub,2.02,38.9,4.96,3401
+2026-10-22T16:17:22,students join,stress-hs,342.46,399.3,4.96,3401
+2026-10-22T16:17:32,students join,stress-ts-scheduler,0.43,61.8,4.94,3456
+2026-10-22T16:17:32,students join,stress-agent,0.0,28.5,4.94,3456
+2026-10-22T16:17:32,students join,stress-hub,0.09,38.6,4.94,3456
+2026-10-22T16:17:32,students join,stress-hs,122.41,353.2,4.94,3456
+2026-10-22T16:17:43,steady (all devices),stress-ts-scheduler,0.01,61.8,4.34,3444
+2026-10-22T16:17:43,steady (all devices),stress-agent,0.0,28.5,4.34,3444
+2026-10-22T16:17:43,steady (all devices),stress-hub,0.09,38.6,4.34,3444
+2026-10-22T16:17:43,steady (all devices),stress-hs,1.38,364.1,4.34,3444
+2026-10-22T16:17:54,steady (all devices),stress-ts-scheduler,0.01,61.5,3.82,3446
+2026-10-22T16:17:54,steady (all devices),stress-agent,0.0,28.5,3.82,3446
+2026-10-22T16:17:54,steady (all devices),stress-hub,0.1,38.6,3.82,3446
+2026-10-22T16:17:54,steady (all devices),stress-hs,0.78,361.8,3.82,3446
+2026-10-22T16:18:04,steady (all devices),stress-ts-scheduler,0.01,61.5,3.23,3446
+2026-10-22T16:18:04,steady (all devices),stress-agent,0.0,28.5,3.23,3446
+2026-10-22T16:18:04,steady (all devices),stress-hub,0.11,38.6,3.23,3446
+2026-10-22T16:18:04,steady (all devices),stress-hs,0.84,361.9,3.23,3446
+2026-10-22T16:18:15,steady (all devices),stress-ts-scheduler,0.01,61.5,2.82,3434
+2026-10-22T16:18:15,steady (all devices),stress-agent,0.0,28.5,2.82,3434
+2026-10-22T16:18:15,steady (all devices),stress-hub,0.11,38.6,2.82,3434
+2026-10-22T16:18:15,steady (all devices),stress-hs,1.43,373.0,2.82,3434
+2026-10-22T16:18:25,steady (all devices),stress-ts-scheduler,0.01,61.5,2.27,3426
+2026-10-22T16:18:25,steady (all devices),stress-agent,0.0,28.5,2.27,3426
+2026-10-22T16:18:25,steady (all devices),stress-hub,0.11,38.6,2.27,3426
+2026-10-22T16:18:25,steady (all devices),stress-hs,1.24,382.1,2.27,3426
+2026-10-22T16:18:36,steady (all devices),stress-ts-scheduler,0.01,61.5,2.0,3426
+2026-10-22T16:18:36,steady (all devices),stress-agent,0.0,28.5,2.0,3426
+2026-10-22T16:18:36,steady (all devices),stress-hub,0.12,38.6,2.0,3426
+2026-10-22T16:18:36,steady (all devices),stress-hs,1.71,382.3,2.0,3426
+2026-10-22T16:18:46,steady (all devices),stress-ts-scheduler,0.01,61.5,1.76,3429
+2026-10-22T16:18:46,steady (all devices),stress-agent,0.0,28.5,1.76,3429
+2026-10-22T16:18:46,steady (all devices),stress-hub,0.11,38.6,1.76,3429
+2026-10-22T16:18:46,steady (all devices),stress-hs,2.06,380.6,1.76,3429
+2026-10-22T16:18:57,steady (all devices),stress-ts-scheduler,0.01,61.5,1.65,3426
+2026-10-22T16:18:57,steady (all devices),stress-agent,0.0,30.6,1.65,3426
+2026-10-22T16:18:57,steady (all devices),stress-hub,0.11,38.6,1.65,3426
+2026-10-22T16:18:57,steady (all devices),stress-hs,0.81,382.8,1.65,3426
+2026-10-22T16:19:07,steady (all devices),stress-ts-scheduler,0.1,36.0,1.4,3456
+2026-10-22T16:19:07,steady (all devices),stress-agent,1.48,25.7,1.4,3456
+2026-10-22T16:19:07,steady (all devices),stress-hub,0.26,38.8,1.4,3456
+2026-10-22T16:19:07,steady (all devices),stress-hs,9.48,383.4,1.4,3456
+2026-10-22T16:19:18,steady (all devices),stress-ts-scheduler,0.01,36.0,1.26,3456
+2026-10-22T16:19:18,steady (all devices),stress-agent,0.0,25.0,1.26,3456
+2026-10-22T16:19:18,steady (all devices),stress-hub,0.12,38.6,1.26,3456
+2026-10-22T16:19:18,steady (all devices),stress-hs,1.75,383.4,1.26,3456
+2026-10-22T16:19:28,steady (all devices),stress-ts-scheduler,0.01,36.0,1.06,3459
+2026-10-22T16:19:28,steady (all devices),stress-agent,0.0,25.0,1.06,3459
+2026-10-22T16:19:28,steady (all devices),stress-hub,0.1,38.8,1.06,3459
+2026-10-22T16:19:28,steady (all devices),stress-hs,1.95,380.7,1.06,3459
+2026-10-22T16:19:39,steady (all devices),stress-ts-scheduler,0.01,36.0,0.97,3459
+2026-10-22T16:19:39,steady (all devices),stress-agent,0.0,25.0,0.97,3459
+2026-10-22T16:19:39,steady (all devices),stress-hub,0.12,38.8,0.97,3459
+2026-10-22T16:19:39,steady (all devices),stress-hs,7.73,380.6,0.97,3459
+2026-10-22T16:19:49,steady (all devices),stress-ts-scheduler,0.01,36.0,0.9,3459
+2026-10-22T16:19:49,steady (all devices),stress-agent,0.0,25.0,0.9,3459
+2026-10-22T16:19:49,steady (all devices),stress-hub,0.1,38.6,0.9,3459
+2026-10-22T16:19:49,steady (all devices),stress-hs,1.08,380.4,0.9,3459
+2026-10-22T16:20:00,steady (all devices),stress-ts-scheduler,0.01,36.0,0.84,3459
+2026-10-22T16:20:00,steady (all devices),stress-agent,0.0,25.0,0.84,3459
+2026-10-22T16:20:00,steady (all devices),stress-hub,0.09,38.6,0.84,3459
+2026-10-22T16:20:00,steady (all devices),stress-hs,1.51,380.6,0.84,3459
+2026-10-22T16:20:10,steady (all devices),stress-ts-scheduler,0.01,36.0,0.86,3457
+2026-10-22T16:20:10,steady (all devices),stress-agent,0.0,27.8,0.86,3457
+2026-10-22T16:20:10,steady (all devices),stress-hub,0.12,38.6,0.86,3457
+2026-10-22T16:20:10,steady (all devices),stress-hs,2.08,380.6,0.86,3457
+2026-10-22T16:20:21,steady (all devices),stress-ts-scheduler,0.01,36.0,0.8,3461
+2026-10-22T16:20:21,steady (all devices),stress-agent,0.0,27.8,0.8,3461
+2026-10-22T16:20:21,steady (all devices),stress-hub,0.1,38.6,0.8,3461
+2026-10-22T16:20:21,steady (all devices),stress-hs,1.98,375.5,0.8,3461
+2026-10-22T16:20:32,steady (all devices),stress-ts-scheduler,0.01,36.0,0.68,3460
+2026-10-22T16:20:32,steady (all devices),stress-agent,0.0,27.8,0.68,3460
+2026-10-22T16:20:32,steady (all devices),stress-hub,0.09,38.6,0.68,3460
+2026-10-22T16:20:32,steady (all devices),stress-hs,1.89,375.5,0.68,3460
+2026-10-22T16:20:42,slot change B,stress-ts-scheduler,0.01,35.0,0.89,3458
+2026-10-22T16:20:42,slot change B,stress-agent,0.0,27.8,0.89,3458
+2026-10-22T16:20:42,slot change B,stress-hub,0.12,42.3,0.89,3458
+2026-10-22T16:20:42,slot change B,stress-hs,3.6,375.4,0.89,3458
+2026-10-22T16:20:53,slot change B,stress-ts-scheduler,0.01,35.0,0.83,3474
+2026-10-22T16:20:53,slot change B,stress-agent,0.0,25.2,0.83,3474
+2026-10-22T16:20:53,slot change B,stress-hub,0.09,42.4,0.83,3474
+2026-10-22T16:20:53,slot change B,stress-hs,19.16,375.5,0.83,3474
+2026-10-22T16:21:03,slot change B,stress-ts-scheduler,0.13,37.5,1.4,3420
+2026-10-22T16:21:03,slot change B,stress-agent,0.0,25.9,1.4,3420
+2026-10-22T16:21:03,slot change B,stress-hub,0.12,42.4,1.4,3420
+2026-10-22T16:21:03,slot change B,stress-hs,3.72,412.5,1.4,3420
+2026-10-22T16:21:14,slot change B,stress-ts-scheduler,1.03,38.5,1.26,3481
+2026-10-22T16:21:14,slot change B,stress-agent,0.0,28.6,1.26,3481
+2026-10-22T16:21:14,slot change B,stress-hub,0.1,42.4,1.26,3481
+2026-10-22T16:21:14,slot change B,stress-hs,2.16,347.4,1.26,3481
+2026-10-22T16:21:24,slot change B,stress-ts-scheduler,0.12,38.1,1.06,3470
+2026-10-22T16:21:24,slot change B,stress-agent,0.0,28.6,1.06,3470
+2026-10-22T16:21:24,slot change B,stress-hub,0.12,42.6,1.06,3470
+2026-10-22T16:21:24,slot change B,stress-hs,1.85,359.3,1.06,3470
+2026-10-22T16:21:35,churn,stress-ts-scheduler,0.71,38.2,1.12,3485
+2026-10-22T16:21:35,churn,stress-agent,0.0,28.6,1.12,3485
+2026-10-22T16:21:35,churn,stress-hub,0.11,42.4,1.12,3485
+2026-10-22T16:21:35,churn,stress-hs,1.65,359.6,1.12,3485
+2026-10-22T16:21:45,churn,stress-ts-scheduler,0.09,37.8,1.1,3485
+2026-10-22T16:21:45,churn,stress-agent,0.0,28.6,1.1,3485
+2026-10-22T16:21:45,churn,stress-hub,0.1,42.4,1.1,3485
+2026-10-22T16:21:45,churn,stress-hs,101.29,347.3,1.1,3485
+2026-10-22T16:21:56,churn,stress-ts-scheduler,0.27,38.2,1.16,3482
+2026-10-22T16:21:56,churn,stress-agent,0.0,29.6,1.16,3482
+2026-10-22T16:21:56,churn,stress-hub,0.09,42.4,1.16,3482
+2026-10-22T16:21:56,churn,stress-hs,102.37,349.8,1.16,3482
+2026-10-22T16:22:06,churn,stress-ts-scheduler,0.02,38.0,1.29,3466
+2026-10-22T16:22:06,churn,stress-agent,0.0,29.6,1.29,3466
+2026-10-22T16:22:06,churn,stress-hub,1.66,42.6,1.29,3466
+2026-10-22T16:22:06,churn,stress-hs,138.99,366.7,1.29,3466
+2026-10-22T16:22:17,churn,stress-ts-scheduler,0.0,38.2,1.33,3496
+2026-10-22T16:22:17,churn,stress-agent,0.0,27.6,1.33,3496
+2026-10-22T16:22:17,churn,stress-hub,0.09,42.4,1.33,3496
+2026-10-22T16:22:17,churn,stress-hs,115.17,337.3,1.33,3496
+2026-10-22T16:22:28,churn,stress-ts-scheduler,0.01,38.0,1.67,3491
+2026-10-22T16:22:28,churn,stress-agent,0.0,27.6,1.67,3491
+2026-10-22T16:22:28,churn,stress-hub,0.08,42.4,1.67,3491
+2026-10-22T16:22:28,churn,stress-hs,107.01,345.8,1.67,3491
+2026-10-22T16:22:38,churn,stress-ts-scheduler,0.14,38.2,1.72,3476
+2026-10-22T16:22:38,churn,stress-agent,0.0,27.6,1.72,3476
+2026-10-22T16:22:38,churn,stress-hub,0.09,42.5,1.72,3476
+2026-10-22T16:22:38,churn,stress-hs,120.37,358.9,1.72,3476
+2026-10-22T16:22:49,churn,stress-ts-scheduler,0.01,38.0,1.77,3491
+2026-10-22T16:22:49,churn,stress-agent,0.0,27.6,1.77,3491
+2026-10-22T16:22:49,churn,stress-hub,0.09,42.4,1.77,3491
+2026-10-22T16:22:49,churn,stress-hs,77.29,343.6,1.77,3491
+2026-10-22T16:22:59,churn,stress-ts-scheduler,0.03,38.2,1.65,3483
+2026-10-22T16:22:59,churn,stress-agent,0.0,27.6,1.65,3483
+2026-10-22T16:22:59,churn,stress-hub,0.1,42.6,1.65,3483
+2026-10-22T16:22:59,churn,stress-hs,100.82,353.2,1.65,3483
+2026-10-22T16:23:10,churn,stress-ts-scheduler,0.22,35.1,1.55,3498
+2026-10-22T16:23:10,churn,stress-agent,0.0,27.6,1.55,3498
+2026-10-22T16:23:10,churn,stress-hub,0.1,42.4,1.55,3498
+2026-10-22T16:23:10,churn,stress-hs,107.69,341.0,1.55,3498
+2026-10-22T16:23:20,churn,stress-ts-scheduler,0.01,35.0,1.77,3499
+2026-10-22T16:23:20,churn,stress-agent,0.0,27.6,1.77,3499
+2026-10-22T16:23:20,churn,stress-hub,0.09,42.4,1.77,3499
+2026-10-22T16:23:20,churn,stress-hs,102.23,340.0,1.77,3499
+2026-10-22T16:23:31,churn,stress-ts-scheduler,0.02,35.0,1.65,3482
+2026-10-22T16:23:31,churn,stress-agent,0.0,29.5,1.65,3482
+2026-10-22T16:23:31,churn,stress-hub,0.09,42.4,1.65,3482
+2026-10-22T16:23:31,churn,stress-hs,103.26,355.2,1.65,3482
+2026-10-22T16:23:41,churn,stress-ts-scheduler,0.02,35.1,1.55,3498
+2026-10-22T16:23:41,churn,stress-agent,0.0,29.5,1.55,3498
+2026-10-22T16:23:41,churn,stress-hub,0.12,42.4,1.55,3498
+2026-10-22T16:23:41,churn,stress-hs,73.54,338.5,1.55,3498
+2026-10-22T16:23:52,churn,stress-ts-scheduler,0.27,35.3,2.0,3489
+2026-10-22T16:23:52,churn,stress-agent,3.69,29.8,2.0,3489
+2026-10-22T16:23:52,churn,stress-hub,4.96,42.6,2.0,3489
+2026-10-22T16:23:52,churn,stress-hs,74.73,337.2,2.0,3489
+2026-10-22T16:24:03,churn,stress-ts-scheduler,0.01,35.1,1.84,3478
+2026-10-22T16:24:03,churn,stress-agent,0.0,29.5,1.84,3478
+2026-10-22T16:24:03,churn,stress-hub,0.08,42.6,1.84,3478
+2026-10-22T16:24:03,churn,stress-hs,106.03,358.8,1.84,3478
+2026-10-22T16:24:13,churn,stress-ts-scheduler,0.01,35.3,1.79,3472
+2026-10-22T16:24:13,churn,stress-agent,0.0,29.5,1.79,3472
+2026-10-22T16:24:13,churn,stress-hub,0.11,42.4,1.79,3472
+2026-10-22T16:24:13,churn,stress-hs,102.14,365.0,1.79,3472
+2026-10-22T16:24:24,churn,stress-ts-scheduler,0.21,35.6,1.66,3483
+2026-10-22T16:24:24,churn,stress-agent,0.0,29.5,1.66,3483
+2026-10-22T16:24:24,churn,stress-hub,0.1,42.4,1.66,3483
+2026-10-22T16:24:24,churn,stress-hs,110.31,354.2,1.66,3483
+2026-10-22T16:24:34,slot change C,stress-ts-scheduler,0.01,35.6,1.56,3498
+2026-10-22T16:24:34,slot change C,stress-agent,0.0,29.5,1.56,3498
+2026-10-22T16:24:34,slot change C,stress-hub,0.1,42.4,1.56,3498
+2026-10-22T16:24:34,slot change C,stress-hs,88.27,338.0,1.56,3498
+2026-10-22T16:24:45,slot change C,stress-ts-scheduler,0.5,38.3,1.75,3417
+2026-10-22T16:24:45,slot change C,stress-agent,17.95,30.8,1.75,3417
+2026-10-22T16:24:45,slot change C,stress-hub,0.11,42.5,1.75,3417
+2026-10-22T16:24:45,slot change C,stress-hs,385.58,414.4,1.75,3417
+2026-10-22T16:24:56,slot change C,stress-ts-scheduler,0.76,38.5,1.78,3470
+2026-10-22T16:24:56,slot change C,stress-agent,0.0,26.7,1.78,3470
+2026-10-22T16:24:56,slot change C,stress-hub,0.09,42.4,1.78,3470
+2026-10-22T16:24:56,slot change C,stress-hs,0.96,365.2,1.78,3470
+2026-10-22T16:25:06,slot change C,stress-ts-scheduler,0.57,40.0,1.73,3467
+2026-10-22T16:25:06,slot change C,stress-agent,0.0,26.7,1.73,3467
+2026-10-22T16:25:06,slot change C,stress-hub,0.12,42.4,1.73,3467
+2026-10-22T16:25:06,slot change C,stress-hs,1.26,364.9,1.73,3467
+2026-10-22T16:25:17,slot change C,stress-ts-scheduler,0.71,40.0,1.55,3450
+2026-10-22T16:25:17,slot change C,stress-agent,0.0,26.7,1.55,3450
+2026-10-22T16:25:17,slot change C,stress-hub,0.1,42.4,1.55,3450
+2026-10-22T16:25:17,slot change C,stress-hs,1.88,382.9,1.55,3450
+2026-10-22T16:25:27,slot change C,stress-ts-scheduler,0.2,39.8,1.39,3450
+2026-10-22T16:25:27,slot change C,stress-agent,0.0,26.7,1.39,3450
+2026-10-22T16:25:27,slot change C,stress-hub,0.11,42.4,1.39,3450
+2026-10-22T16:25:27,slot change C,stress-hs,1.09,383.6,1.39,3450
+2026-10-22T16:25:38,re-apply now,stress-ts-scheduler,0.24,39.6,1.25,3451
+2026-10-22T16:25:38,re-apply now,stress-agent,1.32,26.9,1.25,3451
+2026-10-22T16:25:38,re-apply now,stress-hub,0.09,42.6,1.25,3451
+2026-10-22T16:25:38,re-apply now,stress-hs,101.4,383.4,1.25,3451
+2026-10-22T16:25:48,slot change E,stress-ts-scheduler,0.01,39.6,1.43,3452
+2026-10-22T16:25:48,slot change E,stress-agent,0.0,26.6,1.43,3452
+2026-10-22T16:25:48,slot change E,stress-hub,0.1,42.4,1.43,3452
+2026-10-22T16:25:48,slot change E,stress-hs,1.13,381.3,1.43,3452
+2026-10-22T16:25:59,slot change E,stress-ts-scheduler,0.56,41.6,1.68,3426
+2026-10-22T16:25:59,slot change E,stress-agent,0.0,27.5,1.68,3426
+2026-10-22T16:25:59,slot change E,stress-hub,0.11,42.4,1.68,3426
+2026-10-22T16:25:59,slot change E,stress-hs,344.25,404.1,1.68,3426
+2026-10-22T16:26:09,slot change E,stress-ts-scheduler,0.14,41.2,1.72,3463
+2026-10-22T16:26:09,slot change E,stress-agent,0.0,27.5,1.72,3463
+2026-10-22T16:26:09,slot change E,stress-hub,0.12,42.4,1.72,3463
+2026-10-22T16:26:09,slot change E,stress-hs,1.24,368.3,1.72,3463
+2026-10-22T16:26:20,slot change E,stress-ts-scheduler,0.75,42.6,1.41,3456
+2026-10-22T16:26:20,slot change E,stress-agent,0.0,27.5,1.41,3456
+2026-10-22T16:26:20,slot change E,stress-hub,0.11,42.4,1.41,3456
+2026-10-22T16:26:20,slot change E,stress-hs,1.35,373.6,1.41,3456
+2026-10-22T16:26:30,slot change E,stress-ts-scheduler,0.1,42.4,1.26,3444
+2026-10-22T16:26:30,slot change E,stress-agent,0.0,27.8,1.26,3444
+2026-10-22T16:26:30,slot change E,stress-hub,0.1,42.4,1.26,3444
+2026-10-22T16:26:30,slot change E,stress-hs,0.98,384.8,1.26,3444
+2026-10-22T16:26:41,cool down,stress-ts-scheduler,0.79,43.9,1.14,3458
+2026-10-22T16:26:41,cool down,stress-agent,0.0,30.3,1.14,3458
+2026-10-22T16:26:41,cool down,stress-hub,0.11,42.4,1.14,3458
+2026-10-22T16:26:41,cool down,stress-hs,0.88,368.1,1.14,3458
+2026-10-22T16:26:51,cool down,stress-ts-scheduler,0.02,43.5,0.97,3452
+2026-10-22T16:26:51,cool down,stress-agent,0.0,30.3,0.97,3452
+2026-10-22T16:26:51,cool down,stress-hub,1.77,42.8,0.97,3452
+2026-10-22T16:26:51,cool down,stress-hs,3.43,369.2,0.97,3452
+2026-10-22T16:27:02,cool down,stress-ts-scheduler,0.01,43.5,0.98,3452
+2026-10-22T16:27:02,cool down,stress-agent,0.0,30.3,0.98,3452
+2026-10-22T16:27:02,cool down,stress-hub,0.1,42.4,0.98,3452
+2026-10-22T16:27:02,cool down,stress-hs,1.3,373.8,0.98,3452
+2026-10-22T16:27:13,cool down,stress-ts-scheduler,0.01,43.9,0.9,3455
+2026-10-22T16:27:13,cool down,stress-agent,0.0,30.3,0.9,3455
+2026-10-22T16:27:13,cool down,stress-hub,0.11,42.4,0.9,3455
+2026-10-22T16:27:13,cool down,stress-hs,1.46,369.3,0.9,3455
+2026-10-22T16:27:23,cool down,stress-ts-scheduler,0.01,43.9,0.84,3455
+2026-10-22T16:27:23,cool down,stress-agent,0.0,31.2,0.84,3455
+2026-10-22T16:27:23,cool down,stress-hub,0.11,42.4,0.84,3455
+2026-10-22T16:27:23,cool down,stress-hs,18.73,369.0,0.84,3455
+2026-10-22T16:27:34,cool down,stress-ts-scheduler,0.01,43.9,0.87,3455
+2026-10-22T16:27:34,cool down,stress-agent,0.0,31.2,0.87,3455
+2026-10-22T16:27:34,cool down,stress-hub,0.1,42.4,0.87,3455
+2026-10-22T16:27:34,cool down,stress-hs,1.42,369.5,0.87,3455
+2026-10-22T16:27:44,cool down,stress-ts-scheduler,0.1,43.9,0.81,3453
+2026-10-22T16:27:44,cool down,stress-agent,0.0,31.2,0.81,3453
+2026-10-22T16:27:44,cool down,stress-hub,0.11,42.4,0.81,3453
+2026-10-22T16:27:44,cool down,stress-hs,2.45,369.3,0.81,3453
+2026-10-22T16:27:55,cool down,stress-ts-scheduler,0.02,43.9,0.76,3452
+2026-10-22T16:27:55,cool down,stress-agent,0.0,29.3,0.76,3452
+2026-10-22T16:27:55,cool down,stress-hub,0.1,42.4,0.76,3452
+2026-10-22T16:27:55,cool down,stress-hs,1.97,375.1,0.76,3452
+2026-10-22T16:28:05,cool down,stress-ts-scheduler,0.01,43.9,0.66,3452
+2026-10-22T16:28:05,cool down,stress-agent,0.0,29.3,0.66,3452
+2026-10-22T16:28:05,cool down,stress-hub,0.11,42.4,0.66,3452
+2026-10-22T16:28:05,cool down,stress-hs,0.92,374.8,0.66,3452

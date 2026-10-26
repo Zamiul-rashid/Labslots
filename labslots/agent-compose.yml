@@ -1,0 +1,59 @@
+# Slot agent for one more Headscale server (hs2, hs3, ...). Run it on that server, next to its Headscale:
+#
+#   1. On the website: Settings -> Headscale servers -> Add server (e.g. hs2). Copy the token it shows
+#      into ./secrets/agent/agent_token (chmod 400, owned by uid 10001).
+#   2. A Headscale API key for this server in ./secrets/agent/headscale_api_key (`headscale apikeys create`),
+#      same owner.
+#   3. A pre-auth key for tag:scheduler on this server in ./secrets/tailscale/ts_authkey, for the sidecar.
+#   4. Copy this file here, set the release in .env and start it (no source code needed):
+#        echo LABSLOTS_IMAGE=ghcr.io/zamiul-rashid/labslots:0.1.0 > .env
+#        docker compose -f agent-compose.yml up -d
+#      To upgrade, change the version in .env and run the same `up -d`; to roll back, put the old one back.
+#   5. In the Sheet's PCs tab, set Server = hs2 for this server's PCs. Prepare each PC with the
+#      setup script from the website's PCs page ("setup-lab-pc.sh for hs2").
+x-logging: &logging
+  driver: json-file
+  options: {max-size: "10m", max-file: "3"}
+
+services:
+  labslots-agent:
+    image: ${LABSLOTS_IMAGE:-ghcr.io/zamiul-rashid/labslots:latest}
+    container_name: labslots-agent
+    restart: unless-stopped
+    network_mode: host
+    logging: *logging
+    command: ["python", "-m", "labslots.agent"]
+    environment:
+      TZ: "${TZ:-UTC}"                  # same zone as the hub
+      AGENT_HUB_URL: "https://hs.example.edu/slots"
+      AGENT_TOKEN_FILE: "/run/secrets/agent_token"
+      HEADSCALE_URL: "http://127.0.0.1:8080"        # this server's Headscale
+      HEADSCALE_API_KEY_FILE: "/run/secrets/headscale_api_key"
+      LABSLOTS_SSH_SOCKS: "127.0.0.1:1055"
+    volumes:
+      - ./agent-data:/data
+      - ./secrets/agent:/run/secrets:ro          # agent_token, headscale_api_key
+    healthcheck:   # the agent touches /data/heartbeat after every run
+      test: ["CMD", "python", "-c", "import os, sys, time; sys.exit(time.time() - os.path.getmtime('/data/heartbeat') > 120)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  ts-scheduler:                                       # the agent's way onto this server's tailnet
+    image: tailscale/tailscale:v1.102.3
+    container_name: ts-scheduler
+    restart: unless-stopped
+    network_mode: host
+    logging: *logging
+    environment:
+      TS_USERSPACE: "true"
+      TS_SOCKS5_SERVER: "127.0.0.1:1055"
+      TS_STATE_DIR: "/var/lib/tailscale"
+      TS_ACCEPT_DNS: "false"
+      TS_HOSTNAME: "lab-scheduler"
+      TS_AUTHKEY: "file:/run/secrets/ts_authkey"
+      TS_EXTRA_ARGS: "--login-server=https://THIS-SERVER.example"   # this server's Headscale URL
+    volumes:
+      - ./ts-state:/var/lib/tailscale
+      - ./secrets/tailscale:/run/secrets:ro      # ts_authkey

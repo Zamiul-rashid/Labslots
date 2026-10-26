@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}Now{% endblock %}
+{% block body %}
+<div class="pagehead">
+  <div>
+    <h1>Who has which PC</h1>
+    <p>{% if switching %}Switch-over: the last slot has closed and no group has access until {{ next_change.strftime('%A %H:%M') }}.{% else %}This slot runs until {{ next_change.strftime('%A %H:%M') }}.{% endif %} Each Headscale server's slot agent enforces it and reports here.</p>
+  </div>
+  <form method="post" action="{{ base }}/enforce"><button class="btn">Re-apply now</button></form>
+</div>
+
+{% if rotation %}
+<div class="note warn" role="status"><b>Test rotation running.</b> Access on the test PC switches every {{ rotation.seconds }} seconds (switch {{ rotation.index + 1 }}); next switch {{ rotation.next_change.strftime('%H:%M:%S') }}, ends {{ rotation.end_dt.strftime('%H:%M:%S') }}. <a href="{{ base }}/settings#rotation">Stop it in Settings</a>.</div>
+{% endif %}
+{% if not servers %}
+<div class="note warn">No Headscale server is registered yet, so nothing is being enforced. Add one under <a href="{{ base }}/settings#servers">Settings, Headscale servers</a> and start its slot agent.</div>
+{% endif %}
+{% for sv in servers %}{% set rep = sv.report %}
+  {% if sv.stale %}
+  <div class="note err" role="alert"><b>{{ sv.name }}: no report {{ 'yet' if not sv.last_seen else 'since ' ~ sv.last_seen.replace('T', ' ') }}.</b> Its slot agent is stopped or cannot reach this website. If it is running, it keeps enforcing the last schedule it fetched.</div>
+  {% elif rep.admins_only %}
+  <div class="note err" role="alert"><b>{{ sv.name }}: fail-closed.</b> Its agent applied the admins-only policy, so no group can reach that server's PCs until the error below is fixed.</div>
+  {% endif %}
+  {% if not sv.stale and rep.errors %}
+  <div class="note err"><b>{{ sv.name }}: {{ rep.errors|length }} problem{{ 's' if rep.errors|length != 1 }} in its last run</b>
+    <ul>{% for e in rep.errors %}<li>{{ e }}</li>{% endfor %}</ul></div>
+  {% endif %}
+  {% if not sv.stale and rep.hub_error %}<div class="note warn">{{ sv.name }} had trouble reaching this website: {{ rep.hub_error }}</div>{% endif %}
+  {% if not sv.stale and rep.node_error %}<div class="note err">{{ sv.name }} cannot read its Headscale: {{ rep.node_error }}</div>{% endif %}
+{% endfor %}
+
+<div class="dayhead">
+  <div class="nowcounts">
+    <div><b>{{ counts.busy }}</b><span>in use of {{ counts.total }}</span></div>
+    <div><b>{{ counts.total - counts.busy }}</b><span>free</span></div>
+    <div><b>{{ counts.online }}</b><span>online</span></div>
+    <div class="{{ 'bad' if counts.problems }}"><b>{{ counts.problems }}</b><span>problem{{ 's' if counts.problems != 1 }}</span></div>
+  </div>
+  {% set search_placeholder = 'Filter by PC or group' %}{% include "_search.html" %}
+</div>
+<div class="sheet-wrap">
+<table class="sheet list nowtable">
+  <thead><tr><th scope="col">PC</th><th scope="col">This slot · {{ slot.label }}</th><th scope="col">Next · {{ upcoming.label }}</th><th scope="col">Tailnet</th><th scope="col">On the PC</th></tr></thead>
+  <tbody>
+  {% for r in rows %}
+  <tr class="{{ 'errrow' if r.problem }}" data-search="{{ r.pc.name|lower }} {{ ((r.booking.short or r.booking.slug) ~ ' ' ~ r.booking.group_name)|lower if r.booking }} {{ ((r.next.short or r.next.slug) ~ ' ' ~ r.next.group_name)|lower if r.next }}">
+    <td><span class="lead">{{ r.pc.name }}</span> <code class="muted">{{ r.pc.tag }}</code>{% if servers|length > 1 or r.unserved %} <span class="muted small">on {{ r.server }}</span>{% endif %}</td>
+    <td class="slotcell" data-label="Now">{% if r.booking %}<span class="code-mark" style="--mark: {{ r.booking.color|default('#d6e3f2') }}">{{ r.booking.short or r.booking.slug }}</span> {{ r.booking.group_name }}{% else %}<span class="free">Free, admins only</span>{% endif %}</td>
+    <td class="slotcell" data-label="Next">{% if r.next %}<span class="code-mark" style="--mark: {{ r.next.color|default('#d6e3f2') }}">{{ r.next.short or r.next.slug }}</span> {{ r.next.group_name }}{% else %}<span class="free">Free</span>{% endif %}</td>
+    <td data-label="Tailnet">{% if r.unserved %}<span class="state-bad">Server {{ r.server }} is not registered</span>
+      {% elif r.node %}<span class="dot {{ 'up' if r.node.online else '' }}"></span>{{ 'Online' if r.node.online else 'Offline' }} <code class="muted">{{ r.node.ipv4 }}</code>
+      {% else %}<span class="state-bad">Not enrolled</span>{% endif %}</td>
+    <td data-label="On the PC">{% if not r.pc.ssh_enabled or not status.flags.ssh_enforce %}<span class="muted">Switching off</span>
+      {% elif r.state and r.state.last_error %}<span class="state-bad" title="{{ r.state.last_error }}">Switch failed</span>
+      {% elif r.state %}<code>{{ r.state.active_account or 'nobody' }}</code>
+      {% else %}<span class="state-wait">Waiting for first run</span>{% endif %}</td>
+  </tr>
+  {% else %}
+  <tr><td colspan="5">No lab PCs yet. Add them in the PCs tab of the {% if sheet %}<a href="{{ sheet.url }}" target="_blank" rel="noopener">Sheet</a>{% else %}Sheet{% endif %} and they appear here.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% for sv in servers %}{% set rep = sv.report %}
+{% if not sv.stale and (rep.would_delete or rep.deleted or rep.ssh) %}
+<div class="cols" style="margin-top: var(--s8)">
+  {% if rep.would_delete %}
+  <section class="section"><h2>{{ sv.name }}: clean-up would remove ({{ rep.would_delete|length }})</h2>
+    <p class="muted small">Device clean-up is in dry-run. Turn it on in Settings to remove these students' devices outside their slot.</p>
+    <ul class="subtle-list">{% for d in rep.would_delete %}<li>{{ d }}</li>{% endfor %}</ul></section>
+  {% endif %}
+  {% if rep.deleted %}
+  <section class="section"><h2>{{ sv.name }}: removed in the last run</h2><ul class="subtle-list">{% for d in rep.deleted %}<li>{{ d }}</li>{% endfor %}</ul></section>
+  {% endif %}
+  {% if rep.ssh %}
+  <section class="section"><h2>{{ sv.name }}: PC switches in the last run</h2><ul class="subtle-list">{% for d in rep.ssh %}<li>{{ d }}</li>{% endfor %}</ul></section>
+  {% endif %}
+</div>
+{% endif %}
+{% endfor %}
+
+{% if servers %}
+<section class="section" style="margin-top: var(--s8)">
+  <h2>Headscale servers</h2>
+  <div class="sheet-wrap">
+  <table class="sheet list">
+    <thead><tr><th scope="col">Server</th><th scope="col">Last report</th><th scope="col">Schedule copy fetched</th><th scope="col">Policy written</th></tr></thead>
+    <tbody>{% for sv in servers %}
+    <tr class="{{ 'errrow' if sv.stale }}"><td><span class="lead">{{ sv.name }}</span></td>
+      <td data-label="Last report">{% if sv.stale %}<span class="state-bad">{{ sv.last_seen.replace('T', ' ') if sv.last_seen else 'never' }}</span>{% else %}<span class="state-ok">{{ sv.last_seen[11:19] }}</span>{% endif %}</td>
+      <td data-label="Fetched">{{ (sv.report.slice_at or '—').replace('T', ' ') }}</td>
+      <td data-label="Policy">{{ (sv.report.applied_at or '—').replace('T', ' ') }}</td></tr>
+    {% endfor %}</tbody>
+  </table>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

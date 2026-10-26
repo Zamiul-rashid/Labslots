@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Sign in{% endblock %}
+{% block body %}
+<section class="signin">
+  <h1>Sign in to the slot desk</h1>
+  <p class="muted">For lab admins and supervisors. Use your {{ org }} Google account; only accounts on the admin list get in.</p>
+  {% if oidc %}
+  <p><a class="btn primary" href="{{ base }}/login/google">Sign in with Google</a></p>
+  {% else %}
+  <div class="note warn">Google sign-in is not configured on this server.</div>
+  {% endif %}
+  <p class="muted small">Thesis group wanting a lab PC? <a href="{{ base }}/enroll">Enroll your group here</a>.</p>
+  {% if dev %}
+  <form method="get" action="{{ base }}/dev-login" class="row">
+    <label class="visually-hidden" for="dev-email">Email</label>
+    <input id="dev-email" name="email" type="email" placeholder="admin email (dev sign-in)" required>
+    <button class="btn">Dev sign-in</button>
+  </form>
+  {% endif %}
+</section>
+{% endblock %}

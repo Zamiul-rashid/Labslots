@@ -1,0 +1,5 @@
+slot_change,changed_at,detail,policy_applied_s,devices_removed,removal_first_s,removal_last_s,pcs_switched,switch_errors,last_pc_switched_s,students_signed_in_again,incoming_students_online_s,student_checks,all_checks_correct_s,leaks_after_policy,wrongly_blocked_after_60s
+B,2026-10-22T06:59:02,"65 PCs busy, 57 groups in",5.0,0,,,65,1,23.0,0,,480,36.3,0,0
+C,2026-10-22T07:03:11,"60 PCs busy, 30 groups in",14.0,27,15.0,38.0,65,0,40.0,0,0.1,1565,58.5,0,1
+D,2026-10-22T07:08:11,"60 PCs busy, 30 groups in",12.0,50,13.0,51.0,60,0,53.0,27,60.6,270,16.7,0,0
+E,2026-10-22T07:12:25,"65 PCs busy, 57 groups in",10.0,0,,,63,1,28.0,50,72.8,258,50.2,0,0

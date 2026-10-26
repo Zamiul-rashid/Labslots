@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1d4e89">
+  <title>{% block title %}Slots{% endblock %} · {{ lab_name }}</title>
+  <link rel="stylesheet" href="{{ base }}/static/style.css?v={{ static_v }}">
+  <script src="{{ base }}/static/htmx.min.js" defer></script>
+</head>
+<body>
+<header class="shell">
+  <div class="shell-in">
+    <a class="brand" href="{{ base }}/{{ '' if user or not viewer else 'enroll' }}"><b>{{ lab_name }}</b><span>PC slots</span></a>
+    {% if user %}
+    {% set p = request.url.path %}
+    <nav class="nav" aria-label="Main">
+      {% for href, label in [('/', 'Now'), ('/calendar', 'Calendar'), ('/enrollments', 'Enrollments'), ('/pcs', 'PCs'),
+                             ('/terms', 'Semesters'), ('/settings', 'Settings'), ('/audit', 'Log')] %}
+        {% set here = (p == base ~ '/') if href == '/' else p.startswith(base ~ href) %}
+        <a href="{{ base }}{{ href }}" {% if here %}aria-current="page"{% endif %}>{{ label }}{% if href == '/enrollments' and status and status.pending %}<span class="count" aria-label="{{ status.pending }} pending">{{ status.pending }}</span>{% endif %}</a>
+      {% endfor %}
+    </nav>
+    <form method="post" action="{{ base }}/logout" class="who">
+      <span>{{ user }}</span><button type="submit">Sign out</button>
+    </form>
+    {% elif viewer %}
+    <form method="post" action="{{ base }}/logout" class="who">
+      <span>{{ viewer }}</span><button type="submit">Sign out</button>
+    </form>
+    {% endif %}
+  </div>
+</header>
+{% if status %}
+<div class="statusline">
+  <div class="statusline-in">
+    <span>Now <b>{{ now_slot.label }}</b></span>
+    <span>Changes <b>{{ status.next_change.strftime('%a %H:%M') }}</b></span>
+    <span class="switch {{ 'on' if status.flags.enforce_policy else 'off' }}">Policy {{ 'enforced' if status.flags.enforce_policy else 'off' }}</span>
+    <span class="switch {{ 'on' if status.flags.device_cleanup else 'dry' }}">Device clean-up {{ 'on' if status.flags.device_cleanup else 'dry-run' }}</span>
+    <span class="switch {{ 'on' if status.flags.ssh_enforce else 'off' }}">PC switching {{ 'on' if status.flags.ssh_enforce else 'off' }}</span>
+    {% if status.quiet %}<a class="alert" href="{{ base }}/">No report from {{ status.quiet|join(', ') }}</a>{% endif %}
+    {% if status.admins_only %}<a class="alert" href="{{ base }}/">Fail-closed: admins only</a>
+    {% elif status.errors %}<a class="alert" href="{{ base }}/">{{ status.errors }} enforcement error{{ 's' if status.errors != 1 }}</a>{% endif %}
+    {% if sheet %}{% if sheet.error %}<a class="alert" href="{{ base }}/settings#sheet" title="{{ sheet.error }}">Sheet unreachable: enforcing the last good copy</a>
+    {% else %}<a class="switch on" href="{{ sheet.url }}" target="_blank" rel="noopener">Sheet read {{ (sheet.last_ok or '')[11:16] or 'not yet' }}</a>{% endif %}
+    {% if sheet.problems %}<a class="pending" href="{{ sheet.url }}" target="_blank" rel="noopener">{{ sheet.problems }} Sheet problem{{ 's' if sheet.problems != 1 }}</a>{% endif %}{% endif %}
+    {% if status.pending %}<a class="pending" href="{{ base }}/enrollments">{{ status.pending }} enrollment{{ 's' if status.pending != 1 }} waiting</a>{% endif %}
+  </div>
+</div>
+{% endif %}
+<main id="main">
+  {% for kind, msg in flashes %}<div class="note {{ kind }}" role="{{ 'alert' if kind == 'err' else 'status' }}">{{ msg }}</div>{% endfor %}
+  {% block body %}{% endblock %}
+</main>
+</body>
+</html>

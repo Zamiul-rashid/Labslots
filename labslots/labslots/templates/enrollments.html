@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Enrollments{% endblock %}
+{% block body %}
+<div class="pagehead">
+  <div>
+    <h1>Enrollments</h1>
+    <p>Thesis groups enroll at <a href="{{ base }}/enroll">/slots/enroll</a> with their {{ org }} accounts. Open one to assign the group a PC and its weekly slots.</p>
+  </div>
+</div>
+{% if not mailer_on %}<div class="note warn">Email is not configured, so groups are not emailed when you decide. They still see the result on their status page.</div>{% endif %}
+
+<div class="sheet-wrap">
+<table class="sheet list">
+  <thead><tr><th scope="col">Group</th><th scope="col">Thesis</th><th scope="col">Supervisor</th><th scope="col">Members</th><th scope="col">Hardware needs</th><th scope="col">Sent</th><th scope="col"><span class="visually-hidden">Open</span></th></tr></thead>
+  <tbody>
+  {% for e in pending %}
+  <tr>
+    <td><a class="lead" href="{{ base }}/enrollments/{{ e.id }}">{{ e.group_name }}</a></td>
+    <td data-label="Thesis">{{ e.thesis_title }}</td>
+    <td data-label="Supervisor">{{ e.supervisor }}</td>
+    <td data-label="Members">{{ e.members|length }}</td>
+    <td data-label="Hardware">{{ e.hardware|truncate(80) or '—' }}</td>
+    <td data-label="Sent" class="nowrap muted">{{ e.submitted_at[:16].replace('T', ' ') }}</td>
+    <td class="actions"><a class="btn small primary" href="{{ base }}/enrollments/{{ e.id }}">Assign a PC</a></td>
+  </tr>
+  {% else %}
+  <tr><td colspan="7">No enrollments waiting. Share <code>https://hs.example.edu/slots/enroll</code> with thesis groups.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<section class="section" style="margin-top: var(--s8)">
+  <h2>Decided</h2>
+  <div class="sheet-wrap">
+  <table class="sheet list">
+    <thead><tr><th scope="col">Group</th><th scope="col">Decision</th><th scope="col">By</th><th scope="col">When</th><th scope="col">Note</th></tr></thead>
+    <tbody>
+    {% for e in decided %}
+    <tr>
+      <td><a href="{{ base }}/enrollments/{{ e.id }}">{{ e.group_name }}</a></td>
+      <td data-label="Decision" class="{{ 'state-ok' if e.status == 'approved' else ('state-bad' if e.status == 'rejected' else 'muted') }}">{{ {'approved': 'Enrolled', 'rejected': 'Not approved', 'withdrawn': 'Withdrawn by group'}[e.status] }}</td>
+      <td data-label="By">{{ e.decided_by or '—' }}</td>
+      <td data-label="When" class="nowrap muted">{{ (e.decided_at or '—')[:16].replace('T', ' ') }}</td>
+      <td data-label="Note">{{ e.decision_note or '—' }}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="5" class="muted">Nothing decided yet.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+{% endblock %}

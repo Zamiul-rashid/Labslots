@@ -1,0 +1,47 @@
+# Headplane 0.8.1 for hs.example.edu — example. Served at https://hs.example.edu/admin behind a reverse proxy.
+server:
+  host: "0.0.0.0"
+  port: 3000
+  base_url: "https://hs.example.edu"
+  cookie_secret_path: "/etc/headplane/cookie_secret"
+  cookie_secure: true
+  cookie_max_age: 86400
+  data_path: "/var/lib/headplane"
+
+headscale:
+  url: "http://127.0.0.1:8080"
+  public_url: "https://hs.example.edu"
+  # Mounted read-only: Headplane shows the settings but cannot change them.
+  config_path: "/etc/headscale/config.yaml"
+  # Needed for Google sign-in (Headplane talks to Headscale as this key).
+  api_key_path: "/etc/headplane/headscale_api_key"
+
+# Google sign-in, same Google client as Headscale.
+# Headplane does not filter domains: the FIRST person to sign in becomes Owner,
+# everyone after gets "member" (no access) until an owner/admin promotes them.
+oidc:
+  issuer: "https://accounts.google.com"
+  client_id: "YOUR_CLIENT_ID.apps.googleusercontent.com"
+  client_secret_path: "/etc/headplane/oidc_client_secret"
+  scope: "openid email profile"
+  use_pkce: true
+  default_role: "member"
+
+integration:
+  # No docker/kubernetes/proc integration: Headscale runs natively under systemd
+  # and its config is read-only here, so Headplane never restarts it.
+  agent:
+    enabled: false
+services:
+  headplane:
+    image: ghcr.io/tale/headplane:0.8.1
+    container_name: headplane
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./config.yaml:/etc/headplane/config.yaml:ro
+      - ./cookie_secret:/etc/headplane/cookie_secret:ro
+      - ./headscale_api_key:/etc/headplane/headscale_api_key:ro
+      - ./oidc_client_secret:/etc/headplane/oidc_client_secret:ro
+      - /etc/headscale/config.yaml:/etc/headscale/config.yaml:ro
+      - ./data:/var/lib/headplane

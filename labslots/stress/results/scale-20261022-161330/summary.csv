@@ -1,0 +1,129 @@
+phase,metric,value,unit
+PCs join,PCs online,5.1,s
+students join,student devices started,800,devices
+students join,all student devices online,184.8,s
+students join,"devices online (PCs, students, scheduler)",871,devices
+slot change B,slot change B: policy applied,19.8,s
+slot change B,slot change B: all 70 PCs switched (Tailscale SSH),19.8,s
+slot change B,slot change B: every student probe correct,54.0,s
+slot change B,slot change B: wrong access after the policy (leaks),0,probes
+churn,churn: device reboots,87,reboots
+slot change C,slot change C: policy applied,12.8,s
+slot change C,slot change C: all 70 PCs switched (Tailscale SSH),12.8,s
+slot change C,slot change C: every student probe correct,53.9,s
+slot change C,slot change C: wrong access after the policy (leaks),0,probes
+re-apply now,re-apply now: policy rewritten,11.1,s
+re-apply now,re-apply now: agent run,2.82,s
+slot change E,slot change E: policy applied,16.1,s
+slot change E,slot change E: all 70 PCs switched (Tailscale SSH),16.1,s
+slot change E,slot change E: every student probe correct,51.3,s
+slot change E,slot change E: wrong access after the policy (leaks),0,probes
+PCs join,Headscale CPU mean,85.7,% of one core
+PCs join,Headscale CPU peak,155.5,% of one core
+PCs join,Headscale memory peak,71.9,MB
+PCs join,agent CPU mean,0.0,% of one core
+PCs join,agent CPU peak,0.1,% of one core
+PCs join,agent memory peak,21.4,MB
+PCs join,website CPU mean,0.1,% of one core
+PCs join,website CPU peak,0.1,% of one core
+PCs join,website memory peak,38.5,MB
+PCs join,CT load (1 min) peak,1.05,of 4 cores
+PCs join,"CT free memory, lowest",3713,MB of 4096
+students join,Headscale CPU mean,312.1,% of one core
+students join,Headscale CPU peak,385.6,% of one core
+students join,Headscale memory peak,450.0,MB
+students join,agent CPU mean,0.5,% of one core
+students join,agent CPU peak,4.6,% of one core
+students join,agent memory peak,28.8,MB
+students join,website CPU mean,0.3,% of one core
+students join,website CPU peak,2.0,% of one core
+students join,website memory peak,38.9,MB
+students join,CT load (1 min) peak,5.07,of 4 cores
+students join,"CT free memory, lowest",3359,MB of 4096
+steady (all devices),Headscale CPU mean,2.3,% of one core
+steady (all devices),Headscale CPU peak,9.5,% of one core
+steady (all devices),Headscale memory peak,383.4,MB
+steady (all devices),agent CPU mean,0.1,% of one core
+steady (all devices),agent CPU peak,1.5,% of one core
+steady (all devices),agent memory peak,30.6,MB
+steady (all devices),website CPU mean,0.1,% of one core
+steady (all devices),website CPU peak,0.3,% of one core
+steady (all devices),website memory peak,38.8,MB
+steady (all devices),CT load (1 min) peak,4.34,of 4 cores
+steady (all devices),"CT free memory, lowest",3426,MB of 4096
+slot change B,Headscale CPU mean,6.1,% of one core
+slot change B,Headscale CPU peak,19.2,% of one core
+slot change B,Headscale memory peak,412.5,MB
+slot change B,agent CPU mean,0.0,% of one core
+slot change B,agent CPU peak,0.0,% of one core
+slot change B,agent memory peak,28.6,MB
+slot change B,website CPU mean,0.1,% of one core
+slot change B,website CPU peak,0.1,% of one core
+slot change B,website memory peak,42.6,MB
+slot change B,CT load (1 min) peak,1.4,of 4 cores
+slot change B,"CT free memory, lowest",3420,MB of 4096
+churn,Headscale CPU mean,96.8,% of one core
+churn,Headscale CPU peak,139.0,% of one core
+churn,Headscale memory peak,366.7,MB
+churn,agent CPU mean,0.2,% of one core
+churn,agent CPU peak,3.7,% of one core
+churn,agent memory peak,29.8,MB
+churn,website CPU mean,0.5,% of one core
+churn,website CPU peak,5.0,% of one core
+churn,website memory peak,42.6,MB
+churn,CT load (1 min) peak,2.0,of 4 cores
+churn,"CT free memory, lowest",3466,MB of 4096
+slot change C,Headscale CPU mean,79.8,% of one core
+slot change C,Headscale CPU peak,385.6,% of one core
+slot change C,Headscale memory peak,414.4,MB
+slot change C,agent CPU mean,3.0,% of one core
+slot change C,agent CPU peak,17.9,% of one core
+slot change C,agent memory peak,30.8,MB
+slot change C,website CPU mean,0.1,% of one core
+slot change C,website CPU peak,0.1,% of one core
+slot change C,website memory peak,42.5,MB
+slot change C,CT load (1 min) peak,1.78,of 4 cores
+slot change C,"CT free memory, lowest",3417,MB of 4096
+re-apply now,Headscale CPU mean,101.4,% of one core
+re-apply now,Headscale CPU peak,101.4,% of one core
+re-apply now,Headscale memory peak,383.4,MB
+re-apply now,agent CPU mean,1.3,% of one core
+re-apply now,agent CPU peak,1.3,% of one core
+re-apply now,agent memory peak,26.9,MB
+re-apply now,website CPU mean,0.1,% of one core
+re-apply now,website CPU peak,0.1,% of one core
+re-apply now,website memory peak,42.6,MB
+re-apply now,CT load (1 min) peak,1.25,of 4 cores
+re-apply now,"CT free memory, lowest",3451,MB of 4096
+slot change E,Headscale CPU mean,69.8,% of one core
+slot change E,Headscale CPU peak,344.2,% of one core
+slot change E,Headscale memory peak,404.1,MB
+slot change E,agent CPU mean,0.0,% of one core
+slot change E,agent CPU peak,0.0,% of one core
+slot change E,agent memory peak,27.8,MB
+slot change E,website CPU mean,0.1,% of one core
+slot change E,website CPU peak,0.1,% of one core
+slot change E,website memory peak,42.4,MB
+slot change E,CT load (1 min) peak,1.72,of 4 cores
+slot change E,"CT free memory, lowest",3426,MB of 4096
+cool down,Headscale CPU mean,3.6,% of one core
+cool down,Headscale CPU peak,18.7,% of one core
+cool down,Headscale memory peak,375.1,MB
+cool down,agent CPU mean,0.0,% of one core
+cool down,agent CPU peak,0.0,% of one core
+cool down,agent memory peak,31.2,MB
+cool down,website CPU mean,0.3,% of one core
+cool down,website CPU peak,1.8,% of one core
+cool down,website memory peak,42.8,MB
+cool down,CT load (1 min) peak,1.14,of 4 cores
+cool down,"CT free memory, lowest",3452,MB of 4096
+all,"Headscale API list nodes, median",83,ms
+all,"Headscale API list nodes, 95th percentile",235,ms
+pages,"page /, median load",9.0,ms
+pages,"page /calendar?view=week, median load",36.0,ms
+pages,"page /calendar?view=month, median load",20.5,ms
+pages,"page /pcs, median load",6.0,ms
+pages,"page /settings, median load",20.0,ms
+pages,"page /audit, median load",3.0,ms
+all,Tailscale SSH probes run,2956,probes
+all,"probe logins that worked, median time",68,ms

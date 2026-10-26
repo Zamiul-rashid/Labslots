@@ -1,0 +1,77 @@
+# Pushing a tag vX.Y.Z publishes the labslots image as ghcr.io/zamiul-rashid/labslots:X.Y.Z
+# (also :X.Y and :latest) and makes a GitHub release for it. The tag must match the version in
+# labslots/pyproject.toml. Headscale is not built here: it runs on the host from the official .deb.
+name: release
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: write    # the GitHub release
+  packages: write    # the image on ghcr.io
+
+env:
+  IMAGE: ghcr.io/zamiul-rashid/labslots
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Tag matches pyproject.toml
+        run: |
+          v=$(grep -oP '^version = "\K[^"]+' labslots/pyproject.toml)
+          [ "v$v" = "$GITHUB_REF_NAME" ] || { echo "tag $GITHUB_REF_NAME, pyproject.toml says $v"; exit 1; }
+          echo "VERSION=$v" >> "$GITHUB_ENV"
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Tests
+        working-directory: labslots
+        run: pip install -e '.[test]' && python -m pytest -q
+
+      - uses: docker/setup-qemu-action@99012661954931238ded8c8b007157a8430204e1 # v4.4.0
+      - uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
+      - uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: meta
+        uses: docker/metadata-action@dc802804100637a589fabce1cb79ff13a1411302 # v6.2.0
+        with:
+          images: ${{ env.IMAGE }}
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=raw,value=latest
+          labels: |
+            org.opencontainers.image.title=labslots
+            org.opencontainers.image.description=Slot scheduler for the lab's Headscale tailnet
+      - uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
+        with:
+          context: labslots
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cat > notes.md <<EOF
+          Image: \`${IMAGE}:${VERSION}\`
+
+          On the Headscale host, in /opt/labslots: \`./deploy.sh ${VERSION}\`
+          On another Headscale server: set \`LABSLOTS_IMAGE=${IMAGE}:${VERSION}\` in .env, then
+          \`docker compose -f agent-compose.yml up -d\`
+
+          Headscale itself is not part of this release; it stays on the host as a systemd service.
+          EOF
+          gh release create "$GITHUB_REF_NAME" --title "labslots $VERSION" --notes-file notes.md --generate-notes
