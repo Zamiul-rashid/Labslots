@@ -116,7 +116,7 @@ def create_app(cfg: Config, db: DB | None = None, clock=datetime.now, sheet=None
         user = request.session.get("email", "")
         signed_in = bool(user) and db.is_admin(user)
         return templates.TemplateResponse(request, name, {
-            "base": base, "public_url": cfg.public_url, "lab_name": cfg.lab_name, "org": cfg.org_name, "user": user if signed_in else "", "viewer": user, "flashes": msgs,
+            "base": base, "lab_name": cfg.lab_name, "org": cfg.org_name, "user": user if signed_in else "", "viewer": user, "flashes": msgs,
             "status": status_line() if signed_in and not name.startswith("_") else None,
             "sheet": sync.status() if sync and signed_in else None,
             "now_slot": slot_at(clock()), "switching": in_switch_window(clock()), "WEEKDAYS": WEEKDAYS, "HALVES": HALVES,

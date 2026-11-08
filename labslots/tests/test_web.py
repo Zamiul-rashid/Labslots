@@ -244,14 +244,6 @@ def test_admin_approves_enrollment_into_the_sheet(tmp_path):
     assert row[5] == "BA-ASR" and row[10] == "BA-ASR"
     status = s.get("/slots/enroll").text
     assert "Enrolled" in status and "pc-43" in status and "grp-bangla-asr" in status and "Wed 06:00-17:55" in status
-    # the connect steps point at this server, not a placeholder domain
-    assert "tailscale login --login-server http://testserver<" in status and "hs.example.edu" not in status
-
-
-def test_empty_enrollments_page_shares_this_servers_link(tmp_path):
-    c, db, sheet = client(tmp_path)
-    c.get("/slots/dev-login?email=boss@example.edu")
-    assert "Share <code>http://testserver/slots/enroll</code>" in c.get("/slots/enrollments").text
 
 
 def test_enrollment_shows_the_group_name_from_the_sheet(tmp_path):

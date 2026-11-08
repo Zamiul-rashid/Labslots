@@ -38,7 +38,7 @@
     <h3>How to connect</h3>
     <ol class="steps">
       <li>Install Tailscale on your laptop: <a href="https://tailscale.com/download" rel="noopener">tailscale.com/download</a>.</li>
-      <li>Run <code>tailscale login --login-server {{ public_url }}</code> and sign in with your {{ org }} Google account.</li>
+      <li>Run <code>tailscale login --login-server https://hs.example.edu</code> and sign in with your {{ org }} Google account.</li>
       <li>During one of your slots: <code>ssh {{ a.group.linux_account if a.group else 'your-group-account' }}@{{ a.pcs[0].address if a.pcs|length == 1 and a.pcs[0].address else '&lt;your PC address above&gt;'|safe }}</code></li>
     </ol>
     <p class="muted small">No SSH key or password: Tailscale checks that you are a member of the group, so every member signs in with their own {{ org }} account. Outside your slots the PC cannot be reached, and open sessions end when your slot does. Jobs still running then are stopped, so save checkpoints.</p>
@@ -91,7 +91,7 @@
         <tr class="{{ 'cosup' if i }}" data-filled="{{ '1' if s.name or s.email else '' }}">
           <td class="role">{{ 'Supervisor' if i == 0 else 'Co-supervisor' }}</td>
           <td><label for="sn{{ i }}" class="cell-label">{{ 'Supervisor' if i == 0 else 'Co-supervisor' }} name</label><input id="sn{{ i }}" name="s_name" class="cellinput" maxlength="120" value="{{ s.name }}" {{ 'required' if i == 0 }} autocomplete="off"></td>
-          <td><label for="se{{ i }}" class="cell-label">Email</label><input id="se{{ i }}" name="s_email" type="email" class="cellinput" maxlength="200" value="{{ s.email }}" {{ 'required' if i == 0 }} placeholder="{{ org }} email" autocomplete="off"></td>
+          <td><label for="se{{ i }}" class="cell-label">Email</label><input id="se{{ i }}" name="s_email" type="email" class="cellinput" maxlength="200" value="{{ s.email }}" {{ 'required' if i == 0 }} placeholder="name@example.edu" autocomplete="off"></td>
           <td class="act">{% if i %}<button type="button" class="btn small quiet" data-remove-cosup hidden>Remove</button>{% endif %}</td>
         </tr>
         {% endfor %}
