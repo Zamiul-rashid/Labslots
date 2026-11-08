@@ -24,7 +24,7 @@
     <td class="actions"><a class="btn small primary" href="{{ base }}/enrollments/{{ e.id }}">Assign a PC</a></td>
   </tr>
   {% else %}
-  <tr><td colspan="7">No enrollments waiting. Share <code>https://hs.example.edu/slots/enroll</code> with thesis groups.</td></tr>
+  <tr><td colspan="7">No enrollments waiting. Share <code>{{ public_url }}{{ base }}/enroll</code> with thesis groups.</td></tr>
   {% endfor %}
   </tbody>
 </table>
