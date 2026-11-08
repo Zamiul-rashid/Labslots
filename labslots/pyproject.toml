@@ -1,6 +1,6 @@
 [project]
 name = "labslots"
-version = "0.2.0"
+version = "0.2.1"
 description = "Slot scheduler and admin desk for the Headscale lab pilot"
 requires-python = ">=3.11"
 dependencies = [
