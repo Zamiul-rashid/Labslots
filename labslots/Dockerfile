@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.15-slim
 RUN apt-get update && apt-get install -y --no-install-recommends openssh-client netcat-openbsd tzdata \
  && rm -rf /var/lib/apt/lists/*
 ENV TZ=UTC PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
